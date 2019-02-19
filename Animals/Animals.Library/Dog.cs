@@ -1,13 +1,13 @@
 using System;
 
-namespace Animals.UI
+namespace Animals.Library
 {
-    internal class Dog 
+    public class Dog 
     {
 
-    internal string Noise = "Woof!";
+    public string Noise = "Woof!";
 
-        internal void GoTo(string location) 
+        public void GoTo(string location) 
         {
             //Console.WriteLine("Walking to " + location);
 
@@ -16,7 +16,7 @@ namespace Animals.UI
             
         }
 
-        internal void MakeNoise()
+        public void MakeNoise()
         {
             Console.WriteLine(Noise);
         }
