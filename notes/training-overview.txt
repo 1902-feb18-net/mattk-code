@@ -1,0 +1,16 @@
+C#/.NET curriculum overview
+week 1 - C#, .NET, OOP, testing
+week 2 - SQL (SQL Server), Entity Framework (ORM)
+week 3 - ASP.NET MVC, HTML, CSS (project 0 due middle of week 3)
+week 4 - DevOps, CI/CD, Azure, Docker (project 1)
+week 5 - service-oriented architecture, REST, JS
+week 6 - Angular, TypeScript
+week 7, 8, 9 - project 3, and project 2
+week 10 - ???
+
+Monday - assessment, quiz, timed coding, mock interviews,
+QC audit?
+Tuesday - training
+Wed. - training
+Thurs - training
+Friday - training + project work time

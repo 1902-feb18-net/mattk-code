@@ -17,6 +17,10 @@ namespace Animals.Library
             {
                 throw new ArgumentException("value must not be null or empty");
             }
+            if (newValue.Length == 0)
+            {
+                throw new ArgumentException("value must not be null or empty");
+            }
 
             Noise = newValue;
         }

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MoreAnimals.Library\MoreAnimals.Library.csproj" />
+    <ProjectReference Include="..\Shapes\Shapes.csproj" />
   </ItemGroup>
 
 </Project>

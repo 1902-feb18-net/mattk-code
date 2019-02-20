@@ -1,0 +1,22 @@
+tools:
+    visual studio
+    (only .net core workload required)
+
+bash commands:
+    ls
+        see contents of current directory
+    cd 
+        change directory
+    mkdir
+        make new directory
+git commands:
+    git status
+        see current status of current repository
+        
+use tab completion
+open bash terminal in vscode
+go to settings and use the json version        
+
+problem at c# compile
+alt shift f to auto format in sublime shortcuts
+tour of the c# language

@@ -1,0 +1,588 @@
+
+mpkag@DESKTOP-ICC58FK MINGW64 /
+$ cd /c/revature
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature
+$ ls -la
+total 24
+drwxr-xr-x 1 mpkag 197609 0 Feb 18 16:00 ./
+drwxr-xr-x 1 mpkag 197609 0 Feb 18 11:51 ../
+drwxr-xr-x 1 mpkag 197609 0 Feb 19 09:11 mattk-revature-stuff/
+drwxr-xr-x 1 mpkag 197609 0 Feb 18 11:25 training-code/
+drwxr-xr-x 1 mpkag 197609 0 Feb 18 16:01 VisualStudioHelloWorld/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature
+$ git clone https://github.com/1902-feb18-net/mattk-code.git
+Cloning into 'mattk-code'...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature
+$ ls -la
+total 24
+drwxr-xr-x 1 mpkag 197609 0 Feb 19 10:07 ./
+drwxr-xr-x 1 mpkag 197609 0 Feb 18 11:51 ../
+drwxr-xr-x 1 mpkag 197609 0 Feb 19 10:07 mattk-code/
+drwxr-xr-x 1 mpkag 197609 0 Feb 19 09:11 mattk-revature-stuff/
+drwxr-xr-x 1 mpkag 197609 0 Feb 18 11:25 training-code/
+drwxr-xr-x 1 mpkag 197609 0 Feb 18 16:01 VisualStudioHelloWorld/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature
+$ cd mattk-code
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ ls -la
+total 13
+drwxr-xr-x 1 mpkag 197609    0 Feb 19 10:07 ./
+drwxr-xr-x 1 mpkag 197609    0 Feb 19 10:07 ../
+drwxr-xr-x 1 mpkag 197609    0 Feb 19 10:07 .git/
+-rw-r--r-- 1 mpkag 197609 1092 Feb 19 10:07 LICENSE
+-rw-r--r-- 1 mpkag 197609   12 Feb 19 10:07 README.md
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ code .
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git add .gitignore
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .gitignore
+
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git reset HEAD .gitignore
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git add .gitignore
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .gitignore
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   .gitignore
+
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git add .
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git reset HEAD .gitignore
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git add .gitignore
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .gitignore
+
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git commit
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'mpkag@DESKTOP-ICC58FK.(none)')
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git config --global user.email "mpkagel@gmail.com"
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git config --global user.name "Matt Kagel"
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git commit
+[master 4bc15a8] added gitignore for c#
+ 1 file changed, 554 insertions(+)
+ create mode 100644 .gitignore
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 3.52 KiB | 1.17 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/1902-feb18-net/mattk-code.git
+   52d57d2..4bc15a8  master -> master
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        notes.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git add .
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git commit -m "Add notes file"
+[master 0eaa302] Add notes file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 notes.txt
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 273 bytes | 91.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/1902-feb18-net/mattk-code.git
+   4bc15a8..0eaa302  master -> master
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ cd ../training-code/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/training-code (master)
+$ git pull
+Already up to date.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/training-code (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   01-c-sharp/01-hello-world/Program.cs
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        01-c-sharp/demo1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/training-code (master)
+$ cd ../mattk-code/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ cd ../training-code/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/training-code (master)
+$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 2), reused 4 (delta 2), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/1902-feb18-net/training-code
+   df51741..c14fc25  master     -> origin/master
+Updating df51741..c14fc25
+Fast-forward
+ 01-c-sharp/setup-intro.txt | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/training-code (master)
+$ cd ../mattk-code/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ git log
+commit 0eaa3028ab102983ea6b37a441450107df9ff83f (HEAD -> master, origin/master, origin/HEAD)
+Author: Matt Kagel <mpkagel@gmail.com>
+Date:   Tue Feb 19 10:37:56 2019 -0600
+
+    Add notes file
+
+commit 4bc15a8494137801f26b133048e004ea8a11c7ec
+Author: Matt Kagel <mpkagel@gmail.com>
+Date:   Tue Feb 19 10:26:16 2019 -0600
+
+    added gitignore for c#
+
+commit 52d57d24ffe5395b326287bb5099f16bec790c4e
+Author: mpkagel <kagelm@oregonstate.edu>
+Date:   Tue Feb 19 10:05:57 2019 -0600
+
+    Initial commit
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ cd ../mattk-revature-stuff/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff
+$ ls -la
+total 15
+drwxr-xr-x 1 mpkag 197609    0 Feb 19 09:11 ./
+drwxr-xr-x 1 mpkag 197609    0 Feb 19 10:07 ../
+drwxr-xr-x 1 mpkag 197609    0 Feb 18 11:56 01-hello-world/
+-rw-r--r-- 1 mpkag 197609  556 Feb 18 15:52 2018-02-18_notes.txt
+-rw-r--r-- 1 mpkag 197609 2411 Feb 19 11:17 2018-02-19_notes.txt
+-rw-r--r-- 1 mpkag 197609  497 Feb 18 16:23 setup-notes.txt
+-rw-r--r-- 1 mpkag 197609  532 Feb 18 11:41 training-overview.txt
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff
+$ mkdir Animals
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff
+$ ls -la
+total 15
+drwxr-xr-x 1 mpkag 197609    0 Feb 19 11:19 ./
+drwxr-xr-x 1 mpkag 197609    0 Feb 19 10:07 ../
+drwxr-xr-x 1 mpkag 197609    0 Feb 18 11:56 01-hello-world/
+-rw-r--r-- 1 mpkag 197609  556 Feb 18 15:52 2018-02-18_notes.txt
+-rw-r--r-- 1 mpkag 197609 2411 Feb 19 11:17 2018-02-19_notes.txt
+drwxr-xr-x 1 mpkag 197609    0 Feb 19 11:19 Animals/
+-rw-r--r-- 1 mpkag 197609  497 Feb 18 16:23 setup-notes.txt
+-rw-r--r-- 1 mpkag 197609  532 Feb 18 11:41 training-overview.txt
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff
+$ cd Animals
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff/Animals
+$ ls -la
+total 4
+drwxr-xr-x 1 mpkag 197609 0 Feb 19 11:19 ./
+drwxr-xr-x 1 mpkag 197609 0 Feb 19 11:19 ../
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff/Animals
+$ dotnet new sln
+The template "Solution File" was created successfully.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff/Animals
+$ ls -la
+total 5
+drwxr-xr-x 1 mpkag 197609   0 Feb 19 11:19 ./
+drwxr-xr-x 1 mpkag 197609   0 Feb 19 11:19 ../
+-rw-r--r-- 1 mpkag 197609 540 Feb 19 11:19 Animals.sln
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff/Animals
+$ dotnet new console -n Animals.UI
+The template "Console Application" was created successfully.
+
+Processing post-creation actions...
+Running 'dotnet restore' on Animals.UI\Animals.UI.csproj...
+  Restoring packages for C:\revature\mattk-revature-stuff\Animals\Animals.UI\Animals.UI.csproj...
+  Generating MSBuild file C:\revature\mattk-revature-stuff\Animals\Animals.UI\obj\Animals.UI.csproj.nuget.g.props.
+  Generating MSBuild file C:\revature\mattk-revature-stuff\Animals\Animals.UI\obj\Animals.UI.csproj.nuget.g.targets.
+  Restore completed in 378.47 ms for C:\revature\mattk-revature-stuff\Animals\Animals.UI\Animals.UI.csproj.
+
+Restore succeeded.
+
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff/Animals
+$ dotnet sln add Animals.UI
+Project `Animals.UI\Animals.UI.csproj` added to the solution.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff/Animals
+$ dotnet build
+Microsoft (R) Build Engine version 15.9.20+g88f5fadfbe for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Restore completed in 81.83 ms for C:\revature\mattk-revature-stuff\Animals\Animals.UI\Animals.UI.csproj.
+  Animals.UI -> C:\revature\mattk-revature-stuff\Animals\Animals.UI\bin\Debug\netcoreapp2.2\Animals.UI.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.51
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff/Animals
+$ code .
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff/Animals
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-revature-stuff/Animals
+$ cd ../../mattk-code
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ mkdir Animals
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ ls -la
+total 30
+drwxr-xr-x 1 mpkag 197609     0 Feb 19 11:24 ./
+drwxr-xr-x 1 mpkag 197609     0 Feb 19 10:07 ../
+drwxr-xr-x 1 mpkag 197609     0 Feb 19 10:37 .git/
+-rw-r--r-- 1 mpkag 197609 10830 Feb 19 10:22 .gitignore
+drwxr-xr-x 1 mpkag 197609     0 Feb 19 11:24 Animals/
+-rw-r--r-- 1 mpkag 197609  1092 Feb 19 10:07 LICENSE
+-rw-r--r-- 1 mpkag 197609     5 Feb 19 10:36 notes.txt
+-rw-r--r-- 1 mpkag 197609    12 Feb 19 10:07 README.md
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ cd Animals
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ ls -la
+total 4
+drwxr-xr-x 1 mpkag 197609 0 Feb 19 11:24 ./
+drwxr-xr-x 1 mpkag 197609 0 Feb 19 11:24 ../
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ dotnet new sln
+The template "Solution File" was created successfully.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ dotnet new console -n Animals.UI
+The template "Console Application" was created successfully.
+
+Processing post-creation actions...
+Running 'dotnet restore' on Animals.UI\Animals.UI.csproj...
+  Restoring packages for C:\revature\mattk-code\Animals\Animals.UI\Animals.UI.csproj...
+  Generating MSBuild file C:\revature\mattk-code\Animals\Animals.UI\obj\Animals.UI.csproj.nuget.g.props.
+  Generating MSBuild file C:\revature\mattk-code\Animals\Animals.UI\obj\Animals.UI.csproj.nuget.g.targets.
+  Restore completed in 156.36 ms for C:\revature\mattk-code\Animals\Animals.UI\Animals.UI.csproj.
+
+Restore succeeded.
+
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ dotnet sln add Animals.UI
+Project `Animals.UI\Animals.UI.csproj` added to the solution.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ dotnet build
+Microsoft (R) Build Engine version 15.9.20+g88f5fadfbe for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Restore completed in 33.27 ms for C:\revature\mattk-code\Animals\Animals.UI\Animals.UI.csproj.
+  Animals.UI -> C:\revature\mattk-code\Animals\Animals.UI\bin\Debug\netcoreapp2.2\Animals.UI.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.38
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ./
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git add .Animals
+fatal: pathspec '.Animals' did not match any files
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git add .
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git commit -m "Adding Animals project"
+[master 09ada87] Adding Animals project
+ 3 files changed, 54 insertions(+)
+ create mode 100644 Animals/Animals.UI/Animals.UI.csproj
+ create mode 100644 Animals/Animals.UI/Program.cs
+ create mode 100644 Animals/Animals.sln
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ ls -la
+total 8
+drwxr-xr-x 1 mpkag 197609    0 Feb 19 11:25 ./
+drwxr-xr-x 1 mpkag 197609    0 Feb 19 11:24 ../
+-rw-r--r-- 1 mpkag 197609 1737 Feb 19 11:25 Animals.sln
+drwxr-xr-x 1 mpkag 197609    0 Feb 19 11:25 Animals.UI/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ code .
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git add .
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git commit -m "Added functions to dog class"
+[master 8cff153] Added functions to dog class
+ 2 files changed, 36 insertions(+)
+ create mode 100644 Animals/Animals.UI/Dog.cs
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git reset HEAD Animals.Library/Class1.cs
+Unstaged changes after reset:
+M       Animals/Animals.UI/Animals.UI.csproj
+D       Animals/Animals.UI/Dog.cs
+M       Animals/Animals.UI/Program.cs
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ rm Animals.Library/Class1.cs
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git add .
+warning: LF will be replaced by CRLF in Animals/.vscode/launch.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in Animals/.vscode/tasks.json.
+The file will have its original line endings in your working directory
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git commit -m "Move dog to separate library project"
+[master b3bcff0] Move dog to separate library project
+ 6 files changed, 60 insertions(+), 5 deletions(-)
+ create mode 100644 Animals/.vscode/launch.json
+ create mode 100644 Animals/.vscode/tasks.json
+ create mode 100644 Animals/Animals.Library/Animals.Library.csproj
+ rename Animals/{Animals.UI => Animals.Library}/Dog.cs (60%)
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git push
+Enumerating objects: 26, done.
+Counting objects: 100% (26/26), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (25/25), done.
+Writing objects: 100% (25/25), 3.43 KiB | 292.00 KiB/s, done.
+Total 25 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 1 local object.
+To https://github.com/1902-feb18-net/mattk-code.git
+   0eaa302..b3bcff0  master -> master
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ dotnet sln add Animals.Library
+Project `Animals.Library\Animals.Library.csproj` added to the solution.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git diff
+diff --git a/Animals/Animals.sln b/Animals/Animals.sln
+index d019cc7..c15c788 100644
+--- a/Animals/Animals.sln
++++ b/Animals/Animals.sln
+@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
+ MinimumVisualStudioVersion = 15.0.26124.0
+ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animals.UI", "Animals.UI\Animals.UI.csproj", "{E8282652-43A9-44E3-9B5C-FEF426EA8ED9}"
+ EndProject
++Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animals.Library", "Animals.Library\Animals.Library.csproj", "{81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}"
++EndProject
+ Global
+        GlobalSection(SolutionConfigurationPlatforms) = preSolution
+                Debug|Any CPU = Debug|Any CPU
+@@ -30,5 +32,17 @@ Global
+                {E8282652-43A9-44E3-9B5C-FEF426EA8ED9}.Release|x64.Build.0 = Release|Any CPU
+                {E8282652-43A9-44E3-9B5C-FEF426EA8ED9}.Release|x86.ActiveCfg = Release|Any CPU
+                {E8282652-43A9-44E3-9B5C-FEF426EA8ED9}.Release|x86.Build.0 = Release|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Debug|x64.ActiveCfg = Debug|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Debug|x64.Build.0 = Debug|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Debug|x86.ActiveCfg = Debug|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Debug|x86.Build.0 = Debug|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Release|Any CPU.Build.0 = Release|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Release|x64.ActiveCfg = Release|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Release|x64.Build.0 = Release|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Release|x86.ActiveCfg = Release|Any CPU
++               {81D4E6FF-315C-4D8E-AAF3-BA5388A04C5C}.Release|x86.Build.0 = Release|Any CPU
+        EndGlobalSection
+ EndGlobal
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ git diff HEAD^ HEAD Animals.UI/Animals.UI.csproj
+diff --git a/Animals/Animals.UI/Animals.UI.csproj b/Animals/Animals.UI/Animals.UI.csproj
+index 21dff5c..d35cfd1 100644
+--- a/Animals/Animals.UI/Animals.UI.csproj
++++ b/Animals/Animals.UI/Animals.UI.csproj
+@@ -1,5 +1,9 @@
+ <Project Sdk="Microsoft.NET.Sdk">
+
++  <ItemGroup>
++    <ProjectReference Include="..\Animals.Library\Animals.Library.csproj" />
++  </ItemGroup>
++
+   <PropertyGroup>
+     <OutputType>Exe</OutputType>
+     <TargetFramework>netcoreapp2.2</TargetFramework>
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$

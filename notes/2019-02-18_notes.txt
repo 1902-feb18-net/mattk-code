@@ -1,0 +1,21 @@
+in .NET/C#: 
+
+
+
+
+solution (set of related projects) (.sln)
+
+    dotnet new -> project/assembly (.dll (also used to be .exe files as well)) (c-sharp-basics.csproj)
+
+                    file (Program.cs)
+
+                        namespace (System) -> using System;
+
+                            class (Console)
+                                methods (WriteLine)
+                                properties
+                                fields
+
+
+logical organization: namespaces
+physical organization: projects                            

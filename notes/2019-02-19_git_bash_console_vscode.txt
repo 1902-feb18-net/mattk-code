@@ -1,0 +1,55 @@
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ dotnet run --project Animals.UI
+Program.cs(11,27): error CS0246: The type or namespace name 'Dog' could not be found (are you missing a using directive or an assembly reference?) [C:\revature\mattk-code\Animals\Animals.UI\Animals.UI.csproj]
+
+The build failed. Please fix the build errors and run again.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ dotnet run --project Animals.UI
+Hello World!
+Walking to door
+Woof!
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ dotnet run --project Animals.UI
+Hello World!
+Walking to door
+Woof!
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ dotnet run --project Animals.UI
+Hello World!
+Dog's name is Fido
+Walking to door
+Woof!
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ mpkag@DESKTOP-ICC58FK MINGW64 /
+bash: mpkag@DESKTOP-ICC58FK: command not found
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ $ cd /c/revature
+bash: $: command not found
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ mpkag@DESKTOP-ICC58FK MINGW64 /c/revature
+bash: mpkag@DESKTOP-ICC58FK: command not found
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ $ ls -la
+bash: $: command not found
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ total 24
+bash: total: command not found
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/Animals (master)
+$ drwxr-xr-x 1 mpkag 197609 0 Feb 18 16:00 ./
+bash: drwxr-xr-x: command not found
+
