@@ -1,0 +1,47 @@
+origin is the remote tracking branch
+
+GitHub
+                    master
+                      \
+                        *
+                      /
+        *---*---*---*---*
+                   /      \
+                 master    feature 
+                 
+                 "remote branch"
+
+----------------------------------------------------------------------------------
+laptop
+
+              origin/master "remote tracking branch"
+                          \     origin/feature
+        *---*---*-------    *---/------\    
+                        \  /   /        \
+                         * -- *----------* -- master (after merge) 
+                             /
+                           feature
+                          
+
+on master...
+git merge feature                          
+                            "local branch"
+
+
+
+pull (consists of fetch and merge):
+fetch updates the remote tracking branch
+merge (with no arguemnt) merges the right r.t.b into the current branch
+
+1. commit often
+2. pull often
+3. push often
+
+
+Assignment
+I'm going to have a repo
+Everyone has a branch
+Everyone puts code on the branch and submits to grade
+
+HEAD is a special index that is always moving around, what commit am I looking at right now.
+

@@ -29,6 +29,8 @@ namespace Shapes.UI
             {
                 item.Draw();
             }
+
+            Console.WriteLine();
         }
 
 
