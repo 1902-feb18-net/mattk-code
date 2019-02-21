@@ -12,6 +12,9 @@ namespace Collection
             Lists();
             Sets();
             StringEquality();
+
+            new Stack<int>(); // LIFO
+            new Queue<int>(); // FIFO
         }
 
         static void Arrays()
@@ -142,7 +145,7 @@ namespace Collection
             // This is called "boxing" - the int is wrapped inside a reference type
 
             int i2 = (int)o2; // extract that value from inside the object wrapper
-            
+
         }
 
     }

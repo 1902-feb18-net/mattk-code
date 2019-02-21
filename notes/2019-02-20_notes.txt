@@ -45,3 +45,8 @@ Everyone puts code on the branch and submits to grade
 
 HEAD is a special index that is always moving around, what commit am I looking at right now.
 
+Need to get Test Explorer Visual Studio 2017
+
+
+
+
