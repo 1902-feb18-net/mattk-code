@@ -27,7 +27,7 @@ namespace CollectionTestingLibrary
 
         public static void Contains(string input)
         {
-            //_stringList.Contains(input);
+            return _stringList.Contains(input);
         }
 
         public static void Remove(string input)

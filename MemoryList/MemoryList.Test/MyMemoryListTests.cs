@@ -1,17 +1,18 @@
+using ML.Library;
 using System;
 using Xunit;
 
 namespace ML.Test
 {
-    public class UnitTest1
+    public class MyMemoryListTests
     {
         [Theory]
-        [InlineData(-5)]
-        [InlineData(0)]
-        [InlineData(10000)]
-        public void AddedItemsShouldBeContained(int value)
+        //[InlineData(-5)]
+        //[InlineData(0)]
+        //[InlineData(10000)]
+        public void AddedItemsShouldBeContained(T value)
         {
-            var list = new MemoryList<int>();
+            var list = new MemoryList<T>();
 
             list.Add(value);
 

@@ -4,10 +4,10 @@ using System.Text;
 
 namespace CollectionTestingLibrary
 {
-    class MyGenericCollection<T>
+    public class MyGenericCollection<T>
     {
 
-        private readonly List<T> _list = new List<T>();
+        protected readonly List<T> _list = new List<T>();
         private int id;
 
 
@@ -16,7 +16,7 @@ namespace CollectionTestingLibrary
             id = new Random().Next();
         }
 
-        public MyGenericCollection(T[] initial) : this()
+        public MyGenericCollection(T[] initial)
         {
             _list.AddRange(initial);
         }
@@ -28,9 +28,10 @@ namespace CollectionTestingLibrary
             _list.Add(value);
         }
 
-        public T Contains(T value)
+        public bool Contains(T value)
         {
-            return _list.Contains(value);
+            var result = (bool) _list.Contains(value);
+            return result;
         }
 
     }

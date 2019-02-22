@@ -1,0 +1,123 @@
+.NET platform for many languages
+C# being the most popular
+F# is a functional version of C#
+VB.NET
+Python is in .NET also
+Java is in .NET believe it or not, RedHat is porting
+R is in .NET
+and even TypeScript and of course JS
+
+.NET has limited interoperability between languages
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.NET Common language infrastructure (CLI)
+.NET commmand line interface (CLI) "dotnet"
+
+- virtual execution system (VES), this is the runtime itself, the environment in which
+your code is running
+- Common Type System (CTS), data types among other things
+- Base Class Library (BCL), system namespaces among other thinbgs
+
+"interface" standard (the stuff in between the plus signs)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+----------
+.NET code               C#                                               (common)
+(.cs)          -->      compiler                             -->         intermediate language
+----------              (dotnet build, MS build, CSC)                    IL, CIL, MSIL
+                                                                         (.dll, .exe)
+                                                                         bytecode
+                                                                         assembly
+
+            native CPU
+
+build
+------------------------------------------------------------------------------------------------
+run
+
+VES is on the run side
+
+the intermediate language is an instruction set for the VES
+
+inside the VES we have the JIT (just-in-time) compiler, native instructions go to CPU
+
+
+abstraction
+high <----------------------------------------------------------------------------------> low
+       F#    C#   CIL                                                           native CPU
+
+
+.NET Framework is Windows only from MS
+The new way of doing .NET is .NET Core, truly cross-platform from MS
+Mono port of framework to Mac, Linux (becoming obsolete)
+ADO.NET for data access
+ASP.NET for web development
+WPF (Windows)
+WCF for web services
+
+
+Continuing on...
+interoperability between languages
+cross-platform/platform-independent
+architecture-independent
+exception handing
+types
+managed environment (GC)
+
+.NET standard is not a new version of the runtime
+.NET standard is a standard for what both .NET Framework and .NET Core should doing
+.NET standard is the common subset that both the Core and Framework agree upon 100%,
+so writing a library in .NET standard is more portable
+
+Common Language Runtime (CLR)
+
+
+And Continuing on again...
+Big 4 Principles of OOP
+abstraction: separation between needed functionality and implementation details
+e.g. properties, methods, CTS, List 
+
+encapsulation: restricting access to information within objects, packaging related things
+together and treating them as a unit
+e.g. object, access modifiers
+
+polymorphism: possibility of many implementations behind a common contract
+e.g. method overriding, method overloading, ability to treat a derived class object as
+though it were a base class object
+
+inheritance: the ability for a class to take and extend behavior from another class
+
+MemoryList
+all a list does, plus a little more, use inheritance
+
+inheritance "is-a" 
+versus
+composition "has-a"
+fields/properties in a composition
+
+Project 0
+Console application to manage a store and its inventory
+What kind of store, what kind of products it should sell
+Keep track of customers
+Keep track of stores in the sense of store locations, multiple stores
+Orders/Order History, keep track of orders that have been placed
+Statistics on the orders, left up to us, what day did we have the most volume of sales
+Inventory such that things will be removed from the inventory and the inventory will decrease
+There has to be some complexity to the things that you can buy
+Some relationship between the inventory and the product that you can buy
+order a pizza at the pizza store, inventory may consist of dough and cheese, some kind of
+compound product
+And you do need to be able to order more than one thing in one orderT
+There need to be some sort of business rules you could say, some restrictions
+that come from the real world logic of the product
+Something like no more than 10 pizzas per order allowed
+Leverage the menu based interface
+Typical menu structure menu list interface, console application type interface
+Don't spend a lot of time making it pretty
+Strong separation of concerns
+And a testing Project
+Option to save/load from file, will be replaced with a SQL database
+ORM -> SQL
+

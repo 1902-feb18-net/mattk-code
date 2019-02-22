@@ -7,49 +7,44 @@ namespace FirstNotRepeatingCharacterO1Mem
     {
         static void Main(string[] args)
         {
-            string s = "abacabaabacaba";
+            string s = "abacabad";
             bool repeatFlag = false;
-            char c;
             HashSet<char> chList = new HashSet<char>();
 
             for (int i = 0; i < s.Length; i++)
             {
-                c = s[i];
-                if (chList.Contains(c))
-                {
-                    break;
-                }
-                else
+                if (!chList.Contains(s[i]))
                 {
                     for (int j = i + 1; j < s.Length; j++)
                     {
                         if (s[j] == s[i])
                         {
+                            Console.WriteLine($"{s[i]}");
                             chList.Add(s[i]);
                             repeatFlag = true;
                             break;
                         }
 
                     }
+                    Console.WriteLine($"{s[i]}");
+                    Console.WriteLine($"{repeatFlag}");
                     if (!repeatFlag)
                     {
-                        Console.WriteLine($"{s[i]}");
-                        //return s[j];
+                        Console.WriteLine($"s[i]");
+                        //return s[i];
                     }
                     repeatFlag = false;
                 }
-                
 
             }
 
-            //return '_';
-
-
-
-
             Console.WriteLine("_");
 
-            Console.WriteLine("Hello World!");
+
         }
+
+
     }
+
+ 
 }
