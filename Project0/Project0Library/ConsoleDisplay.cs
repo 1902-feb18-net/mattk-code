@@ -15,6 +15,7 @@ namespace Project0Library
             Console.WriteLine("'C': Add a customer to the database.");
             Console.WriteLine("'O': Add an order to the database.");
             Console.WriteLine("'SL': Get a list of available stores and their id numbers.");
+            Console.WriteLine("'SO': Get a store's order history.");
             Console.WriteLine("'CL': Get a list of available customers and their information.");
             Console.WriteLine("'CS': Search for customers by name.");
             Console.WriteLine("'OL': Get a list of orders that have been placed.");
@@ -33,6 +34,28 @@ namespace Project0Library
                 Console.WriteLine($"Store Id: {item.Id}");
             }
             Console.WriteLine();
+        }
+
+        public static void StoreOrders(List<Location> storeLocations)
+        {
+            ILogger logger = LogManager.GetCurrentClassLogger();
+
+            StoreList(storeLocations);
+            Console.WriteLine("Please enter the store id to get that store's orders:");
+            var input = Console.ReadLine();
+
+            if (int.TryParse(input, out var storeLocationId))
+            {
+                foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
+                {
+                    Console.WriteLine($"Store Location {storeLocationId}");
+                    OrderList(item.OrderHistory);
+                }
+            }
+            else
+            {
+                logger.Error($"Invalid input {input}");
+            }
         }
 
         public static void CustomerList(List<Customer> customers)

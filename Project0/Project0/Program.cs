@@ -47,6 +47,10 @@ namespace Project0
                 {
                     ConsoleDisplay.StoreList(storeLocations);
                 }
+                else if (input == "SO")
+                {
+                    ConsoleDisplay.StoreOrders(storeLocations);
+                }
                 else if (input == "CL")
                 {
                     ConsoleDisplay.CustomerList(customers);
