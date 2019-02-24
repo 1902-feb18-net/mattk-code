@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeSignalRotateImage", "CodeSignalRotateImage\CodeSignalRotateImage.csproj", "{AF99B921-8635-42A4-8D49-9E09ACBA37B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF99B921-8635-42A4-8D49-9E09ACBA37B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF99B921-8635-42A4-8D49-9E09ACBA37B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF99B921-8635-42A4-8D49-9E09ACBA37B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF99B921-8635-42A4-8D49-9E09ACBA37B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FBC5DB6-47B8-40F7-9650-CB8BED0D4F21}
+	EndGlobalSection
+EndGlobal

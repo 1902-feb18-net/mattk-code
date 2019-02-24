@@ -62,7 +62,7 @@ Continuing on...
 interoperability between languages
 cross-platform/platform-independent
 architecture-independent
-exception handing
+exception handling
 types
 managed environment (GC)
 

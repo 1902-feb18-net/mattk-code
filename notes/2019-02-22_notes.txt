@@ -1,0 +1,64 @@
+SOLID principles (also regards OOP)
+
+Single-responsibility principle: a class /method should do just one thing
+Open-closed principle: entities should be open for extension, closed for modification
+    ways to implement OC principle 
+Liskov substitution principle: objects should be replaceable by instances of their subtypes
+without altering the correctness of the code
+
+XmlSerializer : Serializer
+
+some people think that the Liskov substitution principle is too strong, but the general
+idea is good enough for programmers
+
+Liskov inheritantly involves upcasting
+
+Interface segregation principle: heavy interfaces should be split up into many light interfaces
+
+the issue with huge interfaces is lack of modularity
+
+Dependency inversion principle: instead of high level code depending on low level code, or 
+vice-versa, both should depend on interfaces
+
+put interfaces everywhere you can
+
+Diagram Here:
+
+
+is can be substitued for == and vice versa in C#
+
+GAC: global assembly cache
+C:\Windows\assembly
+"strong name"
+package manager NuGet
+"dotnet restore"
+"nuget restore"
+
+
+separation of concerns
+don't be tightly coupled to code that I don't need to be
+minimize tight coupling
+get closer to loose coupling
+
+comment your code
+use XML comments for the public API, not on private stuff, only anything that other people can see
+
+DRY: don't repeat yourself
+KISS: keep it simple stupid
+
+For Project 0, Library+Tests and Console done by Wednesday.
+
+Tuesday morning 9:30 am, QC with Fred
+1-1 with Nick
+
+Monday:
+- Quiz on RevaturePro
+- coding assessment
+- one-on-one mock interview
+- maybe some training
+
+quiz will be multiple choice questions, occasional short answer
+
+
+
+

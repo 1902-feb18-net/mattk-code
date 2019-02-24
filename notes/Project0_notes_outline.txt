@@ -1,0 +1,96 @@
+Cupcakes and Donuts
+Inventory
+Customers
+Ingredients in Inventory
+Stores
+
+List of Ingredients
+These quantities are for a batch of cupcakes 
+makes 14 cupcakes
+
+- flour/lbs,
+each cupcake takes 1 1/3 cups (165 grams) of flour
+- baking powder/lbs
+each cupcake takes 1.25 tsp of baking powder
+- salt/lbs
+each cupcake takes 0.5 tsp of salt
+- unsalted butter/lbs
+each cupcake takes 0.5 cups(115 grams) of unsalted butter, softened
+- granulated sugar/lbs
+each cupcake takes 1 cup(200 grams) of sugar
+- large eggs/units
+each cupcake takes 2 large eggs
+- vanilla extract/gallongs
+each cupcake takes 2 tsp of vanilla extract
+- sour cream/lbs
+1/2 cup/120 grams of sour cream per cupcake
+
+vanilla frosting
+- unsalted butter softened/lbs
+1 cup(230 grams) unsalted butter, softened
+- confectioner's sugar
+3 cups(360 grams) confectioner's sugar
+- vanilla extract
+2 tsp vanilla extract
+- heavy cream
+2 tbs heavy cream
+
+if Chocolate
+then
+
+- unsweetened cocoa powder/lbs
+1.5 cup unsweetened cocoa powder
+
+- raspberries
+7 raspberries per cupcake
+- amaretto biscuits/lbs
+75g per 12 cupcakes
+
+- peanut butter/lbs
+1/4 cup per 12 cupcakes
+
+-peppermints/lbs
+18 per 12 cupcakes
+
+- oreo/lbs
+0.6 oreo per cupcake
+
+- coconut milk/gallons
+0.5 cup coconut milk per 14 cupcakes
+
+- lemons/units
+2 lemons per 14 cupcakes
+
+
+List of Cupcakes
+-Vanilla
+-Chocolate
+-Chocolate Peanut Butter
+-Raspberry Amaretto
+-Chocolate Peppermint
+-Mint Oreo
+-Coconut
+-Lemon
+
+business logic applied
+can only order a maximum of 100 of one cupcake per order, but can order multiple
+types of cupcakes per order
+
+can only place an order at one store per order. If you need to order from two stores,
+that's two orders
+
+if flour gets below a certain amount at a store, tell customer can't order there,
+supply shortage
+
+maximum 500 cupcakes per order
+
+if first order with first customer, can only order 100 cupcakes
+
+can only have a maximum of 5 active orders running consecutively, can't stack too many orders,
+too hard for stores to fill
+
+
+
+
+
+
