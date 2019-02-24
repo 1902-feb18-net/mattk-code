@@ -99,7 +99,7 @@ namespace Project0
             Console.WriteLine("'O': Add an order to the database.");
             Console.WriteLine("'SL': Get a list of available stores and their id numbers.");
             Console.WriteLine("'CL': Get a list of available customers and their information.");
-            Console.WriteLine("'OL': Get a list of orders that have been placedf.");
+            Console.WriteLine("'OL': Get a list of orders that have been placed.");
             Console.WriteLine();
             Console.WriteLine("Please type a selection , or type 'q' to quit: ");
             input = Console.ReadLine().ToUpper();
@@ -214,22 +214,33 @@ namespace Project0
 
                                 try
                                 {
-                                    Enum.Parse(typeof(Cupcake), input);
+                                    Cupcake cupcakeType = (Cupcake) Enum.Parse(typeof(Cupcake), input);
 
-                                    int newOrderId = 1;
-                                    if (orders.Count > 0) { newOrderId = orders.Max(o => o.Id) + 1; }
+                                    Console.WriteLine("Please enter the quantity you would like to order:");
+                                    input = Console.ReadLine();
 
-                                    orders.Add(new Order
+                                    if (int.TryParse(input, out var qnty))
                                     {
-                                        Id = newOrderId,
-                                        OrderLocation = storeLocationId,
-                                        OrderCustomer = customerId,
-                                        OrderTime = DateTime.Now,
-                                    });
-                                    string newData = JsonConvert.SerializeObject(orders, Formatting.Indented);
-                                    File.WriteAllTextAsync(jsonOrders, newData).Wait();
+                                        int newOrderId = 1;
+                                        if (orders.Count > 0) { newOrderId = orders.Max(o => o.Id) + 1; }
 
-                                    Console.WriteLine($"Order with id of {newOrderId} successfully created!");
+                                        orders.Add(new Order
+                                        {
+                                            Id = newOrderId,
+                                            OrderLocation = storeLocationId,
+                                            OrderCustomer = customerId,
+                                            OrderTime = DateTime.Now,
+                                            OrderItem = (cupcakeType, qnty)
+                                        });
+                                        string newData = JsonConvert.SerializeObject(orders, Formatting.Indented);
+                                        File.WriteAllTextAsync(jsonOrders, newData).Wait();
+
+                                        Console.WriteLine($"Order with id of {newOrderId} successfully created!");
+                                    }
+                                    else
+                                    {
+                                        logger.Error($"Invalid input {input}");
+                                    }
                                 }
                                 catch (SystemException ex)
                                 {
@@ -292,7 +303,8 @@ namespace Project0
             foreach (var item in orders)
             {
                 Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
-                    $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}");
+                    $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
+                    $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
             }
             Console.WriteLine();
         }

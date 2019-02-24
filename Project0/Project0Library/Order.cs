@@ -11,7 +11,7 @@ namespace Project0Library
         public int OrderLocation { get; set; }
         public int OrderCustomer { get; set; }
         public DateTime OrderTime { get; set; }
-        private Dictionary<Cupcake, int> Cupcakes { get; set; }
+        public (Cupcake, int) OrderItem { get; set; }
 
 
 
