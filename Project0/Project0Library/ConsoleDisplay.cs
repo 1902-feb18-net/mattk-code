@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Project0Library
@@ -15,6 +17,7 @@ namespace Project0Library
             Console.WriteLine("'SL': Get a list of available stores and their id numbers.");
             Console.WriteLine("'CL': Get a list of available customers and their information.");
             Console.WriteLine("'OL': Get a list of orders that have been placed.");
+            Console.WriteLine("'OR': Get a customer's recommended order.");
             Console.WriteLine();
             Console.WriteLine("Please type a selection , or type 'q' to quit: ");
             input = Console.ReadLine().ToUpper();
@@ -69,6 +72,56 @@ namespace Project0Library
             Console.WriteLine("Coconut");
             Console.WriteLine("Lemon");
             Console.WriteLine();
+        }
+
+        public static void OrderRecommended(List<Customer> customers, List<Order> orders)
+        {
+            ILogger logger = LogManager.GetCurrentClassLogger();
+
+            ConsoleDisplay.CustomerList(customers);
+            Console.WriteLine("Please enter a valid customer Id to display recommended order:");
+            var input = Console.ReadLine();
+
+            if (int.TryParse(input, out var customerId))
+            {
+                if (customers.Any(c => c.Id == customerId))
+                {
+                    var customer = customers.Single(c => c.Id == customerId);
+                    var customerOrders = orders.Where(o => o.OrderCustomer == customerId);
+                    // https://stackoverflow.com/questions/6730974/select-most-frequent-value-using-linq
+                    var mostFrequentOrder = customerOrders.GroupBy(o => o.OrderItem.Item1)
+                                                         .OrderByDescending(gp => gp.Count())
+                                                         .Take(1);
+                    // https://code.i-harness.com/en/q/820541
+                    var intermediate = mostFrequentOrder.First();
+                    string orderRecommended = "not assigned";
+                    foreach (var item in intermediate)
+                    {
+                        orderRecommended = item.OrderItem.Item1.ToString();
+                        break;
+                    }
+
+                    if (orderRecommended == "not assigned")
+                    {
+                        logger.Error($"Unable to find recommended order for customer {customer.FirstName}" +
+                            $" {customer.LastName}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Order recommended count: {mostFrequentOrder.Count()}");
+                        Console.WriteLine($"Recommended Order for Customer {customer.FirstName}" +
+                            $" {customer.LastName}: {orderRecommended}");
+                    }
+                }
+                else
+                {
+                    logger.Error($"{customerId} is not in the list of customers.");
+                }
+            }
+            else
+            {
+                logger.Error($"Invalid input {input}");
+            }
         }
     }
 }

@@ -55,6 +55,10 @@ namespace Project0
                 {
                     ConsoleDisplay.OrderList(orders);
                 }
+                else if (input == "OR")
+                {
+                    ConsoleDisplay.OrderRecommended(customers, orders);
+                }
                 else if (input == "Q")
                 {
                     break;
