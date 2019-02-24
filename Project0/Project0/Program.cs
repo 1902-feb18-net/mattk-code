@@ -39,6 +39,10 @@ namespace Project0
                 {
                     AddCustomer(jsonCustomers, customers, storeLocations);
                 }
+                else if (input == "O")
+                {
+                    AddOrder(jsonCustomers, jsonOrders, customers, storeLocations, orders);
+                }
                 else if (input == "SL")
                 {
                     StoreList(storeLocations);
@@ -47,13 +51,9 @@ namespace Project0
                 {
                     CustomerList(customers);
                 }
-                else if (input == "O")
+                else if (input == "OL")
                 {
-                    AddOrder();
-                }
-                else if (input == "5")
-                {
-
+                    OrderList(orders);
                 }
                 else if (input == "Q")
                 {
@@ -96,8 +96,10 @@ namespace Project0
             Console.WriteLine();
             Console.WriteLine("'S': Add a store location to the database.");
             Console.WriteLine("'C': Add a customer to the database.");
+            Console.WriteLine("'O': Add an order to the database.");
             Console.WriteLine("'SL': Get a list of available stores and their id numbers.");
             Console.WriteLine("'CL': Get a list of available customers and their information.");
+            Console.WriteLine("'OL': Get a list of orders that have been placedf.");
             Console.WriteLine();
             Console.WriteLine("Please type a selection , or type 'q' to quit: ");
             input = Console.ReadLine().ToUpper();
@@ -179,79 +181,85 @@ namespace Project0
             }
         }
 
-        public static void AddOrder()
+        public static void AddOrder(string jsonCustomers,
+                                    string jsonOrders,
+                                    List<Customer> customers,
+                                    List<Location> storeLocations,
+                                    List<Order> orders)
         {
-            //if (storeLocations.Count > 0 && customers.Count > 0)
-            //{
-            //    StoreList(storeLocations);
-            //    Console.WriteLine("Please enter a valid store Id for the order:");
-            //    input = Console.ReadLine();
+            ILogger logger = LogManager.GetCurrentClassLogger();
 
-            //    if (int.TryParse(input, out var storeLocationId))
-            //    {
-            //        if (storeLocations.Any(sL => sL.Id == storeLocationId))
-            //        {
-            //            CustomerList(customers);
-            //            Console.WriteLine("Please enter a valid customer Id for the order:");
-            //            input = Console.ReadLine();
+            if (storeLocations.Count > 0 && customers.Count > 0)
+            {
+                StoreList(storeLocations);
+                Console.WriteLine("Please enter a valid store Id for the order:");
+                var input = Console.ReadLine();
 
-            //            if (int.TryParse(input, out var customerId))
-            //            {
-            //                if (customers.Any(c => c.Id == customerId))
-            //                {
-            //                    CupcakeList();
+                if (int.TryParse(input, out var storeLocationId))
+                {
+                    if (storeLocations.Any(sL => sL.Id == storeLocationId))
+                    {
+                        CustomerList(customers);
+                        Console.WriteLine("Please enter a valid customer Id for the order:");
+                        input = Console.ReadLine();
 
-            //                    Console.WriteLine("Please enter the name of a cupcake as it appears on the list:");
-            //                    input = Console.ReadLine();
+                        if (int.TryParse(input, out var customerId))
+                        {
+                            if (customers.Any(c => c.Id == customerId))
+                            {
+                                CupcakeList();
 
-            //                    try
-            //                    {
-            //                        //Enum.Parse(typeof(Cupcake), input);
+                                Console.WriteLine("Please enter the name of a cupcake as it appears on the list:");
+                                input = Console.ReadLine();
 
-            //                        int newOrderId = 1;
-            //                        if (orders.Count > 0) { newOrderId = orders.Max(o => o.Id) + 1; }
+                                try
+                                {
+                                    Enum.Parse(typeof(Cupcake), input);
 
-            //                        orders.Add(new Order
-            //                        {
-            //                            Id = newOrderId,
-            //                            OrderLocation = storeLocationId,
-            //                            OrderCustomer = customerId,
-            //                            OrderTime = DateTime.Now,
-            //                        });
-            //                        string newData = JsonConvert.SerializeObject(orders, Formatting.Indented);
-            //                        File.WriteAllTextAsync(jsonOrders, newData).Wait();
+                                    int newOrderId = 1;
+                                    if (orders.Count > 0) { newOrderId = orders.Max(o => o.Id) + 1; }
 
-            //                        Console.WriteLine($"Order with id of {newOrderId} successfully created!");
-            //                    }
-            //                    catch (SystemException ex)
-            //                    {
-            //                        logger.Error(ex);
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    logger.Error($"{customerId} is not in the list of customers.");
-            //                }
-            //            }
-            //            else
-            //            {
-            //                logger.Error($"Invalid input {input}");
-            //            }
-            //        }
-            //        else
-            //        {
-            //            logger.Error($"{storeLocationId} is not in the list of stores.");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        logger.Error($"Invalid input {input}");
-            //    }
-            //}
-            //else
-            //{
-            //    Console.WriteLine("You must add at least one store and one customer before you can place an order.");
-            //}
+                                    orders.Add(new Order
+                                    {
+                                        Id = newOrderId,
+                                        OrderLocation = storeLocationId,
+                                        OrderCustomer = customerId,
+                                        OrderTime = DateTime.Now,
+                                    });
+                                    string newData = JsonConvert.SerializeObject(orders, Formatting.Indented);
+                                    File.WriteAllTextAsync(jsonOrders, newData).Wait();
+
+                                    Console.WriteLine($"Order with id of {newOrderId} successfully created!");
+                                }
+                                catch (SystemException ex)
+                                {
+                                    logger.Error(ex);
+                                }
+                            }
+                            else
+                            {
+                                logger.Error($"{customerId} is not in the list of customers.");
+                            }
+                        }
+                        else
+                        {
+                            logger.Error($"Invalid input {input}");
+                        }
+                    }
+                    else
+                    {
+                        logger.Error($"{storeLocationId} is not in the list of stores.");
+                    }
+                }
+                else
+                {
+                    logger.Error($"Invalid input {input}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("You must add at least one store and one customer before you can place an order.");
+            }
         }
 
         public static void StoreList(List<Location> storeLocations)
@@ -273,6 +281,18 @@ namespace Project0
             {
                 Console.WriteLine($"Customer Id: {item.Id}, First Name: {item.FirstName}, " +
                     $"Last Name, {item.LastName}, Default Store Id: {item.DefaultStore}");
+            }
+            Console.WriteLine();
+        }
+
+        public static void OrderList(List<Order> orders)
+        {
+            Console.WriteLine("List of Orders:");
+            Console.WriteLine();
+            foreach (var item in orders)
+            {
+                Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
+                    $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}");
             }
             Console.WriteLine();
         }
