@@ -16,6 +16,7 @@ namespace Project0Library
             Console.WriteLine("'O': Add an order to the database.");
             Console.WriteLine("'SL': Get a list of available stores and their id numbers.");
             Console.WriteLine("'CL': Get a list of available customers and their information.");
+            Console.WriteLine("'CS': Search for customers by name.");
             Console.WriteLine("'OL': Get a list of orders that have been placed.");
             Console.WriteLine("'OR': Get a customer's recommended order.");
             Console.WriteLine();
@@ -44,6 +45,61 @@ namespace Project0Library
                     $"Last Name, {item.LastName}, Default Store Id: {item.DefaultStore}");
             }
             Console.WriteLine();
+        }
+
+        public static void CustomerSearch(List<Customer> customers)
+        {
+            ILogger logger = LogManager.GetCurrentClassLogger();
+
+            Console.WriteLine("Please enter the first name of the customer:");
+            var input = Console.ReadLine();
+
+            if (!String.IsNullOrEmpty(input))
+            {
+                var numPossibleMatches = customers.Count(c => c.FirstName == input);
+                if (numPossibleMatches > 0)
+                {
+                    Console.WriteLine($"Found {numPossibleMatches} with that first name.");
+                    var possibleMatches = customers.Where(c => c.FirstName == input);
+                    List<Customer> customerList = new List<Customer>();
+                    foreach (var item in possibleMatches)
+                    {
+                        customerList.Add(item);
+                    }
+                    Console.WriteLine("Please enter the last name of the customer:");
+                    input = Console.ReadLine();
+                    if (!String.IsNullOrEmpty(input))
+                    {
+                        numPossibleMatches = customerList.Count(c => c.LastName == input);
+                        if (numPossibleMatches > 0)
+                        {
+                            possibleMatches = customerList.Where(c => c.LastName == input);
+                            Console.WriteLine("List of customer's with that first name and last name:");
+                            foreach (var item in possibleMatches)
+                            {
+                                Console.WriteLine($"Customer Id: {item.Id}, First Name: {item.FirstName}, " +
+                                $"Last Name, {item.LastName}, Default Store Id: {item.DefaultStore}");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("There is no one in the system with that first name and last name.");
+                        }
+                    }
+                    else
+                    {
+                        logger.Error("Empty input for last name is invalid.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("There is no one in the system with that first name.");
+                }
+            }
+            else
+            {
+                logger.Error("Empty input for first name is invalid.");
+            }
         }
 
         public static void OrderList(List<Order> orders)

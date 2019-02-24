@@ -52,7 +52,7 @@ namespace Project0Library
                                 {
                                     Id = newCustomerId,
                                     FirstName = fName,
-                                    LastName = input,
+                                    LastName = lName,
                                     DefaultStore = storeLocationId
                                 });
                                 string newData = JsonConvert.SerializeObject(customers, Formatting.Indented);
