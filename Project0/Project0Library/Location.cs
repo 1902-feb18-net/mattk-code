@@ -9,7 +9,7 @@ namespace Project0Library
 
         public int Id { get; set; }
         private Inventory StoreInv { get; set; }
-        private OrderHistory OrderHistory { get; set; }
+        public List<Order> OrderHistory { get; set; } = new List<Order>();
 
 
     }

@@ -11,7 +11,7 @@ namespace Project0Library
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int DefaultStore { get; set; }
-        private OrderHistory OrderHistory { get; set; }
+        private List<Order> OrderHistory { get; set; } = new List<Order>();
 
     }
 }

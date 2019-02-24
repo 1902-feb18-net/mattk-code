@@ -41,7 +41,7 @@ namespace Project0
                 }
                 else if (input == "O")
                 {
-                    CreateData.AddOrder(jsonCustomers, jsonOrders, customers, storeLocations, orders);
+                    CreateData.AddOrder(jsonLocations, jsonCustomers, jsonOrders, customers, storeLocations, orders);
                 }
                 else if (input == "SL")
                 {

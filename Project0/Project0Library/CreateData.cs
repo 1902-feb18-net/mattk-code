@@ -86,7 +86,8 @@ namespace Project0Library
             }
         }
 
-        public static void AddOrder(string jsonCustomers,
+        public static void AddOrder(string jsonLocations,
+                                    string jsonCustomers,
                                     string jsonOrders,
                                     List<Customer> customers,
                                     List<Location> storeLocations,
@@ -129,16 +130,26 @@ namespace Project0Library
                                         int newOrderId = 1;
                                         if (orders.Count > 0) { newOrderId = orders.Max(o => o.Id) + 1; }
 
-                                        orders.Add(new Order
+                                        Order newOrder = new Order
                                         {
                                             Id = newOrderId,
                                             OrderLocation = storeLocationId,
                                             OrderCustomer = customerId,
                                             OrderTime = DateTime.Now,
                                             OrderItem = (cupcakeType, qnty)
-                                        });
+                                        };
+
+                                        orders.Add(newOrder);
                                         string newData = JsonConvert.SerializeObject(orders, Formatting.Indented);
                                         File.WriteAllTextAsync(jsonOrders, newData).Wait();
+
+                                        // https://stackoverflow.com/questions/19930450/conditional-updating-a-list-using-linq
+                                        foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
+                                        {
+                                            item.OrderHistory.Add(newOrder);
+                                        }
+                                        string newData2 = JsonConvert.SerializeObject(storeLocations, Formatting.Indented);
+                                        File.WriteAllTextAsync(jsonLocations, newData2).Wait();
 
                                         Console.WriteLine($"Order with id of {newOrderId} successfully created!");
                                     }
