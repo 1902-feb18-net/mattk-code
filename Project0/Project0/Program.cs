@@ -59,6 +59,10 @@ namespace Project0
                 {
                     ConsoleDisplay.CustomerSearch(customers);
                 }
+                else if (input == "CO")
+                {
+                    ConsoleDisplay.CustomerOrders(customers);
+                }
                 else if (input == "OL")
                 {
                     ConsoleDisplay.OrderList(orders);

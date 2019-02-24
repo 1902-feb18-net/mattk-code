@@ -18,6 +18,7 @@ namespace Project0Library
             Console.WriteLine("'SO': Get a store's order history.");
             Console.WriteLine("'CL': Get a list of available customers and their information.");
             Console.WriteLine("'CS': Search for customers by name.");
+            Console.WriteLine("'CO': Get a list of customer orders.");
             Console.WriteLine("'OL': Get a list of orders that have been placed.");
             Console.WriteLine("'OR': Get a customer's recommended order.");
             Console.WriteLine();
@@ -122,6 +123,28 @@ namespace Project0Library
             else
             {
                 logger.Error("Empty input for first name is invalid.");
+            }
+        }
+
+        public static void CustomerOrders(List<Customer> customers)
+        {
+            ILogger logger = LogManager.GetCurrentClassLogger();
+
+            CustomerList(customers);
+            Console.WriteLine("Please enter the customer id to get that customer's orders:");
+            var input = Console.ReadLine();
+
+            if (int.TryParse(input, out var customerId))
+            {
+                foreach (var item in customers.Where(c => c.Id == customerId))
+                {
+                    Console.WriteLine($"Customer {item.FirstName} {item.LastName}");
+                    OrderList(item.OrderHistory);
+                }
+            }
+            else
+            {
+                logger.Error($"Invalid input {input}");
             }
         }
 

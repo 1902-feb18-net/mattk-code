@@ -151,6 +151,13 @@ namespace Project0Library
                                         string newData2 = JsonConvert.SerializeObject(storeLocations, Formatting.Indented);
                                         File.WriteAllTextAsync(jsonLocations, newData2).Wait();
 
+                                        foreach (var item in customers.Where(c => c.Id == customerId))
+                                        {
+                                            item.OrderHistory.Add(newOrder);
+                                        }
+                                        string newData3 = JsonConvert.SerializeObject(customers, Formatting.Indented);
+                                        File.WriteAllTextAsync(jsonCustomers, newData3).Wait();
+
                                         Console.WriteLine($"Order with id of {newOrderId} successfully created!");
                                     }
                                     else
