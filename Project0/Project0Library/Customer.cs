@@ -6,13 +6,12 @@ namespace Project0Library
 {
     public class Customer
     {
-        private static int idIncrement = 0;
 
-        private int Id { get; set; }
-        private string firstName { get; set; }
-        private string lastName { get; set; }
-        private Location defaultStore { get; set; }
-        private OrderHistory orderHistory { get; set; }
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int DefaultStore { get; set; }
+        private OrderHistory OrderHistory { get; set; }
 
     }
 }

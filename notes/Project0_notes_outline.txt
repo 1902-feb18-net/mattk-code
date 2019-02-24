@@ -90,7 +90,11 @@ can only have a maximum of 5 active orders running consecutively, can't stack to
 too hard for stores to fill
 
 
-
-
+Project0 Questions
+1. What are we supposed to be logging?
+2. Where do we keep the log, where do we keep our XML/JSON data?
+3. Why is Logger from NLog doubling up on entries?
+4. Is it ok to keep data in multiple files? ONe for each class etc?
+5. Use logger as a global variable within Program.cs
 
 

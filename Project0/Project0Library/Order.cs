@@ -6,11 +6,12 @@ namespace Project0Library
 {
     public class Order
     {
-        private static int idIncrement = 0;
 
-        private int Id { get; set; }
-        private Dictionary<int, int> Cupcakes { get; set; }
-        private DateTime orderTime { get; set; }
+        public int Id { get; set; }
+        public int OrderLocation { get; set; }
+        public int OrderCustomer { get; set; }
+        public DateTime OrderTime { get; set; }
+        private Dictionary<Cupcake, int> Cupcakes { get; set; }
 
 
 

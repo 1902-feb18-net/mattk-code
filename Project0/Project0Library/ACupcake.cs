@@ -4,6 +4,14 @@ using System.Text;
 
 namespace Project0Library
 {
+    public abstract class ACupcake
+    {
+        private int Id { get; set; }
+
+        public abstract Dictionary<Ingredient, int> GetIngredients();
+        public abstract void BakeCupcake(int qnty);
+    }
+
     public enum Cupcake
     {
         Vanilla,
@@ -14,6 +22,5 @@ namespace Project0Library
         MintOreo,
         Coconut,
         Lemon
-
     }
 }

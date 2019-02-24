@@ -6,8 +6,7 @@ namespace Project0Library
 {
     public class Inventory
     {
-        private static int idIncrement = 0;
-
-
+        private Dictionary<ACupcake, int> CupcakeInv = new Dictionary<ACupcake, int>();
+        private Dictionary<Ingredient, int> IngredientInv = new Dictionary<Ingredient, int>();
     }
 }

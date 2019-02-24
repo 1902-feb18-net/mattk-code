@@ -10,7 +10,7 @@ namespace Project0Library
         BakingPowder,
         Salt,
         UnsaltedButter,
-        GranualtedSugar,
+        GranulatedSugar,
         LargeEgg,
         VanillaExtract,
         SourCream,
