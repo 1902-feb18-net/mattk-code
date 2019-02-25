@@ -65,7 +65,7 @@ namespace Project0
                 }
                 else if (input == "OL")
                 {
-                    ConsoleDisplay.OrderList(orders);
+                    ConsoleDisplay.OrderList(orders, storeLocations);
                 }
                 else if (input == "OR")
                 {

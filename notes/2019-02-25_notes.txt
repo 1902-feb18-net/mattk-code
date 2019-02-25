@@ -1,0 +1,72 @@
+SQL
+
+-RDBMS
+table, row, column, PK, FK, referential integrity, anomalies, muliplicity
+
+- normalization
+dependency, candidate key, 1NF, 2NF, 3NF
+
+- DML
+select, insert, update, delete, truncate
+
+- DDL
+create, alter, drop, joins
+
+- joins
+inner, outer, (left, right, full), cross, self
+
+- set operations
+union, intersect, except, distinct/all
+
+- subquery
+CTE/with
+
+- aggregate functions
+avg, min, max, sum, count
+
+- view
+
+- functions
+parameters, returns, tabular, scalar
+
+- stored procedures
+variables, blocks, if-else, try-catch, throw, print, raiserror
+
+- trigger
+after, instead of, before, row/statement
+
+- transaction
+commit, rollback, savepoint
+
+- ACID
+atomic, consistent, isolated, durable
+
+- isolation
+read uncommitted, read committed, repeatable, serializable
+
+- data types
+numeric string, binary, boolean, money, date/time
+
+- built-in functions
+
+- ADO.NET
+
+- connected arch.
+DataReader, Command, Connection
+
+- disconnected arch.
+DataAdapter, DataSet
+
+- ORM
+
+- Entity Framework
+DbContext, DbSet, configuration, entity state, tracking, LINQ, IQueryable
+IEnumerable, deferred execution
+
+- testing EF
+- db-first scaffolding
+- repository pattern
+- layered arch.
+- DDD
+- TDD
+- eager/lazy loading

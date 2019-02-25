@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using MoreLinq;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,8 @@ namespace Project0Library
             Console.WriteLine("'SO': Get a store's order history.");
             Console.WriteLine("'CL': Get a list of available customers and their information.");
             Console.WriteLine("'CS': Search for customers by name.");
-            Console.WriteLine("'CO': Get a list of customer orders.");
-            Console.WriteLine("'OL': Get a list of orders that have been placed.");
+            Console.WriteLine("'CO': Get a customer's order history.");
+            Console.WriteLine("'OL': Get a list of all orders that have been placed.");
             Console.WriteLine("'OR': Get a customer's recommended order.");
             Console.WriteLine();
             Console.WriteLine("Please type a selection, or type 'q' to quit: ");
@@ -50,7 +51,7 @@ namespace Project0Library
                 foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
                 {
                     Console.WriteLine($"Store Location {storeLocationId}");
-                    OrderList(item.OrderHistory);
+                    OrderList(item.OrderHistory, null);
                 }
             }
             else
@@ -139,7 +140,7 @@ namespace Project0Library
                 foreach (var item in customers.Where(c => c.Id == customerId))
                 {
                     Console.WriteLine($"Customer {item.FirstName} {item.LastName}");
-                    OrderList(item.OrderHistory);
+                    OrderList(item.OrderHistory, null);
                 }
             }
             else
@@ -148,7 +149,7 @@ namespace Project0Library
             }
         }
 
-        public static void OrderList(List<Order> orders)
+        public static void OrderList(List<Order> orders, List<Location> storeLocations)
         {
             Console.WriteLine();
             Console.WriteLine("Please select from the following filters ('n' for no filter)");
@@ -224,6 +225,18 @@ namespace Project0Library
                     Console.WriteLine($"Order Id {item.Id} total cost: " +
                         $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
                 }
+                Console.WriteLine();
+                Console.WriteLine("Other order statistics...:");
+                Console.WriteLine($"Average Order Cost: " +
+                    $"{orders.Average(o => o.OrderItem.Item2 * Cupcake.GetCost(o.OrderItem.Item1))}");
+                Console.WriteLine($"Order with the latest date: " +
+                    $"{orders.Max(o => o.OrderTime)}");
+                if (!(storeLocations is null))
+                {
+                    var storeWithMostOrders = storeLocations.MaxBy(sL => sL.OrderHistory.Count()).First();
+                    Console.WriteLine($"Store Id with the most orders: {storeWithMostOrders.Id}");
+                }
+
             }
             Console.WriteLine();
         }
