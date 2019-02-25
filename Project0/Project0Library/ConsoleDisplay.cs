@@ -22,7 +22,7 @@ namespace Project0Library
             Console.WriteLine("'OL': Get a list of orders that have been placed.");
             Console.WriteLine("'OR': Get a customer's recommended order.");
             Console.WriteLine();
-            Console.WriteLine("Please type a selection , or type 'q' to quit: ");
+            Console.WriteLine("Please type a selection, or type 'q' to quit: ");
             input = Console.ReadLine().ToUpper();
         }
 
@@ -150,13 +150,80 @@ namespace Project0Library
 
         public static void OrderList(List<Order> orders)
         {
-            Console.WriteLine("List of Orders:");
             Console.WriteLine();
-            foreach (var item in orders)
+            Console.WriteLine("Please select from the following filters ('n' for no filter)");
+            Console.WriteLine("'E': Earliest orders first");
+            Console.WriteLine("'L': Latest orders first");
+            Console.WriteLine("'C': Cheapest orders first");
+            Console.WriteLine("'X': Most expensive orders first");
+            Console.WriteLine();
+            Console.WriteLine("Please type a selection to see a list of orders: ");
+            var input = Console.ReadLine().ToUpper();
+
+            if (input == "E")
             {
-                Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
-                    $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
-                    $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
+                Console.WriteLine("List of Orders (earliest to latest):");
+                Console.WriteLine();
+                foreach (var item in orders.OrderBy(o => o.OrderTime))
+                {
+                    Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
+                        $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
+                        $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
+                    Console.WriteLine($"Order Id {item.Id} total cost: " +
+                        $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
+                }
+            }
+            else if (input == "L")
+            {
+                Console.WriteLine("List of Orders (latest to earliest):");
+                Console.WriteLine();
+                foreach (var item in orders.OrderByDescending(o => o.OrderTime))
+                {
+                    Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
+                        $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
+                        $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
+                    Console.WriteLine($"Order Id {item.Id} total cost: " +
+                        $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
+                }
+            }
+            else if (input == "C")
+            {
+                Console.WriteLine("List of Orders (cheapest to most expensive):");
+                Console.WriteLine();
+                foreach (var item in orders.OrderBy(o => (o.OrderItem.Item2 * Cupcake.GetCost(o.OrderItem.Item1))))
+                {
+                    Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
+                        $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
+                        $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
+                    Console.WriteLine($"Order Id {item.Id} total cost: " +
+                        $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
+                }
+            }
+            else if (input == "X")
+            {
+                Console.WriteLine("List of Orders (most expensive to cheapest):");
+                Console.WriteLine();
+                foreach (var item in orders.OrderByDescending(o => (o.OrderItem.Item2 * Cupcake.GetCost(o.OrderItem.Item1))))
+                {
+                    Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
+                        $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
+                        $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
+                    Console.WriteLine($"Order Id {item.Id} total cost: " +
+                        $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
+                }
+            }
+            else 
+            {
+                Console.WriteLine("List of Orders:");
+                Console.WriteLine();
+                foreach (var item in orders)
+                {
+                    Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
+                        $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
+                        $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
+                    Console.WriteLine($"Order Id {item.Id} total cost: " +
+                        $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
+                }
             }
             Console.WriteLine();
         }

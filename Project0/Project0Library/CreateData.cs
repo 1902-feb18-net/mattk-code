@@ -120,7 +120,7 @@ namespace Project0Library
 
                                 try
                                 {
-                                    Cupcake cupcakeType = (Cupcake)Enum.Parse(typeof(Cupcake), input);
+                                    CupcakeNum cupcakeType = (CupcakeNum)Enum.Parse(typeof(CupcakeNum), input);
 
                                     Console.WriteLine("Please enter the quantity you would like to order:");
                                     input = Console.ReadLine();
@@ -195,5 +195,6 @@ namespace Project0Library
                 Console.WriteLine("You must add at least one store and one customer before you can place an order.");
             }
         }
+
     }
 }
