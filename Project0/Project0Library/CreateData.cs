@@ -15,6 +15,9 @@ namespace Project0Library
             int newLocationId = 1;
             if (storeLocations.Count > 0) { newLocationId = storeLocations.Max(sL => sL.Id) + 1; }
 
+            //Location newLocation = ;
+            //newLocation.
+
             storeLocations.Add(new Location { Id = newLocationId });
             string newData = JsonConvert.SerializeObject(storeLocations, Formatting.Indented);
             File.WriteAllTextAsync(jsonLocations, newData).Wait();

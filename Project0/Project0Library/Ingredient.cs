@@ -23,6 +23,5 @@ namespace Project0Library
         Oreo,
         CoconutMilk,
         Lemon
-
     }
 }
