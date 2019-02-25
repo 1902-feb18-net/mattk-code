@@ -160,83 +160,68 @@ namespace Project0Library
             Console.WriteLine();
             Console.WriteLine("Please type a selection to see a list of orders: ");
             var input = Console.ReadLine().ToUpper();
+            List<Order> modOrders = new List<Order>();
 
             if (input == "E")
             {
-                Console.WriteLine("List of Orders (earliest to latest):");
-                Console.WriteLine();
                 foreach (var item in orders.OrderBy(o => o.OrderTime))
                 {
-                    Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
-                        $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
-                        $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
-                    Console.WriteLine($"Order Id {item.Id} total cost: " +
-                        $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
+                    modOrders.Add(item);
                 }
+                DisplayOrders(modOrders, storeLocations, "List of Orders (earliest to latest):");
             }
             else if (input == "L")
             {
-                Console.WriteLine("List of Orders (latest to earliest):");
-                Console.WriteLine();
                 foreach (var item in orders.OrderByDescending(o => o.OrderTime))
                 {
-                    Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
-                        $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
-                        $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
-                    Console.WriteLine($"Order Id {item.Id} total cost: " +
-                        $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
+                    modOrders.Add(item);
                 }
+                DisplayOrders(modOrders, storeLocations, "List of Orders (latest to earliest):");
             }
             else if (input == "C")
             {
-                Console.WriteLine("List of Orders (cheapest to most expensive):");
-                Console.WriteLine();
                 foreach (var item in orders.OrderBy(o => (o.OrderItem.Item2 * Cupcake.GetCost(o.OrderItem.Item1))))
                 {
-                    Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
-                        $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
-                        $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
-                    Console.WriteLine($"Order Id {item.Id} total cost: " +
-                        $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
+                    modOrders.Add(item);
                 }
+                DisplayOrders(modOrders, storeLocations, "List of Orders (cheapest to most expensive):");
             }
             else if (input == "X")
             {
-                Console.WriteLine("List of Orders (most expensive to cheapest):");
-                Console.WriteLine();
                 foreach (var item in orders.OrderByDescending(o => (o.OrderItem.Item2 * Cupcake.GetCost(o.OrderItem.Item1))))
                 {
-                    Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
-                        $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
-                        $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
-                    Console.WriteLine($"Order Id {item.Id} total cost: " +
-                        $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
+                    modOrders.Add(item);
                 }
+                DisplayOrders(modOrders, storeLocations, "List of Orders (most expensive to cheapest):");
             }
-            else 
+            else
             {
-                Console.WriteLine("List of Orders:");
-                Console.WriteLine();
-                foreach (var item in orders)
-                {
-                    Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
-                        $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
-                        $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
-                    Console.WriteLine($"Order Id {item.Id} total cost: " +
-                        $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
-                }
-                Console.WriteLine();
-                Console.WriteLine("Other order statistics...:");
-                Console.WriteLine($"Average Order Cost: " +
-                    $"{orders.Average(o => o.OrderItem.Item2 * Cupcake.GetCost(o.OrderItem.Item1))}");
-                Console.WriteLine($"Order with the latest date: " +
-                    $"{orders.Max(o => o.OrderTime)}");
-                if (!(storeLocations is null))
-                {
-                    var storeWithMostOrders = storeLocations.MaxBy(sL => sL.OrderHistory.Count()).First();
-                    Console.WriteLine($"Store Id with the most orders: {storeWithMostOrders.Id}");
-                }
+                DisplayOrders(orders, storeLocations, "List of Orders:");
+            }
+        }
 
+        public static void DisplayOrders(List<Order> orders, List<Location> storeLocations, string prompt)
+        {
+            Console.WriteLine(prompt);
+            Console.WriteLine();
+            foreach (var item in orders)
+            {
+                Console.WriteLine($"Order Id: {item.Id}, Location Id: {item.OrderLocation}, " +
+                    $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
+                    $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
+                Console.WriteLine($"Order Id {item.Id} total cost: " +
+                    $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Other order statistics...:");
+            Console.WriteLine($"Average Order Cost: " +
+                $"{orders.Average(o => o.OrderItem.Item2 * Cupcake.GetCost(o.OrderItem.Item1))}");
+            Console.WriteLine($"Order with the latest date: " +
+                $"{orders.Max(o => o.OrderTime)}");
+            if (!(storeLocations is null))
+            {
+                var storeWithMostOrders = storeLocations.MaxBy(sL => sL.OrderHistory.Count()).First();
+                Console.WriteLine($"Store Id with the most orders: {storeWithMostOrders.Id}");
             }
             Console.WriteLine();
         }
