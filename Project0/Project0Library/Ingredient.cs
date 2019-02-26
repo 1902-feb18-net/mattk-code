@@ -22,6 +22,7 @@ namespace Project0Library
         Peppermint,
         Oreo,
         CoconutMilk,
-        Lemon
+        Lemon,
+        Amaretto
     }
 }

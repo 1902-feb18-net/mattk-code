@@ -70,3 +70,7 @@ IEnumerable, deferred execution
 - DDD
 - TDD
 - eager/lazy loading
+
+In an interview/QC (QC is sort of like an interview), if you don't know the answer, try and give
+the small portion that you do know, or talk about something related in an effort to at least flesh
+out the answer. Try not to say you don't know or reflect on how little you know.

@@ -7,7 +7,7 @@ namespace Project0Library
     public class Location
     {
         public int Id { get; set; }
-        public Dictionary<Ingredient, double> StoreInv { get; set; } = new Dictionary<Ingredient, double>();
+        public double[] StoreInv { get; set; } = new double[18];
         public List<Order> OrderHistory { get; set; } = new List<Order>();
 
         public Location()
@@ -17,24 +17,52 @@ namespace Project0Library
 
         public void SetInv()
         {
-            StoreInv[(Ingredient) 0] = 1; // Flour, lbs
-            StoreInv[(Ingredient) 1] = 1; // BakingPowder, lbs
-            StoreInv[(Ingredient) 2] = 1; // Salt, lbs
-            StoreInv[(Ingredient) 3] = 1; // UnsaltedButter, lbs
-            StoreInv[(Ingredient) 4] = 1; // GranulatedSugar, lbs
-            StoreInv[(Ingredient) 5] = 1; // LargeEgg, each or individual units
-            StoreInv[(Ingredient) 6] = 1; // VanillaExtract, gallons
-            StoreInv[(Ingredient) 7] = 1; // SourCream, lbs
-            StoreInv[(Ingredient) 8] = 1; // ConfectionerSugar, lbs
-            StoreInv[(Ingredient) 9] = 1; // HeavyCream, lbs
-            StoreInv[(Ingredient) 10] = 1; // CocoaPowder, lbs
-            StoreInv[(Ingredient) 11] = 1; // Raspberry, each or individual units
-            StoreInv[(Ingredient) 12] = 1; // PeanutButter, lbs
-            StoreInv[(Ingredient) 13] = 1; // Peppermint, each or individual units
-            StoreInv[(Ingredient) 14] = 1; // Oreo, lbs
-            StoreInv[(Ingredient) 15] = 1; // CoconutMilk, gallons
-            StoreInv[(Ingredient) 16] = 1; // Lemon, each or individual units
+            StoreInv[0] = 100; // Flour, lbs
+            StoreInv[1] = 100; // BakingPowder, lbs
+            StoreInv[2] = 100; // Salt, lbs
+            StoreInv[3] = 100; // UnsaltedButter, lbs
+            StoreInv[4] = 100; // GranulatedSugar, lbs
+            StoreInv[5] = 100; // LargeEgg, each or individual units
+            StoreInv[6] = 100; // VanillaExtract, gallons
+            StoreInv[7] = 100; // SourCream, lbs
+            StoreInv[8] = 100; // ConfectionerSugar, lbs
+            StoreInv[9] = 100; // HeavyCream, lbs
+            StoreInv[10] = 100; // CocoaPowder, lbs
+            StoreInv[11] = 100; // Raspberry, each or individual units
+            StoreInv[12] = 100; // PeanutButter, lbs
+            StoreInv[13] = 100; // Peppermint, each or individual units
+            StoreInv[14] = 100; // Oreo, lbs
+            StoreInv[15] = 100; // CoconutMilk, gallons
+            StoreInv[16] = 100; // Lemon, each or individual units
+            StoreInv[17] = 100; // Amaretto, lbs
         }
 
+        public bool CheckInv(CupcakeNum cupcakeType, int qnty)
+        {
+            double[] cupcakeRequirements = Cupcake.GetIngredients(cupcakeType);
+
+            int i = 0;
+            foreach (var item in StoreInv)
+            {
+                if (StoreInv[i] < (double) (cupcakeRequirements[i] * qnty))
+                {
+                    return false;
+                }
+                i++;
+            }
+            return true;
+        }
+
+        public void UpdateInv(CupcakeNum cupcakeType, int qnty)
+        {
+            double[] cupcakeRequirements = Cupcake.GetIngredients(cupcakeType);
+
+            int i = 0;
+            foreach (var item in StoreInv)
+            {
+                StoreInv[i] -= (double)(cupcakeRequirements[i] * qnty);
+                i++;
+            }
+        }
     }
 }

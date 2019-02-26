@@ -35,7 +35,7 @@ namespace Project0
                 {
                     CreateData.AddStoreLocation(jsonLocations, storeLocations);
                 }
-                if (input == "C")
+                else if (input == "C")
                 {
                     CreateData.AddCustomer(jsonCustomers, customers, storeLocations);
                 }

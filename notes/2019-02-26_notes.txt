@@ -1,0 +1,91 @@
+Azure
+PluralSight
+Microsoft Virtual Academy
+
+Stuff in Azure
+All Resources
+Cost Management + Billing - Overview
+
+Create SQL Database
+Need a resource group
+Additional settings, Sample database, AdventureWorksLT
+sql server firewalls and virtual networks to set firewall rule
+
+
+relational databases
+    tables 
+        rows
+        columns
+
+ID    Product         Color           Supplier        Phone
+1    widget          Red             Microsoft       555-1234
+2    Thingybob       Black, Red      Amazon          555-4321
+3    Knicknack       Black, Blue     Microsoft       555-1234
+
+Phone depends upon Supplier
+Supplier depends upon Phone
+Supplier depends upon Product
+Color depends upon Product
+
+Product is the candidate key for the table, since Product determines Supplier which determines Phone
+
+database management system (DBMS)
+
+relational DBMS (RDBMS)
+
+SQL (structured query language)
+    SQL Server (T-SQL, Transact-SQL)
+    MySQL
+    OracleSQL
+    PostgresSQL
+    SQLite
+
+Functional dependency (relationship between one set of columns and another set of columns)
+for two sets of columns X and Y...
+X depends on Y if, for each possible set of Y values, there is exactly one possible set of
+X values (Y -> X)
+If two rows had the same X, you'd know the values of X must be the same
+X is a fact about you
+often the "sets" are size 1
+
+candidate key (of a table)
+minimal set of columns that every other column depends on
+The values of any candidate key can uniquely identify that rows
+
+primary key (of a table) (often denoted by an underline)
+one of the candidate keys that we choose to actually identify the row
+
+any key of any kind with more than one column in it is a composite key
+
+foreign key (of a table)
+a column that has copies of a table's primary key to establish a relationship between
+the rows of the two tables
+
+non-atomic values
+- problem? hard to read values, have to search through strings
+
+update anomaly
+- problem that arises from redundancy
+- with redundant data, we might not update all copies
+
+deletion anomaly
+- if we delete some data, we sometimes lost other data
+
+insertion anomaly
+- it becomes impossible to insert some data without some associated data
+
+The solution to some of these problems is normalization
+before 1NF would be all databases including the unnormalized ones
+1NF is the first level of normalization
+2NF even more constraints
+3NF even more
+
+1NF: first normal form
+- no duplicate rows
+(enforce that with a PK)
+- atomic values
+- no repeating groups of columns (e.g. Color 1, Color 2, Color 3)
+
+2NF: second normal form
+- 1NF
+- no non

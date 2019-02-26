@@ -15,9 +15,6 @@ namespace Project0Library
             int newLocationId = 1;
             if (storeLocations.Count > 0) { newLocationId = storeLocations.Max(sL => sL.Id) + 1; }
 
-            //Location newLocation = ;
-            //newLocation.
-
             storeLocations.Add(new Location { Id = newLocationId });
             string newData = JsonConvert.SerializeObject(storeLocations, Formatting.Indented);
             File.WriteAllTextAsync(jsonLocations, newData).Wait();
@@ -130,38 +127,57 @@ namespace Project0Library
 
                                     if (int.TryParse(input, out var qnty))
                                     {
-                                        int newOrderId = 1;
-                                        if (orders.Count > 0) { newOrderId = orders.Max(o => o.Id) + 1; }
-
-                                        Order newOrder = new Order
-                                        {
-                                            Id = newOrderId,
-                                            OrderLocation = storeLocationId,
-                                            OrderCustomer = customerId,
-                                            OrderTime = DateTime.Now,
-                                            OrderItem = (cupcakeType, qnty)
-                                        };
-
-                                        orders.Add(newOrder);
-                                        string newData = JsonConvert.SerializeObject(orders, Formatting.Indented);
-                                        File.WriteAllTextAsync(jsonOrders, newData).Wait();
-
-                                        // https://stackoverflow.com/questions/19930450/conditional-updating-a-list-using-linq
+                                        bool orderFeasible = false;
+                                        // Check store inventory to make sure there are enough ingredients
                                         foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
                                         {
-                                            item.OrderHistory.Add(newOrder);
+                                            orderFeasible = item.CheckInv(cupcakeType, qnty);
                                         }
-                                        string newData2 = JsonConvert.SerializeObject(storeLocations, Formatting.Indented);
-                                        File.WriteAllTextAsync(jsonLocations, newData2).Wait();
 
-                                        foreach (var item in customers.Where(c => c.Id == customerId))
+                                        if (orderFeasible)
                                         {
-                                            item.OrderHistory.Add(newOrder);
-                                        }
-                                        string newData3 = JsonConvert.SerializeObject(customers, Formatting.Indented);
-                                        File.WriteAllTextAsync(jsonCustomers, newData3).Wait();
+                                            foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
+                                            {
+                                                item.UpdateInv(cupcakeType, qnty);
+                                            }
 
-                                        Console.WriteLine($"Order with id of {newOrderId} successfully created!");
+                                            int newOrderId = 1;
+                                            if (orders.Count > 0) { newOrderId = orders.Max(o => o.Id) + 1; }
+
+                                            Order newOrder = new Order
+                                            {
+                                                Id = newOrderId,
+                                                OrderLocation = storeLocationId,
+                                                OrderCustomer = customerId,
+                                                OrderTime = DateTime.Now,
+                                                OrderItem = (cupcakeType, qnty)
+                                            };
+
+                                            orders.Add(newOrder);
+                                            string newData = JsonConvert.SerializeObject(orders, Formatting.Indented);
+                                            File.WriteAllTextAsync(jsonOrders, newData).Wait();
+
+                                            // https://stackoverflow.com/questions/19930450/conditional-updating-a-list-using-linq
+                                            foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
+                                            {
+                                                item.OrderHistory.Add(newOrder);
+                                            }
+                                            string newData2 = JsonConvert.SerializeObject(storeLocations, Formatting.Indented);
+                                            File.WriteAllTextAsync(jsonLocations, newData2).Wait();
+
+                                            foreach (var item in customers.Where(c => c.Id == customerId))
+                                            {
+                                                item.OrderHistory.Add(newOrder);
+                                            }
+                                            string newData3 = JsonConvert.SerializeObject(customers, Formatting.Indented);
+                                            File.WriteAllTextAsync(jsonCustomers, newData3).Wait();
+
+                                            Console.WriteLine($"Order with id of {newOrderId} successfully created!");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("This store does not have enough ingredients to place the requested order.");
+                                        }
                                     }
                                     else
                                     {

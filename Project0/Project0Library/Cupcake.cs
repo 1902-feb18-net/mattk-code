@@ -22,36 +22,201 @@ namespace Project0Library
             }
         } 
 
-        public static Dictionary<Ingredient, int> GetIngredients(CupcakeNum type)
+        public static double[] GetIngredients(CupcakeNum type)
         {
-            Dictionary<Ingredient, int> returnIngredients = new Dictionary<Ingredient, int>();
+            double[] returnIngredients = new double[18];
+            double[] ingredientHelper = new double[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             switch ((int) type)
             {
-                case 0: return returnIngredients; // Vanilla
-                case 1: return returnIngredients; // Chocolate
-                case 2: return returnIngredients; // ChocPeanutButter
-                case 3: return returnIngredients; // RaspAmaretto
-                case 4: return returnIngredients; // ChocPeppermint
-                case 5: return returnIngredients; // MintOreo
-                case 6: return returnIngredients; // Coconut
-                case 7: return returnIngredients; // Lemon
-                default: return returnIngredients;
-            }
-            
-        }
-        
-    }
+                case 0: // Vanilla
+                    ingredientHelper = new double[] {
+                        0.028, // Flour
+                        0.00094, // BakingPowder
+                        0.00045, // Salt
+                        0.054, // UnsaltedButter
+                        0.031, // GranulatedSugar
+                        0.14, // LargeEgg
+                        0.0004, // VanillaExtract
+                        0.019, // SourCream
+                        0.057, // ConfectionerSugar
+                        0.0045, // HeavyCream
+                        0, // CocoaPowder
+                        0, // Raspberry
+                        0, // PeanutButter
+                        0, // Peppermint
+                        0, // Oreo
+                        0, // CoconutMilk
+                        0, // Lemon
+                        0 // Amaretto
+                    };
+                    break;
+                case 1: // Chocolate
+                    ingredientHelper = new double[] {
+                        0.028, // Flour
+                        0.00094, // BakingPowder
+                        0.00045, // Salt
+                        0.054, // UnsaltedButter
+                        0.031, // GranulatedSugar
+                        0.14, // LargeEgg
+                        0.0004, // VanillaExtract
+                        0.019, // SourCream
+                        0.057, // ConfectionerSugar
+                        0.0045, // HeavyCream
+                        0.024, // CocoaPowder
+                        0, // Raspberry
+                        0, // PeanutButter
+                        0, // Peppermint
+                        0, // Oreo
+                        0, // CoconutMilk
+                        0, // Lemon
+                        0 // Amaretto
+                    };
+                    break;
+                case 2: // ChocPeanutButter
+                    ingredientHelper = new double[] {
+                        0.028, // Flour
+                        0.00094, // BakingPowder
+                        0.00045, // Salt
+                        0.054, // UnsaltedButter
+                        0.031, // GranulatedSugar
+                        0.14, // LargeEgg
+                        0.0004, // VanillaExtract
+                        0.019, // SourCream
+                        0.057, // ConfectionerSugar
+                        0.0045, // HeavyCream
+                        0.024, // CocoaPowder
+                        0, // Raspberry
+                        0.011, // PeanutButter
+                        0, // Peppermint
+                        0, // Oreo
+                        0, // CoconutMilk
+                        0, // Lemon
+                        0 // Amaretto
+                    };
+                    break;
+                case 3: // RaspAmaretto
+                    ingredientHelper = new double[] {
+                        0.028, // Flour
+                        0.00094, // BakingPowder
+                        0.00045, // Salt
+                        0.054, // UnsaltedButter
+                        0.031, // GranulatedSugar
+                        0.14, // LargeEgg
+                        0.0004, // VanillaExtract
+                        0.019, // SourCream
+                        0.057, // ConfectionerSugar
+                        0.0045, // HeavyCream
+                        0, // CocoaPowder
+                        7, // Raspberry
+                        0, // PeanutButter
+                        0, // Peppermint
+                        0, // Oreo
+                        0, // CoconutMilk
+                        0, // Lemon
+                        0.014 // Amaretto
+                    };
+                    break;
+                case 4: // ChocPeppermint
+                    ingredientHelper = new double[] {
+                        0.028, // Flour
+                        0.00094, // BakingPowder
+                        0.00045, // Salt
+                        0.054, // UnsaltedButter
+                        0.031, // GranulatedSugar
+                        0.14, // LargeEgg
+                        0.0004, // VanillaExtract
+                        0.019, // SourCream
+                        0.057, // ConfectionerSugar
+                        0.0045, // HeavyCream
+                        0.024, // CocoaPowder
+                        0, // Raspberry
+                        0, // PeanutButter
+                        1, // Peppermint
+                        0, // Oreo
+                        0, // CoconutMilk
+                        0, // Lemon
+                        0 // Amaretto
+                    };
+                    break;
+                case 5: // MintOreo
+                    ingredientHelper = new double[] {
+                        0.028, // Flour
+                        0.00094, // BakingPowder
+                        0.00045, // Salt
+                        0.054, // UnsaltedButter
+                        0.031, // GranulatedSugar
+                        0.14, // LargeEgg
+                        0.0004, // VanillaExtract
+                        0.019, // SourCream
+                        0.057, // ConfectionerSugar
+                        0.0045, // HeavyCream
+                        0, // CocoaPowder
+                        0, // Raspberry
+                        0, // PeanutButter
+                        0.5, // Peppermint
+                        0.5, // Oreo
+                        0, // CoconutMilk
+                        0, // Lemon
+                        0 // Amaretto
+                    };
+                    break;
+                case 6: // Coconut
+                    ingredientHelper = new double[] {
+                        0.028, // Flour
+                        0.00094, // BakingPowder
+                        0.00045, // Salt
+                        0.054, // UnsaltedButter
+                        0.031, // GranulatedSugar
+                        0.14, // LargeEgg
+                        0.0004, // VanillaExtract
+                        0.019, // SourCream
+                        0.057, // ConfectionerSugar
+                        0.0045, // HeavyCream
+                        0, // CocoaPowder
+                        0, // Raspberry
+                        0, // PeanutButter
+                        0, // Peppermint
+                        0, // Oreo
+                        0.0025, // CoconutMilk
+                        0, // Lemon
+                        0 // Amaretto
+                    };
+                    break;
+                case 7: // Lemon
+                    ingredientHelper = new double[] {
+                        0.028, // Flour
+                        0.00094, // BakingPowder
+                        0.00045, // Salt
+                        0.054, // UnsaltedButter
+                        0.031, // GranulatedSugar
+                        0.14, // LargeEgg
+                        0.0004, // VanillaExtract
+                        0.019, // SourCream
+                        0.057, // ConfectionerSugar
+                        0.0045, // HeavyCream
+                        0, // CocoaPowder
+                        0, // Raspberry
+                        0, // PeanutButter
+                        0, // Peppermint
+                        0, // Oreo
+                        0, // CoconutMilk
+                        0.15, // Lemon
+                        0 // Amaretto
+                    };
+                    break;
+                default:
+                    break;
+                }
 
-    public enum CupcakeNum
-    {
-        Vanilla,
-        Chocolate,
-        ChocPeanutButter,
-        RaspAmaretto,
-        ChocPeppermint,
-        MintOreo,
-        Coconut,
-        Lemon
+            int i = 0;
+            foreach (var item in returnIngredients)
+            {
+                returnIngredients[i] = ingredientHelper[i];
+                i++;
+            }
+
+            return returnIngredients;
+        }
     }
 }

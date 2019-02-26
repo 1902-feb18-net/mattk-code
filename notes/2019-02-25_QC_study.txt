@@ -1,0 +1,73 @@
+abstraction: is the separation between needed functionality and implmentation details
+
+some examples of abstraction include: properties that provide a private backing field automatically to abstract
+the process of data encapsulation
+
+methods that provide functionality to a user via a library without the need to know exactly how the method works
+
+CTS, common type system that provides a list of common types and their requirements for program portability
+without the need for knowing a specific implementation
+
+List, I need a collection that has Add, Remove, Contains, but I don't care how it does it.
+
+
+encapsulation: restricting access to information within objects, packaging related things together
+and treating them as a unit
+
+examples of encapsulation include making data members private and giving them getters and setters, this can be
+done via properties. access modifiers are another good example, providing more specific control over where certain
+information can be accessed
+
+
+polymorphism: possibility of many implementations behind a common contract
+
+examples include method overriding, method overloading, ability to treat a derived class object as though it
+were a base class object
+
+
+inheritance: the ability for a class to take and extend behavior from another class
+
+: operator in c#, example is a memorylist, take a list, and give it the ability to remember what it has
+contained in the past
+
+
+
+SOLID
+
+S: Single-responsibility principle: a class/method should do just one thing
+avoid tightly coupling your tools together
+give an example: a display method should not be adding data, that's two different methods
+
+O: Open-closed principle: entities should be open for extension, closed for modification,
+brain surgery is not necessary when putting on a hat
+example is a method that opens a filename, hard-coded filename versus passing filename in as a parameter
+
+L: Liskov substitution principle: objects should be replaceable by instances of their subtypes without
+altering the correctness of the code
+this is basically restating polymorphism
+XmlSerializer : Serializer
+
+I: Interface segregation principle: heavy interfaces should be split up into many light interfaces
+the issue with huge interfaces is lack of modularity
+maybe I only want one section of a library, but if it is ties to a huge interface, I have to grab a bunch
+of stuff that I don't want
+
+D: Dependency inversion principle: instead of high level code depending on low level code, or
+vice-versa, both should depend on interfaces
+put interfaces everywhere you can
+abstractions should not depend on details, details should depend upon abstractions
+Would you solder a lamp directly to the electrical wiring in a wall?
+Trade out your tight coupling for loose coupling, separation of concerns
+
+
+extended modifiers
+                class                   member
+static          yes                     yes
+virtual         no                      yes
+override        no                      yes
+new             no                      yes
+const           no                      yes
+readonly        no                      yes
+abstract        yes                     yes
+sealed          yes                     no
+partial         yes                     no
