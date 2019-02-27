@@ -22,6 +22,18 @@ ID    Product         Color           Supplier        Phone
 2    Thingybob       Black, Red      Amazon          555-4321
 3    Knicknack       Black, Blue     Microsoft       555-1234
 
+N-to-1 relationship between color and product/ID
+Make another table in order to normalize
+Product ID      Color
+1               Red
+2               Bla
+3               Bla
+2               R
+3               Blu
+
+referential integrity
+every FK value corresponds to an existing row in the other table
+
 Phone depends upon Supplier
 Supplier depends upon Phone
 Supplier depends upon Product
@@ -88,4 +100,32 @@ before 1NF would be all databases including the unnormalized ones
 
 2NF: second normal form
 - 1NF
-- no non
+- no non-CK column may depend on PART of any composite CK
+- no partial dependency
+
+2NF demo
+CityID      City    State   Region  SalesTotal
+
+
+Region depends upon State
+CityID is unique, should know everything else
+CityID is a candidate key
+City and State together are a candidate key
+
+
+3NF: 
+- no non-candidate key column may depend on any other non candidate key column
+- no transitive dependencies or no indirect dependencies
+
+
+normal forms mnemonic
+non-CK columns should depend on "the keys, the whole keys, and nothing but the keys"
+
+normalization
+pro                                               con
+less redundancy                                   some queries can be slower (but more tend to get faster)  
+less errors
+easier to evolve data model
+easier to read and write with consistency
+
+sometimes there is an advantage to denormalization (reading a lot more than writing is a good example)

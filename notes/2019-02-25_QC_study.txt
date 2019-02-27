@@ -71,3 +71,26 @@ readonly        no                      yes
 abstract        yes                     yes
 sealed          yes                     no
 partial         yes                     no
+
+
+
+Questions that were Difficult:
+1. What is an assembly?
+2. What are the scopes in C#?
+3. What is readonly, const, and static?
+4. What is the difference between a ref type and a value type? How would you make one of each?
+5. What is a compiler? What are the advantages of using a compiler?
+6. What is the VES?
+7. What is .NET Common Language Infrastructure?
+8. What is the Common Language Runtime?
+9. What is the Liskov substitution principle?
+10. What is polymorphism? Can you give an example?
+11. What is the interface segregation principle?
+12. What is the difference between an abstract class and an interface?
+13. What is a memory leak?
+14. When would you use the keyword virtual?
+15. How would you write an extended method for a class?
+16. Please provide what you know about generics and how to use them?
+17. What is a delegate and why would you want to use it?
+18. What do ref and out do?
+19. What is the dependency inversion principle?
