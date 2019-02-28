@@ -128,76 +128,98 @@ namespace Project0Library
 
                                     if (int.TryParse(input, out var qnty))
                                     {
-                                        bool orderFeasible = false;
-                                        // Check store inventory to make sure there are enough ingredients
-                                        foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
+                                        if (qnty <= 500) // no more than 500 cupcakes per order
                                         {
-                                            orderFeasible = item.CheckInv(lookupCupcake, qnty);
-                                        }
+                                            var ordersAtStore = orders.Where(o => o.OrderLocation == storeLocationId);
+                                            var ordersAtStoreRecently = 
+                                                ordersAtStore.Where(o => 
+                                                Math.Abs(o.OrderTime.Subtract(DateTime.Now).TotalMinutes) < 1440);
+                                            var ordersAtStoreRecentlyWithCupcake = 
+                                                ordersAtStoreRecently.Where(o => o.OrderItem.Item3 == cupcakeType);
+                                            int sum = ordersAtStoreRecentlyWithCupcake.Sum(o => o.OrderItem.Item2);
 
-                                        bool customerCanOrder = true;
-                                        foreach (var item in customers.Where(c => c.Id == customerId))
-                                        {
-                                            DateTime currentTime = DateTime.Now;
-                                           if ((Math.Abs((item.LastOrder).Subtract(currentTime).TotalMinutes) < 120) &&
-                                                item.LastStoreOrder == storeLocationId)
+                                            if (sum < 1000)
                                             {
-                                                customerCanOrder = false;
-                                            }
-                                        }
-
-                                        if (orderFeasible)
-                                        {
-                                            if (customerCanOrder)
-                                            {
+                                                bool orderFeasible = false;
+                                                // Check store inventory to make sure there are enough ingredients
                                                 foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
                                                 {
-                                                    item.UpdateInv(lookupCupcake, qnty);
+                                                    orderFeasible = item.CheckInv(lookupCupcake, qnty);
                                                 }
 
-                                                int newOrderId = 1;
-                                                if (orders.Count > 0) { newOrderId = orders.Max(o => o.Id) + 1; }
-
-                                                Order newOrder = new Order
-                                                {
-                                                    Id = newOrderId,
-                                                    OrderLocation = storeLocationId,
-                                                    OrderCustomer = customerId,
-                                                    OrderTime = DateTime.Now,
-                                                    OrderItem = (lookupCupcake, qnty)
-                                                };
-
-                                                orders.Add(newOrder);
-                                                string newData = JsonConvert.SerializeObject(orders, Formatting.Indented);
-                                                File.WriteAllTextAsync(jsonOrders, newData).Wait();
-
-                                                // https://stackoverflow.com/questions/19930450/conditional-updating-a-list-using-linq
-                                                foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
-                                                {
-                                                    item.OrderHistory.Add(newOrder);
-                                                }
-                                                string newData2 = JsonConvert.SerializeObject(storeLocations, Formatting.Indented);
-                                                File.WriteAllTextAsync(jsonLocations, newData2).Wait();
-
+                                                bool customerCanOrder = true;
                                                 foreach (var item in customers.Where(c => c.Id == customerId))
                                                 {
-                                                    item.OrderHistory.Add(newOrder);
-                                                    item.LastOrder = DateTime.Now;
-                                                    item.LastStoreOrder = storeLocationId;
+                                                    DateTime currentTime = DateTime.Now;
+                                                    if ((Math.Abs((item.LastOrder).Subtract(currentTime).TotalMinutes) < 120) &&
+                                                         item.LastStoreOrder == storeLocationId)
+                                                    {
+                                                        customerCanOrder = false;
+                                                    }
                                                 }
-                                                string newData3 = JsonConvert.SerializeObject(customers, Formatting.Indented);
-                                                File.WriteAllTextAsync(jsonCustomers, newData3).Wait();
 
-                                                Console.WriteLine($"Order with id of {newOrderId} successfully created!");
+                                                if (orderFeasible)
+                                                {
+                                                    if (customerCanOrder)
+                                                    {
+                                                        foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
+                                                        {
+                                                            item.UpdateInv(lookupCupcake, qnty);
+                                                        }
+
+                                                        int newOrderId = 1;
+                                                        if (orders.Count > 0) { newOrderId = orders.Max(o => o.Id) + 1; }
+
+                                                        Order newOrder = new Order
+                                                        {
+                                                            Id = newOrderId,
+                                                            OrderLocation = storeLocationId,
+                                                            OrderCustomer = customerId,
+                                                            OrderTime = DateTime.Now,
+                                                            OrderItem = (lookupCupcake, qnty, cupcakeType)
+                                                        };
+
+                                                        orders.Add(newOrder);
+                                                        string newData = JsonConvert.SerializeObject(orders, Formatting.Indented);
+                                                        File.WriteAllTextAsync(jsonOrders, newData).Wait();
+
+                                                        // https://stackoverflow.com/questions/19930450/conditional-updating-a-list-using-linq
+                                                        foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
+                                                        {
+                                                            item.OrderHistory.Add(newOrder);
+                                                        }
+                                                        string newData2 = JsonConvert.SerializeObject(storeLocations, Formatting.Indented);
+                                                        File.WriteAllTextAsync(jsonLocations, newData2).Wait();
+
+                                                        foreach (var item in customers.Where(c => c.Id == customerId))
+                                                        {
+                                                            item.OrderHistory.Add(newOrder);
+                                                            item.LastOrder = DateTime.Now;
+                                                            item.LastStoreOrder = storeLocationId;
+                                                        }
+                                                        string newData3 = JsonConvert.SerializeObject(customers, Formatting.Indented);
+                                                        File.WriteAllTextAsync(jsonCustomers, newData3).Wait();
+
+                                                        Console.WriteLine($"Order with id of {newOrderId} successfully created!");
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.WriteLine("Customer can't place an order at this store because it hasn't been 2 hours yet.");
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    Console.WriteLine("This store does not have enough ingredients to place the requested order.");
+                                                }
                                             }
                                             else
                                             {
-                                                Console.WriteLine("Customer can't place an order at this store because it hasn't been 2 hours yet.");
+                                                Console.WriteLine("This store has exhausted supply of that cupcake. Try back in 24 hours.");
                                             }
                                         }
                                         else
                                         {
-                                            Console.WriteLine("This store does not have enough ingredients to place the requested order.");
+                                            Console.WriteLine("Maximum order quantity is 500.");
                                         }
                                     }
                                     else
