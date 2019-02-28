@@ -180,7 +180,7 @@ namespace Project0Library
             }
             else if (input == "C")
             {
-                foreach (var item in orders.OrderBy(o => (o.OrderItem.Item2 * Cupcake.GetCost(o.OrderItem.Item1))))
+                foreach (var item in orders.OrderBy(o => (o.OrderItem.Item2 * o.OrderItem.Item1.Cost)))
                 {
                     modOrders.Add(item);
                 }
@@ -188,7 +188,7 @@ namespace Project0Library
             }
             else if (input == "X")
             {
-                foreach (var item in orders.OrderByDescending(o => (o.OrderItem.Item2 * Cupcake.GetCost(o.OrderItem.Item1))))
+                foreach (var item in orders.OrderByDescending(o => (o.OrderItem.Item2 * o.OrderItem.Item1.Cost)))
                 {
                     modOrders.Add(item);
                 }
@@ -210,12 +210,12 @@ namespace Project0Library
                     $"Customer Id, {item.OrderCustomer}, Order Time: {item.OrderTime}, " +
                     $"Order Item: {item.OrderItem.Item1}, qnty: {item.OrderItem.Item2}");
                 Console.WriteLine($"Order Id {item.Id} total cost: " +
-                    $"${item.OrderItem.Item2 * Cupcake.GetCost(item.OrderItem.Item1)}");
+                    $"${item.OrderItem.Item2 * item.OrderItem.Item1.Cost}");
             }
             Console.WriteLine();
             Console.WriteLine("Other order statistics...:");
             Console.WriteLine($"Average Order Cost: " +
-                $"{orders.Average(o => o.OrderItem.Item2 * Cupcake.GetCost(o.OrderItem.Item1))}");
+                $"{orders.Average(o => o.OrderItem.Item2 * o.OrderItem.Item1.Cost)}");
             Console.WriteLine($"Order with the latest date: " +
                 $"{orders.Max(o => o.OrderTime)}");
             if (!(storeLocations is null))

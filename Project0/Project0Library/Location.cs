@@ -37,9 +37,9 @@ namespace Project0Library
             StoreInv[17] = 100; // Amaretto, lbs
         }
 
-        public bool CheckInv(CupcakeNum cupcakeType, int qnty)
+        public bool CheckInv(Cupcake lookupCupcake, int qnty)
         {
-            double[] cupcakeRequirements = Cupcake.GetIngredients(cupcakeType);
+            double[] cupcakeRequirements = lookupCupcake.GetIngredients();
 
             int i = 0;
             foreach (var item in StoreInv)
@@ -53,9 +53,9 @@ namespace Project0Library
             return true;
         }
 
-        public void UpdateInv(CupcakeNum cupcakeType, int qnty)
+        public void UpdateInv(Cupcake lookupCupcake, int qnty)
         {
-            double[] cupcakeRequirements = Cupcake.GetIngredients(cupcakeType);
+            double[] cupcakeRequirements = lookupCupcake.GetIngredients();
 
             int i = 0;
             foreach (var item in StoreInv)

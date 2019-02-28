@@ -121,6 +121,7 @@ namespace Project0Library
                                 try
                                 {
                                     CupcakeNum cupcakeType = (CupcakeNum)Enum.Parse(typeof(CupcakeNum), input);
+                                    Cupcake lookupCupcake = Cupcake.FindCupcake(cupcakeType);
 
                                     Console.WriteLine("Please enter the quantity you would like to order:");
                                     input = Console.ReadLine();
@@ -131,7 +132,7 @@ namespace Project0Library
                                         // Check store inventory to make sure there are enough ingredients
                                         foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
                                         {
-                                            orderFeasible = item.CheckInv(cupcakeType, qnty);
+                                            orderFeasible = item.CheckInv(lookupCupcake, qnty);
                                         }
 
                                         bool customerCanOrder = true;
@@ -151,7 +152,7 @@ namespace Project0Library
                                             {
                                                 foreach (var item in storeLocations.Where(sL => sL.Id == storeLocationId))
                                                 {
-                                                    item.UpdateInv(cupcakeType, qnty);
+                                                    item.UpdateInv(lookupCupcake, qnty);
                                                 }
 
                                                 int newOrderId = 1;
@@ -163,7 +164,7 @@ namespace Project0Library
                                                     OrderLocation = storeLocationId,
                                                     OrderCustomer = customerId,
                                                     OrderTime = DateTime.Now,
-                                                    OrderItem = (cupcakeType, qnty)
+                                                    OrderItem = (lookupCupcake, qnty)
                                                 };
 
                                                 orders.Add(newOrder);

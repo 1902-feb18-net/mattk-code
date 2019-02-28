@@ -6,14 +6,10 @@ namespace Project0Library
 {
     public class Order
     {
-
         public int Id { get; set; }
         public int OrderLocation { get; set; }
         public int OrderCustomer { get; set; }
         public DateTime OrderTime { get; set; }
-        public (CupcakeNum, int) OrderItem { get; set; }
-
-
-
+        public (Cupcake, int) OrderItem { get; set; } // tuple is (Cupcake, qnty)
     }
 }
