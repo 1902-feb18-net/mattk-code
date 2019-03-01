@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Project0Library
@@ -13,6 +16,17 @@ namespace Project0Library
         public Location()
         {
             SetInv();
+        }
+
+        public static int AddStoreLocation(string jsonLocations, List<Location> storeLocations)
+        {
+            int newLocationId = 1;
+            if (storeLocations.Count > 0) { newLocationId = storeLocations.Max(sL => sL.Id) + 1; }
+
+            storeLocations.Add(new Location { Id = newLocationId });
+            string newData = JsonConvert.SerializeObject(storeLocations, Formatting.Indented);
+            File.WriteAllTextAsync(jsonLocations, newData).Wait();
+            return newLocationId;
         }
 
         public void SetInv()
@@ -62,6 +76,30 @@ namespace Project0Library
             {
                 StoreInv[i] -= (double)(cupcakeRequirements[i] * qnty);
                 i++;
+            }
+        }
+
+        public static bool CheckForStores(List<Location> storeLocations)
+        {
+            if (storeLocations.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool CheckStoreExists(int storeLocationId, List<Location> storeLocations)
+        {
+            if (storeLocations.Any(sL => sL.Id == storeLocationId))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

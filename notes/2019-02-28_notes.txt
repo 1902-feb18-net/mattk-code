@@ -1,0 +1,114 @@
+Need to try and make schema for database for Project0
+
+Locations
+public int Id { get; set; }
+public double[] StoreInv { get; set; } = new double[18];
+public List<Order> OrderHistory { get; set; } = new List<Order>();
+
+
+Orders
+public int Id { get; set; }
+public int OrderLocation { get; set; }
+public int OrderCustomer { get; set; }
+public DateTime OrderTime { get; set; }
+public (Cupcake, int, CupcakeNum) OrderItem { get; set; } // tuple is (Cupcake, qnty)
+
+
+OrderItem
+Needs
+Cupcake
+int for qnty
+CupcakeNum for type redundant with Cupcake
+
+
+Cupcakes
+public virtual double Cost { get; set; } = 6;
+
+
+Lecture Notes ...
+transaction
+ACID (principles for a transaction)
+
+A - atomic, all operations succeed 100% or do nothing at all (if it fails, there needs to be some
+recovery that brings the system back to the state before the transaction was attemtped)
+C - consistent, operations should not be allowed to violate constraints
+I - isolated, even if multiple transactions run concurrently it should be as if each was running alone
+D - durable, transaction incomplete until written to persistent storage
+
+in SQL every statement is a transaction
+INSERT INTO Table VALUES
+(), <- gets undone because of error
+(), <- gets undone because of error
+(ERROR)
+
+classic example
+(SELECT) 1. check account balance
+(UPDATE) 2. withdraw funds
+(UPDATE) 3. deposit in other account
+
+issue                       isolation level that fixes issue
+-----                       --------------------------------
+                            read_uncommitted                                (higher performance toward top of list)
+
+dirty read                  read_uncommitted (default)                      (higher isolation toward bottom of list)
+(see other transactions' unfinished work)
+
+nonrepeatable read          repeatable_read
+(read row twice, 
+another finished transaction
+changed it in between)
+
+phantom read                serializable
+other transactions can
+insert rows that meet
+conditions I'm filtering
+
+
+the more isolation that we require, the more locks that we have to put on transactions to enforce the
+guarantees of that level of isolation, and it comes at a large performance penalty
+
+
+BEGIN TRANSACTION;
+    UPDATE
+            IF ...
+            ROLLBACK TRANSACTION; -- if something goes wrong
+    UPDATE
+    SELECT
+    DELETE
+COMMIT TRANSACTION;
+
+
+object-relational impedance mismatch
+the way that we think of data in code is different from the way we think about it in databases
+
+the software that attemps to solve that problem is called an Object Relational Mapper (ORM)
+Java: Hibernate
+.NET: Entity Framework
+      NHibernate (Java Hibernate ported to .NET)
+      Dapper (minimal ORM)
+
+Entity Framework or EF in terms of .NET Framework we're up to version 6 EF in the .NET Framework
+.NET Core: EF Core 2.2
+EF Core has lazy loading, but not many-to-many without a class for the junction table (which people want)
+
+database-first: give EF our connection string, connects to DB, run all kinds of questions against DB
+about the DDL, and the generate a bunch of classes in your C# that will be able to talk to the database
+code generation
+scaffolding
+
+delete the whole onconfig
+
+when ref. integrity would be violated by...
+- delete
+- update
+we can handle it one of 3 ways...
+1. (default) raise error
+2. cascade
+3. set null
+
+d/u             FK = null
+c.      ->        i.       ->       il
+set null
+
+
+code-first

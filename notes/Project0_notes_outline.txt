@@ -90,6 +90,8 @@ can only have a maximum of 5 active orders running consecutively, can't stack to
 too hard for stores to fill
 
 
+
+
 Project0 Questions
 1. What are we supposed to be logging?
 2. Where do we keep the log, where do we keep our XML/JSON data?

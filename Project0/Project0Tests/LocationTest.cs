@@ -3,10 +3,10 @@ using Xunit;
 
 namespace Project0Tests
 {
-    public class UnitTest1
+    public class LocationTest
     {
         [Fact]
-        public void Test1()
+        public void RejectOrderNotEnoughInventory()
         {
 
         }
