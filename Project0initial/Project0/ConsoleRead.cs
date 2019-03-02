@@ -203,7 +203,7 @@ namespace Project0Library
             }
         }
 
-        public static (CupcakeNum, Cupcake) GetCupcake()
+        public static Cupcake GetCupcake()
         {
             ILogger logger = LogManager.GetCurrentClassLogger();
 
@@ -213,6 +213,9 @@ namespace Project0Library
 
             try
             {
+                if ()
+
+
                 CupcakeNum cupcakeType = (CupcakeNum)Enum.Parse(typeof(CupcakeNum), input);
                 Cupcake lookupCupcake = Cupcake.FindCupcake(cupcakeType);
                 return (cupcakeType, lookupCupcake);
@@ -220,7 +223,7 @@ namespace Project0Library
             catch (SystemException ex)
             {
                 logger.Error(ex);
-                return (0, null);
+                return null;
             }
         }
 

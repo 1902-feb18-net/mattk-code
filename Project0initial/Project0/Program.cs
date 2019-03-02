@@ -170,7 +170,7 @@ namespace Project0
                 logger.Error($"{customerId} is not in the list of customers.");
                 return;
             }
-            (CupcakeNum, Cupcake) cupcakeTuple = ConsoleRead.GetCupcake();
+            Cupcake cupcakeTuple = ConsoleRead.GetCupcake();
             if (cupcakeTuple.Item2 is null)
             {
                 return;

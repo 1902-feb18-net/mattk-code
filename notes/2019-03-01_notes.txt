@@ -1,0 +1,83 @@
+loading related data
+
+eager loading, have to tell it some things manually
+
+lazy loading, not by default but if you turn it on, then Genre wouldn't be fetched at first, but dbContext will
+do another query to get the Genre if you don't tell it explicitly, can result in bad performance, since
+you're losing control over what it's doing
+
+explicit loading, which applications never use, so we will ignore it
+
+method eager loading uses to do a join is called Include
+
+we can .Include more than one relationship
+.ThenInclude to go two levels deep, a level deeper than .Include, and you can chain these together
+as much as you care to
+
+SAVE TRANSACTION (point that you can ROLLBACK TRANSACTION to)
+
+views can be created with option SCHEMABINDING
+    this means that the table(s) underneath the view cannot be changed in a
+    way that would break the view.
+indexes, clustered and nonclustered (the most important topic for query optimization)
+    default on primary key and unique
+    often good idea to add on foreign keys
+    CREATE NONCLUSTERED INDEX IX_name ON Movie.Movie ( GenreID )
+
+index -> clustered index directly related to the physical layout of the table
+by default when we add the PK it adds clustered index
+
+the other kind of index is nonclustered index
+we can have many by default, on UNIQUE
+it's usually in the real world beneficial to create nonclustered index on each FK because
+when we're doing joins very frequently we're looking up values by the FK
+
+Sql Server has the functionality to recommend when an index would improve performance
+in Azure Profile can go to Database - Performance overview - Query Performance Insight
+
+scan: SQL SErver iterates through many values looking for the right ones
+seek: SQL SErver is able to look up what it needs much faster (binary search) using an index
+    think about when the indexes can actually be used.
+    if your query has a WHERE IndexedCol = val, we can use it.
+    if it has WHERE SOME_FUNCTION(IndexedCol) = val, we can't use it.
+azure query performance insights
+sql profiler (not available for azure sql db)
+in some cases, a join-based query can be faster than a subquery-based query,
+namely when the subquery is doing some EXISTS check based on the values
+from the outer query, we should replace that with INNER JOIN.
+
+SELECT *
+FROM Customer AS c
+WHERE EXISTS (SELECT * FROM Invoice AS i
+WHERE i.CustomerId = c.CustomerId);
+
+you should have some answers to what are some considerations for increasing performance of outer
+SQL queries
+
+there is another SQL client, Azure Data Studio, similar to VSCode, more lightweight
+
+there are a couple of different project architectures that you can work with for Project0
+"layered architecture" says there should be some kind of UI layer where we just do all the UI stuff
+and then typically we'lll have some kind of business logic layer, 
+and the a layer for Data Access
+
+breaks dependency inversion principle a little bit, business logic would preferrably not be ThenInclude
+to the lower level details of DAta Access
+
+testing
+
+arrange
+
+act
+
+assert
+
+repository's job:
+provide CRUD on library objects (internally implemented by converting to/from EF objects)
+
+
+
+
+
+
+

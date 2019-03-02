@@ -1,5 +1,7 @@
 ﻿using HelloEntityFramework.DataAccess;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 using System;
 using System.Linq;
 
@@ -7,6 +9,8 @@ namespace HelloEntityFramework
 {
     class Program
     {
+        public static readonly LoggerFactory AppLoggerFactory
+            = new LoggerFactory(new[] { new ConsoleLoggerProvider((_, __) => true, true) });
 
         // EF database-first approach steps:
         //
@@ -37,29 +41,43 @@ namespace HelloEntityFramework
         {
             var optionsBuilder = new DbContextOptionsBuilder<MoviesContext>();
             optionsBuilder.UseSqlServer(SecretConfiguration.ConnectionString);
+            optionsBuilder.UseLoggerFactory(AppLoggerFactory);
             var options = optionsBuilder.Options;
 
 
             using (var dbContext = new MoviesContext(options))
             {
-                var myMovieRepo = new MovieRepo(dbContext);
+                //var myMovieRepo = new MovieRepo(dbContext);
 
-                // lots of complex setup... here is where the payoff begins
+                //// lots of complex setup... here is where the payoff begins
+                //PrintMovies(dbContext);
+                //Console.WriteLine();
+
+                //AddMovie(dbContext);
+
                 PrintMovies(dbContext);
-                Console.WriteLine();
 
-                AddMovie(dbContext);
-
-                PrintMovies(dbContext);
-
-                UpdateMovies(dbContext);
+                //UpdateMovies(dbContext);
             }
 
             Console.ReadLine();
 
+
         }
 
-        
+        static void PrintMovies(MoviesContext dbContext)
+        {
+            //foreach (var movie in dbContext.Movie) causes null exception on Genre,
+            // because we needed to load that relationship / navigation property
+            // but with .Include, it will fetch that data we ask for.
+            foreach (var movie in dbContext.Movie.Include(m => m.Genre))
+            {
+                Console.WriteLine($"{movie.Genre.Name} Movie #{movie.MovieId}: ${movie.Title}" +
+                    $" ({movie.ReleaseDate.Year})");
+            }
+        }
+
+
 
     }
 }

@@ -112,3 +112,5 @@ set null
 
 
 code-first
+
+connectionstrings.com to get commonly used connection strings for c#/.NET
