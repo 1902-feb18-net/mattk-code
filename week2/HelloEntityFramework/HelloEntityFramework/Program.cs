@@ -77,7 +77,29 @@ namespace HelloEntityFramework
             }
         }
 
+        //void AddMovie(Movie movie);
+        public static void AddMovie(Movie movie)
+        {
+            Genre actionGenre = dbContext.Genre
+                .Include()
+                .First(g => g.Name.Contains("Action"));
 
+            Movie newMovie = new Movie
+            {
+                Title = "LOTR: The Two Towers",
+                ReleaseDate = new DateTime(2003, 1, 1),
+                Genre = actionGenre
+            };
+
+            dbContext.Movie.Add(newMovie);
+
+            actionGenre.Movie.Add(newMovie);
+
+            // tell the dbcontext we have a new movie to insert.
+
+            // this one actually accesses the sql server and runs insert
+            dbContext.SaveChanges();
+        }
 
     }
 }
