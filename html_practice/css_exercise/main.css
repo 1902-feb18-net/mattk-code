@@ -1,0 +1,26 @@
+.fox {
+    border: 6px solid orange;
+    width: 350px;
+    height: 150px;
+}
+
+.fox_text {
+    border: 6px dashed orange;
+    overflow-y: scroll;
+    width: 350px;
+    height: 200px;
+    background-color: yellow;
+}
+
+main {
+    border: 3px solid maroon;
+    background-color: palegoldenrod;
+    margin: auto;
+    width: 400px;
+    padding: 10px;
+}
+
+.fox_p::first-line {
+    font-weight: bold;
+    text-decoration: underline;
+}

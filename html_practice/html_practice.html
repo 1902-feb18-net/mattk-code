@@ -1,0 +1,181 @@
+<!-- HTML comments look like this -->
+<!-- we put our HTML in .html or .htm files -->
+<!-- use the simple starting point shortcut in vscode -->
+
+<!-- the first part of an HTML document is the document type definition (DTD) aka the doctype -->
+<!-- tells the browser this is HTML, and what version. -->
+<!-- this doctype tag, minimal doctype is interpreted to mean:
+    this is HTML 5, use latest HTML 5 behavior -->
+    <!-- might get strange behavior without the doctype tag -->
+<!-- without a doctype, browser enters compatibility mode for old HTML -->
+<!DOCTYPE html>
+
+<!-- the doctype is not an element, but is required for HTML 5, exception to the rule of being an element -->
+
+<!-- the root element for an HTML page is the HTML element, sometimes called the 
+"the document element" -->
+<html>
+
+<!-- the HTML element has two child elements: head, and the body -->
+<head>
+    <!-- head is for metadata about the page, not actual page contents -->
+
+    <!-- most of that metadata comes in with meta elements -->
+    <!-- this one sets the character set of the page to UTF-8 -->
+    <!-- meta tags usually don't have closing tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- title element gives the name of the tab/window -->
+    <title>Page Title</title>
+    <!-- this one sets some initial viewport stuff for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- importing an external CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <!-- importing an external JavaScript script. -->
+    <script src="main.js"></script>
+</head>
+<body>
+    <img border="5" src="https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/themes/revature/imgs/logo.png">
+    <h1>About</h1>
+    &nbsp;
+    Some text about the website.
+    &nbsp;
+    &nbsp;
+    <h2>Our Locations</h2>
+    <ul>
+        <li>USA</li>
+        <li>
+            <ul>
+                <li>New York</li>
+                <li>Columbus</li>
+                <li>Austin</li>
+                <li>Philly</li>
+             </ul>
+        </li>
+        <li>World</li>
+        <li>
+            <ul>
+                <li>Ottawa</li>
+                <li>Sydney</li>
+            </ul>
+        </li>
+    </ul>
+    <h2>Upcoming Classes</h2>
+    <table>
+        <!-- thead for header rows -->
+        <thead>
+            <!-- tr for a row -->
+            <tr>
+                <!-- th for table header cell -->
+                <th>Location</th>
+                <th>Topic</th>
+            </tr>
+        </thead>
+        <!-- tbody for the rest of the rows -->
+        <tbody>
+            <tr>
+                <!-- td (table data?) for cells in row. -->
+                <td>New York</td>
+                <td>San Francisco</td>
+            </tr>
+            <tr>
+                <!-- td (table data?) for cells in row. -->
+                <td>JavaScript & jQuery</td>
+                <td>HTML & CSS</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Sign Up!</h2>
+    <form method="POST" action="">
+        <!-- inside the form, we put inputs. -->
+        <p>Name: <input type="text" name="name"></p>
+        <p>Email: <input type="text" name="name"></p>
+        <p>
+            Location: <select>
+                <option>Reston</option>
+                <option selected="selected">Arlington</option>
+                <option>Tampa</option>
+                <option>San Francisco</option>
+            </select>
+        </p>
+        <fieldset>
+            <legend>Gender:</legend>
+            <label>
+                Female <input type="radio" name="whichgender" 
+                value="0">
+            </label>
+            <label>
+                Male <input type="radio" name="whichgender" 
+                value="1">
+            </label>
+        </fieldset>
+        Experience: <input type="text" name="name"
+        >
+
+        <label for="lastInput">Last name:</label>
+        <input type="text" name="last" id="lastInput">
+
+        <!-- another way: -->
+        <label>
+            Middle name:
+            <input type="text" name="middle">
+        </label>
+
+        <label>
+            Number <input type="number">
+        </label>
+        <label>
+            Checkbox (true/false)
+            <input type="checkbox">
+        </label>
+        <label>
+            Password <input type="password">
+        </label>
+        <label>
+            Range <input type="range" min="0" max="10">
+        </label>
+        <label>
+            Date <input type="date">
+        </label>
+        <!-- other date ones -->
+        <input type="color">
+        <input type="file">
+
+        <fieldset>
+            
+        </fieldset>
+
+
+        <input type="submit">
+
+    </form>
+
+
+
+
+<p>Link to <a href="https://microsoft.com">
+        Microsoft.com target="_blank"</a>Microsoft.com</p>
+
+<p>Link to <a href="https://microsoft.com">
+        Microsoft.com</a>Microsoft.com</p>
+
+    <!-- select list -->
+
+    <select>
+        <option>Reston</option>
+        <option
+        selected="selected">Arlington</option>
+        <option>Tampa</option>
+    </select>
+
+   
+    <!-- action: where to send the form data, default:
+    current loaded URL. -->
+    
+
+  
+
+</body>
+
+</html>
+

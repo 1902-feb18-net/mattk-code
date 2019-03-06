@@ -1,0 +1,238 @@
+MVC
+
+HTML: element, attribute, doctype HTML5, common elements (list, structural, etc.)
+HTML5: audio, video, canvas, new elements, accessibility
+CSS: rule, property, cascase, box model, inheritance, media query, positioning, responsive design,
+external/internal/inline, selectors, Bootstrap
+MVC: model, view, controller, view model, HTTP request lifecycle
+
+ASP.NET MVC
+controller: action, HTTP verbs
+model: model binding, Data Annotations
+view: Razor, Layour, @model (strongly weakly-typed), ViewData, ViewBad,
+dynamic, TempData
+routing: convention, attribute, route parameter, query string
+validation: server, client ModelState, CSRF, anti-forgery token
+testing: mask, BDD
+filters: authorization, resource, action, exception, result, (custom)
+helpers: HTML, tag, (custom), common ones
+ASP.NET + EF design, code-first EF, migrations
+dependency injection: singleton, scoped, transient, FromService
+
+
+And more notes...
+HTML: Hypertext Markup Language
+
+"link" - hyperlink
+"hypertext" page that links to another page, text linking to another text
+HTML is not a programming language, neither is CSS, JS is
+programming means describing behavior that the computer should do
+HTML is the definition of data, CSS is the style of data, they are markup languages like XML
+markup in that we have elements that we are using to annotate our content
+
+product of a couple decades of evolution
+it's job today is to keep information of the content of a page, the semantics and the structure of a document
+back in the day it's job was not so well defined, it was just the basic way that we would keep any kind of
+website, and all the information would somehow ho into the HTML
+
+old HTML (internet explorer and netscape, browser wars) -> HTML 4 (a little more standardization)
+HTML 4 got other browsers on the same page (netscape was kind of the odd man out)
+-> from there we got XHTML (there was an effort to fix up some of the chaos of HTML4 and HTML, HTML
+is difficult to parse, a lot of exceptions to how things work)
+
+XHTML tried to bring more structure and definition to how we design our webpages
+XHTML make HTML a strict subset of XML, so all pages are valid XML, carefully structured
+and make error handling well defined, web developers and browsers rejected it and went around it
+web developers are barbarians
+
+
+and now we have HTML 5 which is kind of a compromise between XHTML and the really old way
+some error handling, but not so strict, throwing out baked in standards
+move towards a "living standard"
+all the browsers are talking to each other now, there are no precise version numbers for HTML 5
+things just evolve week to week year to year
+
+the old standard was the W3C, the world wide web consortium, or www consortium, have been pushed
+out of relevance
+
+the group responsible for keeping track of HTML 5 and related technologies WHATWG,
+stands for web hypertext application technology working group, consists of Google, Microsoft, 
+Mozilla, all of the big players
+
+separation of concerns:
+HTML:
+    structure, semantics, text content
+
+CSS:
+    appearance, layout, presentation
+
+JavaScript:
+    dynamic client side behavior, anything that changes on the webpage without sending a request to the
+    server to get a whole new webpage back
+
+Dreamweaver, drag and drop webpage maker, generated awful code
+it would make tables taht were invisible all around everything in order to position it
+
+HTML syntax:
+tag, opening tag, closing tag, the whole thing is an element
+    <tagname attributename="attributevalue">
+    contents
+    </tag>
+
+input and img tags don't require closing tags, but you can add them, they just don't do anything
+
+<input attr=val />
+syntax for self-closing tag
+
+lists of values in attr: space-separated e.g. data = "1 2 3"
+
+attributes
+lookup at Mozilla Developer Network for proper behavior of attributes and things, HTML, CSS, and JavaScript
+google searches may lead you to w3schools, and might get you by, but is not as reliable as MDN
+
+some "global"
+id, class, title, style, "on ___" event handlers
+
+id: identifier for this element, unique on page
+class: a grouping of elements for CSS/JS to target
+title: hover tooltip text
+
+
+
+server 
+
+HTTP request, says "GET /index.html"
+at www.facebook.com/index.html
+
+GET is the method, verb
+index.html wants the path
+
+
+DNS, domain name service, converts something like www.facebook.com
+into some IP address, current location on the server that
+can serve the webpage to me
+
+
+browser, www.facebook.com
+
+
+so with forms, usually use POST method, not GET method
+with a POST request, still post to whatever URL we are
+accessing, and we also have a response body
+name = Nick,
+employer = Rev
+
+query string in URL from the ? onwards
+at the end of a URL we can put ?name=value&other=othervalue
+
+
+And even more notes...
+CSS
+cascading style sheets
+table, th, td {
+    border: 1px solid black
+}
+this all told is one rule in CSS
+the part at the beginning is the selector (table, th, td)
+the part in the braces is the property: value, so border would be the property, and 1px solid black are the values,
+but the entire property/value pairing is often just referred to as a property
+we can have many properties in one rule
+(many properties per rule)
+
+SASS, SCSS, LESS compile down to CSS, allow more flexibility and logic in CSS
+
+The selectors
+*                                   all elements
+tag             div                 all with tag (all divs)
+.class          .login-form         all with class (all class="login-form")
+#id             #logo-img           the one with the id (id = "logo-img")
+[attr=val]      [src=logo.png]      all with attrbute se to value
+[attr~=val]     [class~=asdf]       all with attribute containing val
+
+selector combinators
+,               p,div               all matching either selector, (OR) p or div
+(concatenate)   p.login             all matching both selectors, (AND) all p elements with class login
+>               p > div             "parent child" - all matching 2nd selector that are children of some matching 1st selector
+(space)         div p               "ancestor descendant" - same concept but not children, the descendants
++               p+p                 "next sibling" - same except siblings directly after
+~               p~p                 "any sibling" - same except share the same parent
+
+div
+    div
+        section
+            p <- mathces div p (div (space) p)
+    p <- matches div > p
+    p <- matches p+p
+    p <- matches p+p
+
+pseudo-class
+- select elements in some state
+- at end of selector
+
+:valid
+:invalid
+:link
+:visited
+:active
+:focus
+:hover
+:nth-child(aN + b)          (ex: :nth-child(2N) and :nth-child(2N + 1))
+:first-child
+:last-child
+
+pseudo-element
+::before
+::after
+::selection (what the user is highlighting)
+
+a.external::after {
+    content: "(some Unicode character)"
+}
+
+the cascade
+this sort of means when multiple rules set the same property on an element, which one wins
+user-agent styles 
+browser defaults
+author styles
+css included on documents
+
+- external styles
+<head>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+- internal styles
+<style>
+    p { font-weight: bold; }
+</style>
+
+- inline styles
+<body>
+    <p style="border: 1px solid black"></p>
+</body>
+
+better practice... external > internal > inline
+inline can't be reused file to file
+always use external style sheets
+
+the cascade
+1. importance use !important, it's an override, it's a dummy way to make your rule win (bad practice)
+2. specificity, heuristic for how specific a selector is (inline wins)
+    more # wins
+    more . wins
+    more tag wins
+3. source order (later rule wins)
+
+box model
+every element on the page has some contents, and some inherent structure, an input type text has some inherent size to it
+
+contents
+
+3 concentric boxes around the contents consisting of the: border, padding, margin
+margin-right
+border-top
+padding-bottom
+
+margin: 1px 2px 1px 2px (top right bottom left), like a clock face
+

@@ -1,0 +1,25 @@
+
+5-8 min
+start by introducint yourself
+what is your project, what is the purpose of your porject, who uses it, what will they use it for?
+my project is a pizza store, it allows customer sto place orders at etc. etc.
+
+once you've explained the purose of your 
+list the technologies that you created it with
+the program is in C#
+keeping data stored on a SQL Server datagase hosted with Azure connecting with Entity Framework
+
+don't go on for a long time on a super abstract technical topic
+
+demoing the project
+a lot of requirement
+demo placing an order
+a couple different ways if there is some customization
+show me order details, order history of both locations and customers
+don't need to see all four sorted ways, show one
+demo at least one part of input validation
+a couple of examples of input validation
+
+dbupdateconcurrencyexception
+
+ioexception

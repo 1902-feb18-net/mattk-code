@@ -27,6 +27,8 @@ indexes, clustered and nonclustered (the most important topic for query optimiza
 index -> clustered index directly related to the physical layout of the table
 by default when we add the PK it adds clustered index
 
+
+
 the other kind of index is nonclustered index
 we can have many by default, on UNIQUE
 it's usually in the real world beneficial to create nonclustered index on each FK because

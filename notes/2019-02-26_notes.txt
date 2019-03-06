@@ -11,6 +11,7 @@ Need a resource group
 Additional settings, Sample database, AdventureWorksLT
 sql server firewalls and virtual networks to set firewall rule
 
+go to dev essesntials to get Azure account
 
 relational databases
     tables 

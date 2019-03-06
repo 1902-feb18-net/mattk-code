@@ -1,0 +1,170 @@
+possible questions for QC...
+
+what is a RDBMS, what is it for
+RDBMS stands for relational database management system
+it consists of a management systems for relational databases, by relational database I mean databases
+in which the entities are allowed to have relationships to each other via foreign key constraints
+and the system enforces and manages those constraints. One example of this is if a product is in an order,
+and the product changes it's price, then the system will update the order as well if the two are connected via
+a foreign key constraint.
+
+what is a table in a relational database
+a table is a collection of data representing an entity, it is a single unit within the database schema
+CREATE TABLE Movie.Movie (
+	MovieId INT NOT NULL PRIMARY KEY IDENTITY(1, 1), 
+	Title NVARCHAR(200) NOT NULL,
+	ReleaseDate DATETIME2 NOT NULL,
+	DateModified DATETIME2 NOT NULL DEFAULT(GETDATE()) 
+	CONSTRAINT U_Movie_Title_Date UNIQUE (Title, ReleaseDate),
+	-- CONSTRAINT PK_blah PRIMARY KEY (col1, col2) -- (composite PK)
+	CONSTRAINT CHK_DateNotTooEarly CHECK (ReleaseDate > '1900')
+);
+
+tables are lists of data for a specific entity within the schema
+each table can have different attributes such as an Id or a Name, and these attributes have data types
+the table attributes by in large determine what entity the particular table is representing
+
+a row is a specific line within a table representing one instance of an entity
+rows are created with INSERT INTO command
+the row lists the values of all of the data attributes for that particular instance
+adds an entity to the table
+
+what is a column
+a column within a table is all of the values of a particular data attribute for an entity within a table
+one example is products that have a price, and the price may range from 0.50 to 500.00
+
+what is a primary key
+a primary key is often denoted by an underline
+the primary key is one of the candidate keys that we choose to identify a row, there are often multiple choices of candidate key
+
+the candidate key of a table is the minimal set of columns that every other column depends on
+the values of any candidate key can uniquely
+identify any rows 
+there can be multiple candidate keys
+
+any key of any kind with more than one column in it is a composite key
+
+what is referential integrity
+refers to the accuracy and consistency of data within a relationship
+whenever a foreign key is referenced, it must reference a valid, existing primary key in
+the parent table
+referential integrity prevents a user from doing the following
+1. adding records to a related table if there are no associated records in the primary table
+2. changing values in a primary table that result in orphaned records in a related table
+3. deleting records from a primary table if there are matching related records
+
+non-atomic values are those that can be subdivided further, they are not single units, like an array of int
+hard to read values, have to search through strings
+
+update anomaly
+- problem that arises from redundancy
+- with redundant data, we might not update all copies
+duplicate rows having the same address,
+change address in one row, maybe not the other
+
+deletion anomaly
+- if we delete some data, we sometimes lose other data
+delete a record that has a list of company 
+phone numbers, but the phone numbers aren't 
+stored elsewhere
+
+insertion anomaly
+- it becomes impossible to insert some data
+without some associated data
+can't add a new course unless we have at
+least one student enrolled in a course
+
+what is RDBMS multiplicity
+1 to 1
+N to 1
+N to N
+
+what is normalization dependency
+full functional dependency equates to a database satisfying 2NF
+
+before 1NF is all databases including unnormalized databases
+1NF: first normal form
+- no duplicate rows
+- atomic values
+- no repeating groups of columns
+(e.g. Color 1, Color 2, Color 3)
+
+2NF: second normal form
+- 1NF
+- no non-CK column may depend on PART of any composite CK
+- no partial dependency
+
+3NF:
+- no non-candidate key column may depend on
+any other non candidate key column
+- no transitive dependcies or no indirect dependencies
+
+what is a transitive dependency
+a functional dependency that is one or more tables removed, so it is not a direct functional dependency
+
+explain easier to evolve the data model
+
+DML (data manipulation language)
+work with tables and database
+those commands are as follows: SELECT, INSERT, UPDATE, DELETE, TRUNCATE TABLE
+what does truncate table do?
+removes all rows from a table same as DELETE FROM Table WHERE 1=1;
+
+DDL (data definition language)
+get tables and database off the ground
+those commands are as follows: CREATE, ALTER, DROP
+and also JOINS
+
+let's talk about all the different kinds of joins
+Cross join does a cartesian product, so each row gets combined with every other row in the other table
+
+INNER JOIN defaults to JOIN in SQL Server
+INNER JOIN joins the two tables based on a condition, such as whereever an id from the left table matches an id column in the right table
+join uses ON for the condition
+
+joining on true is the same as a cross join
+
+three kinds of outer join: left outer, right outer, and full outer
+
+left join takes all rows in the left table, even if there are no matches, it will fill the not matching columns with null
+
+right join takes all rows in the right table, even if there are no matches, it will fill the not matching columns with null
+
+full outer join
+
+a WHERE clause can also be applied to the joijn
+
+tables can be aliased with an AS clause
+
+a self join is a query in which a table is joined (compared) to itself
+
+what are the set operations
+what is a union set operation, it merges both tables, the elements don't have to be in both tables, eliminating duplicates, DISTINCT is the default for union, there is also an ALL version
+what is an intersect operation, it takes what is common to both, eliminating duplicates
+
+except gives values that are in the first but no the second result
+
+WITH gives a subquery block a name referred to as common table expression
+
+There are also available aggregate functions: avg, min, max, sum, count
+
+What is a view
+a view is like a pretend table, it's gives a specific query a name that you use often, and sort of treats it like a table, even though it isn't one
+can do inserts/updates/deletes through a view
+
+what are sql query functions
+
+can DECLARE variables in SQL with @ symbol
+can have FUNCTIONS
+using AS
+RETURNS
+BEGIN
+END
+
+TRIGGERS run FUNCTIONS
+with AFTER clause, like AFTER UPDATE, so after update, the trigger happens
+
+can have TRY CATCH and RAISERROR commands within FUNCTIONS
+can use PROCEDURE with EXECUTE command
+
+
