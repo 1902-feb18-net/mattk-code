@@ -1,0 +1,127 @@
+one other pseudo-class is :not(<selector>)
+
+display property
+the display property has a few different values
+the default value for display determines whether or not it is inline or block
+inline value
+block value
+inline-block
+none, no visual place in the document anymore, used to make things disappear and reappear
+li {display: inline}
+
+visibility: hidden
+
+position property
+default is static (default)
+relative, which whereever the element would have wound up, activates four other properties
+    left, right, top, bottom to offset the position from where it would be normally
+absolute
+    also uses left, right, top, bottom, now you are not offsetting realtive to static, you are offsetting
+    relative to the overall container of the parent element
+fixed
+    left, right, top, bottom, grabs the element and puts it on its own layer so it follows the window pane
+    of the browser, so the element follows you around
+
+CSS layout tools
+    Flexbox
+    Grid Layout
+    column layout
+
+color
+background-color
+font-family 'sans-serif'
+font-weight
+font-style
+
+inheritance
+the behavior that when you set a property on an element, all of the child elements inherit the parent's
+properties, but generally the default makes sense
+background-color generally inherited
+
+inherit             not
+bg color            border
+font-family         margin
+                    padding
+
+CSS resets
+- remove browser
+defaults (user-agent styles)
+- set to zero
+
+Normalize.css (compromise between using reset and not using reset)
+-> remove browser defaults, set to reasonable starting point
+
+adaptive design
+-> we write many CSS files, 1 per resolution 
+this one typically requires a refresh
+
+responsive design
+-> 1 CSS file
+the page will automatically reformat without a refresh
+
+media query is a feature that allows conditional rules only if the user agent has certain properties
+- for example screen aspect ratio, using media query to change rules depending on height and width
+or aspect ratio
+- touchscreen/mouse
+- "print preview"
+- often use libraries to help achieve
+    - Bootstrap
+    - Zurb Foundation
+
+Bootstrap is CSS and JS, but a lot of companies use a small portion of Bootstrap, and try and
+use more of their own branding
+
+Bootstrap is based on a 12 column grid
+
+And that's it for CSS
+
+And now some ASP.NET
+server
+server (IIS Express) .html, .css, .js
+
+
+
+client
+browser
+
+browser sends server a request
+before the server would have a directory of static files, nothing getting generated at request time
+the server sends response back to browser
+
+what we used to have in .NET land, is Active Server Pages
+and ASP (also "Web Forms") .aspx files are web Forms
+.aspx files have inside them special syntax that can connect to .NET code behind it even thought they
+are not .NET code, special templating syntax inside HTML
+poor separation of concerns
+
+and now we have a new framework ASP.NET "MVC"
+framework for building web applications in .NET with strong separation of concerns using the MVC design pattern
+
+MVC -> model-view-controller, and it's a design pattern, for web applications
+model
+    object-oriented data sent to 
+    or received from the client
+views
+    the templates for the HTML
+    layout, appearance, display logic
+    +CSS, JS, give views their model, and render them into HTML
+controller
+    objects that receive requests from client, they marshal the models and views together
+    to construct the response. So the controller's job/goal is to give a response to the browser.
+
+views are parametrized with specific values by the controller using the model, most views start out sort of
+hollow
+
+model depends on nothing
+view depends on model
+controller depends upon model and view
+
+
+
+
+
+
+
+
+
+
