@@ -9,14 +9,40 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MoviesSite.BLL;
 
 namespace MoviesSite.App
 {
     public class Startup
     {
+        public static readonly List<Movie> _moviesDb = new List<Movie>();
+        public static readonly List<Genre> _genreDb = new List<Genre>();
+
+        private static void SeedDatabase()
+        {
+            _genreDb.AddRange(new[]
+            {
+                new Genre{ Id = 1, Name = "Action"},
+                new Genre{ Id = 1, Name = "Drama"},
+
+            });
+
+            _moviesDb.AddRange(new[]
+            {
+                new Movie
+                {
+                    Id = 1,
+                    Title = "Star Wars IV",
+                    DateReleased = new DateTime(1970, 1, 1),
+                    Genre = _genreDb[0]
+                }
+            });
+        }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            SeedDatabase();
         }
 
         public IConfiguration Configuration { get; }
@@ -31,6 +57,9 @@ namespace MoviesSite.App
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddScoped<MovieRepository>();
+            services.AddSingleton<IList<Movie>>(_moviesDb);
+            services.AddSingleton<IList<Genre>>(_genreDb);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

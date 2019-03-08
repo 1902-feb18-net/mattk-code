@@ -1,0 +1,138 @@
+Fred's batch showcase for Project 3
+Take some notes
+Introduction first
+Then explain what the project is
+LIst of technologies
+Show test coverage, also shows a build result bar graph
+How do you get a project topic?
+How do you get your project scope?
+It sort of looked like the batch had two main groups to support Cloudverse
+What is a velocity, 63/84 points
+
+org scoped vs public scoped
+how loosely coupled are the architectures
+what level did you take devops and agile
+how far did your devops pipeline go
+sonarcloud analysis
+what checks did you have in the devops pipeline to test or review the application
+pair programming
+was there any testing related to security?
+what regulations did you try and get your application meet?
+mention of HIPPA requirements
+
+how did you do your code review
+each piece of code should be already be tied to what it should be doing
+the branches withint the tasks
+code review on the pull requests
+automated code review, static analysis of your code, run your tests, if the tests fail then stop the code
+looking for security flaws, opportunies for sql injection, cross-site string attacks
+throwing strings all over the place
+
+next week Monday Project 1 is due, Thurs-Fri come up with teams and start making proposals for what
+you want your Project 2 to be.
+
+
+
+Razor markup
+-> Razor expressions 
+e.g. @Model.Name, @(new Data{Name = "<A>"}.Name)
+the result of the C# expression is converted to string, HTML encoded and inserted onto the
+HTML page -> &lt;A&gt;
+<script>
+---
+---
+
+Razor blocks
+e.g. @{ var data = 5;}
+runs code during view render.
+doesn't inherently insert anything to HTML
+
+control statements
+@if @while @foreach @switch etc.
+HTML inside these will be conditionally/repetitively inserted
+
+directives 
+@model <type-name>
+makes the new strongly-typed
+
+comments @* *@ removed at render time
+
+tag helpers
+
+
+HTML helpers to know..
+DisplayFor
+DisplayNameFor
+EditorFor
+TextBoxFor
+ActionLink
+DropdownListFor
+BeginForm
+(doesn't auto insert anti-forgery token)
+
+tag helpers
+a (anchor)
+asp-action
+asp-controller
+asp-route
+asp-route-(param name) gives value for route parameter
+input tag helper
+asp-for
+select tag helper which also uses asp-for, asp-items
+label which also uses asp-for
+span asp-validation-for
+form asp-action attribute
+
+new { @class = "col-2-sm" }
+
+XSRF
+cross-site request forgery
+
+                        req
+my server                <-                client
+        form ->
+        POST <-
+
+can get a malicious middle man <- counterfeit form from some other site
+[ValidateAntiForgeryToken]
+
+Data Annotations
+library used for both EF and ASP.NET for a slightly different purpose
+these are attributes both EF and ASP.NET use for validation checks & other metadata
+
+- Required
+- MaxLength
+- Range
+- RegularExpression
+- DataType, (ZipCode, EmailAddress, Phone, Password)
+- Display(Name = )
+
+
+DI (dependency injection)
+in Startup.ConfigureServices
+
+services.AddSingleton
+one instance of the service for application lifetime
+services.AddScoped and also 
+services.AddDbContext
+one instance for each HTTP request
+the third lifetime, which is transient, and that is one instance per call
+
+registering concrete implementation on interface type things is where dependency injection really helps
+
+if (Configuration["useDB"])
+... AddDbContext
+... AddScope<IRepo, DbRepo>()
+else
+AddScoped<IRepo, Repo>()
+
+with validation, ModelState will get filled with Errors if the incoming response values do not meet the
+requirements of the Data Annotations
+
+
+
+
+
+
+
+

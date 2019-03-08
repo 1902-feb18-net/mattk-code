@@ -21,6 +21,11 @@ namespace MoviesSite.BLL
             return _moviesData.ToList();
         }
 
+        public IEnumerable<Genre> AllGenres()
+        {
+            return _genreData.ToList();
+        }
+
         public IEnumerable<Movie> AllMovies(Genre genre)
         {
             return _moviesData.Where(m => m.Genre.Id == genre.Id).ToList();
@@ -54,7 +59,7 @@ namespace MoviesSite.BLL
         {
             var oldMovie = MovieById(id);
             oldMovie.Title = movie.Title;
-            oldMovie.Genre = GenreById(movie.Genre.Id);
+            oldMovie.Genre = movie.Genre is null ? null : GenreById(movie.Genre.Id);
             oldMovie.DateReleased = movie.DateReleased;
         }
 
@@ -62,5 +67,7 @@ namespace MoviesSite.BLL
         {
             _moviesData.Remove(MovieById(id));
         }
+
+
     }
 }

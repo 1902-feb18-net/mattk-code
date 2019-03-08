@@ -4,17 +4,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MoviesSite.App.ViewModels;
 using MoviesSite.BLL;
 
 namespace MoviesSite.App.Controllers
 {
     public class MoviesController : Controller
     {
-        public static readonly List<Movie> _moviesDb = new List<Movie>();
-        public static readonly List<Genre> _genreDb = new List<Genre>();
+        public MoviesController(MovieRepository movieRepo)
+        {
+            MovieRepo = movieRepo;
+        }
 
-        public MovieRepository MovieRepo { get; set; } =
-            new MovieRepository(_moviesDb, _genreDb);
+        public MovieRepository MovieRepo { get; set; } 
+
+        // two steps to setup dependency injection
+        // 1. register the dep. as a service in STartup.ConfigureServices.
+        // 2. request the service (typically, by just having it as ctor parameter)
+
         
         // GET: Movies
         public ActionResult Index()
@@ -26,49 +33,103 @@ namespace MoviesSite.App.Controllers
         // GET: Movies/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Movie movie = MovieRepo.MovieById(id);
+
+            var viewModel = new MovieViewModel
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                ReleaseDate = movie.DateReleased,
+                Genre = movie.Genre,
+                Genres = MovieRepo.AllGenres().ToList()
+
+            };
+
+            return View(movie);
+
         }
 
         // GET: Movies/Create
         public ActionResult Create()
         {
-            return View();
+
+            var viewModel = new MovieViewModel
+            {
+                Genres = MovieRepo.AllGenres().ToList()
+        };
+            return View(viewModel);
         }
 
         // POST: Movies/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Movie movie)
+        public ActionResult Create(MovieViewModel viewModel)
         {
             try
             {
+
+                var movie = new Movie
+                {
+                    Id = viewModel.Id,
+                    Title = viewModel.Title,
+                    DateReleased = viewModel.ReleaseDate,
+                    Genre = viewModel.Genre
+
+                };
+
                 // TODO: Add insert logic here
                 MovieRepo.Create(movie);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View(movie);
+                return View(viewModel);
             }
         }
 
         // GET: Movies/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            try
+            {
+                Movie movie = MovieRepo.MovieById(id);
+                return View(movie);
+            }
+            catch (InvalidOperationException)
+            {
+                // log that, and redirect to error page
+                return RedirectToAction("Error", "Home");
+            }
+            
         }
 
         // POST: Movies/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, MovieViewModel viewModel)
         {
             try
             {
-                // TODO: Add update logic here
 
+                if (!ModelState.IsValid)
+                {
+                    return View(viewModel);
+                }
+                var movie = new Movie
+                {
+                    Id = viewModel.Id,
+                    Title = viewModel.Title,
+                    DateReleased = viewModel.ReleaseDate,
+                    Genre = viewModel.Genre
+
+                };
+
+                // TODO: Add insert logic here
+                MovieRepo.Create(movie);
                 return RedirectToAction(nameof(Index));
             }
+
+                
             catch
             {
                 return View();
@@ -79,7 +140,6 @@ namespace MoviesSite.App.Controllers
         public ActionResult Delete(int id)
         {
             Movie movie = MovieRepo.MovieById(id);
-
             return View(movie);
         }
 
