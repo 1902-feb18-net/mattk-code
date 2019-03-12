@@ -1,0 +1,53 @@
+ViewData etc.
+attr routing
+filters
+testing w/mocks
+RestReviews demo
+
+client
+
+MVC
+
+server
+
+What happens with request and response
+ASP.NET Core
+We have a sequence of middleware, and these are plugged in, in order, using .Use calls in
+Startup.Configure
+middleware is some kind of processing or handling logic that will insert itself in the processing of
+the request
+
+ request comes in to -> other middleware (e.g. exception-handling, static file serving, etc.)
+ then next we have routing middleware
+ and then we have MVC
+ and then the response goes to routing middleware
+ back through other middleware
+ and then on to the client
+
+controller/action selection
+ Authorization filters
+ Resource filters
+ Exception filters
+Model binding
+Action filters (before)
+Action method execution
+Action filters (after)
+Result filters (before)
+Result execution (e.g. view rendering)
+Result filters (after)
+
+
+filters are applied to controllers/actions using attributes or globally in Startup.Configure
+
+Razor markup is executed/rendered into HTML
+
+[HttpPost]
+[CheckModelState]
+public ActionResult Create(Model m)
+{
+    return View(m);
+
+}
+
+
+

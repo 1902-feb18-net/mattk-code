@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MoviesSite.BLL;
+using MoviesSite.DataAccess;
 
 namespace MoviesSite.App
 {
@@ -60,6 +61,9 @@ namespace MoviesSite.App
             services.AddScoped<MovieRepository>();
             services.AddSingleton<IList<Movie>>(_moviesDb);
             services.AddSingleton<IList<Genre>>(_genreDb);
+
+            services.AddDbContext<MovieDbContext>(builder =>
+                builder.UseSqlServer(Configuration.GetConnectionString("MovieDB")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

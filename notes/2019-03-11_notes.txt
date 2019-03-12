@@ -1,0 +1,51 @@
+the user should not be able to input ids
+keep progamming names out of the user interface
+parts of the interface that are visible will break things, hide it, make it invisible
+no question about does this work does this not work, have a list of inputs and outputs
+know exactly what should happen
+server side validation
+get some unit testing experience
+
+timeline for Project 2 1st of April target day project showcase, same technologies as Project 2 plus able
+little more
+
+Project 3 likely inherit Fred's batch's work
+fancy Fred architecture, the problem is it wasn't fully fleshed out until we were already done,
+but it's been cleaned up
+
+Assignment is 
+
+implement library project
+along with if you get to it some unit tests
+chiefly a library project which has a class that implements a triangle
+you can come up with ways to mutate the triangle
+google properties for a triangle, maybe about 200 different properties
+at least 6 methods, mutating methods, reading methods
+push it to branch with names
+
+need to fetch to get changes in visual studio 2017
+
+three rules with git
+1 commit often
+2 pull often (optional!)
+3 push often
+
+
+there might be some complicated branch history on github
+then we clone to our laptops and get exactly the same on local
+
+dotnet/corefx make a fork called escalonn/corefx
+
+fork is a GitHub thing, makes a new repository entirely and can evolve independently from the other often
+GitHub forks are not temporary
+
+"pull request"
+"merge request"
+a PR is a request to merge a branch into another branch, which stays "open" and tracks both branches,
+summarizes diffs, etc. until the user with authority over the target branch merges the PR
+
+as soon as you start working on a feature, make the PR, so the PR object can track what the consequences
+of the merge will be as the feature is worked on before it is finally merged later
+
+
+
