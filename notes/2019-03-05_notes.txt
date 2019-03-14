@@ -2,7 +2,7 @@ MVC
 
 HTML: element, attribute, doctype HTML5, common elements (list, structural, etc.)
 HTML5: audio, video, canvas, new elements, accessibility
-CSS: rule, property, cascase, box model, inheritance, media query, positioning, responsive design,
+CSS: rule, property, cascade, box model, inheritance, media query, positioning, responsive design,
 external/internal/inline, selectors, Bootstrap
 MVC: model, view, controller, view model, HTTP request lifecycle
 

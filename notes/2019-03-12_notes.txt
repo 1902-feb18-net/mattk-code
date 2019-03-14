@@ -1,0 +1,112 @@
+Ideas for a project:
+
+
+
+Software Development Life Cycle (SDLC)
+Make the deadlines, have some accountability, more communication between people
+One of the classic ways to formalize is
+commonly called the Waterfall model
+- gather requirements 
+- design the architecture of the application
+- build the application
+- test that the code works
+- deploy the application
+
+get each stage that is 100% complete before moving on to the next stage
+follow the sequence and you can't go back
+better to soldier on with an imperfect design than to keep going back and forth
+
+slow, not adaptable
+pros: enables more security, more accountability, if something goes wrong you know whose fault it is
+
+
+iterative models (in contrast to the waterfall model)
+spiral model is one of them, mini-waterfalls, responsive to client feedback
+
+
+Big Bang model
+requirements, design, everything at once in one day, suitable for prototypes
+putting a lot of process around that prototype doesn't make sense
+
+
+Agile models
+we break project up into features/small pieces called
+"user stories" and we run individual user stories through development
+
+scrum model (concrete model) 
+- user story: this is some desired functionality of the software
+the user can create an account, set a password, change a password
+feature/bug fix makes a user story
+each user story has estimated "effort" in points that correspond to man hours
+to prevent quibbling over how much it's going to take, round to nearest Fibo sequence to get
+past that stage
+- scrum board
+may consist of backlog, in progress, testing, done, and released
+there is no hard definition for which statuses you are going to have
+- scrum master (scrum lord)
+their job is to maintain the scrum boards, could be a developer or a manager
+leads the daily standup
+- sprint
+a sprint is a core scrum concept where we slice off some of the features of the project,
+and spend a period of 2-6 weeks on those user stories only
+sprint planning meeting starts things off
+formalize user stories for that sprint
+concept of stakeholder, which is our term for anyone with a stake in the project, anyone who
+cares about it, and agile says they should be involved, should be talking to stakeholders continuously
+way for users to submit feedback and plug that into project board
+the industry is full of fake agile
+- daily standup
+meeting where everyone in the project gives a quick status of their progress on the project
+1. what did you do yesterday 2. what are you gonna do today 3. identify blockers, what is preventing you
+from doing your job today
+it's called a standup because it's supposed to be quick
+- sprint retrospective/review
+capacity: productive work hours/points available in the sprint
+velocity: sum of effort points completed in sprint
+- backlog
+all stores uncompleted in project
+
+strict schedule (sprint)
+for completing preset amount of work, with re-evaluation after each sprint
+
+
+Other Agile models besides scrum:
+kanban, a lot of similarities with scrum, except no sprints, more ambitious
+no sprints - continuous planning, and continuous reflection/re-evaluation
+kanban board, each column in the board has a maximum number of points it can contain
+attempts to limit max work in progress with continuous re-evaluation
+
+
+CMMI capability maturity model integration
+very process heavy version of agile, + security, + accountability, levels
+
+
+
+Azure DevOps
+used to be Visual Studio Online
+then it was Visual Studio Team Services (VSTS)
+and now it's Azure DevOps
+
+"configuration-as-code"
+YAML pipelines
+also as there is a designer version
+trying to create a build pipeline
+
+What is our goal here?
+automated pipeline
+to: - fetch latest code from GitHub
+    - build code
+    - run tests
+    - deploy to Azure App Service
+
+Azure DevOps
+pipelines
+boards
+repos
+artifacts
+
+don't use a .edu account for Azure DevOps
+
+
+test your .yml pipeline build file locally before you commit it.
+

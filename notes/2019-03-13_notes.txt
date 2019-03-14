@@ -1,0 +1,123 @@
+Software deployment
+
+There are the dev people
+
+
+"source of truth", agreed upon to mediate disputes, inconsistencies, disagreements, etc.
+dev server is usually a "source of truth"
+IT typically manages the dev server, place that is running the application and that's it
+IT loads to test server as well
+staging server, catch an error before it's too late
+ops has goals that are at odds with the devs some times
+SDLC is confined to source repo and devs
+
+source repo                     package repo (versions, 1.0, 1.1)
+(devs go back and forth from source repo)
+The devs are going to code    ->      IT (to package repo)              (operations (ops))
+
+                                    dev server                  test server         staging server
+
+                                                                QA (user test server to determine if code is correct)
+
+
+production server
+
+
+Once it reaches the production server, it's too late
+
+
+DevOps
+- an extension of Agile values
+to deployment + maintenance 
+all the way to production
+- we're going to use automation with parameters agreed upon by devs, ops, stakeholders
+to deploy frequently and with quality via automated checks
+- people, process, product
+
+
+continuous integration (CI)
+- very frequently, each dev's code is integrated with the others
+with automatic checks:
+- the code should build/compile
+- the unit tests should pass
+- static analysis
+
+Need VCS/SCM (source code management)
+(for us that is Git)
+- deploy to dev server on every change
+
+
+continuous delivery (CD, CDe)
+automated deployment all the way to production server with some manual approvals before production
+
+
+continuous deployment (CD)
+100% auto to production
+
+list for the week
+
+DevOps (week 3 QC list)
+
+SDLC: watefall, iterative, Agile, Scrum, kanban
+Scrum: sprint, planning, user story, effort, capacity, velocity, scrum board
+Git branching, merging, pull request, conflict resolution
+DevOps: motivation, values, continuous integration/delivery/deployment, build pipeline
+Azure DevOps: pipelines, boards
+Pipelines: build definition, task, parameter, service connection, release definition,
+Designer/YAML
+static analysis: SonarQube/SonarCloud, configuration, quality gate, quality profile
+code coverage 
+cloud computing: public, private, hybrid, multi, IaaS, PaaS, SaaS, CaaS
+Azure services: VM, SQL, AppService, storage
+Docker: daemon, CLI, image, container, virtualization
+Dockerfile: FROM, RUN, CMD, ENTRYPOINT, EXPOSE, COPY, WORKDIR, ARG
+(Docker orchestration, Compose, Stack?)
+
+
+NuGet restore
+the path to solution may end up including different solutions
+Use packages can have public feed
+
+pipelines:
+build
+Git -> build -> artifacts (a document or some result of some process, typically with a version)
+artifacts -> release
+
+often a successful build is a trigger for a release, possibly with manual approval
+
+make sure to enable pull request validation
+
+and now SonarQube
+software for static analysis
+static analysis implicitly refers to static analysis of code
+the static part means we're going to analyze code without compiling or running it,
+or maybe compile it, but definitely not run it
+so correct the code just by looking at it basically
+
+go to sonarcloud.com
+
+SonarQube server does the interpretation or the analysis, applies rules from scanner input, and builds the
+analysis
+
+SonarQube Scanner (scan the code, upload to server)
+ PBI - project backlog item
+epic feature user story on a Task
+
+code coverage
+what % of lines, blocks
+
+technical debt, making choices that pay off in the short term, but eventually you have to pay for your
+sins, so you end up having to totally redesign when requirements change a little bit, code that is not easy
+to evolve or maintain later, you have to pay that back later
+
+quality profile, alter when sonarcloud complains about certain code smells
+
+quality gate
+
+Project 2
+in that one project there will be three pipelines, three sonarcloud projects, and three different repos
+
+
+
+
+

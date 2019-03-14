@@ -1,0 +1,119 @@
+MVC - model view controller
+
+HTML, what is HTML?
+HTML stands for Hypertext Markup Language, and it is used to 
+define the layout of the data on your webpage.
+
+What is a HTML element?
+An HTML element is an individual component of a HTML document or webpage. Each HTML element gets a tag defining what kind of element it is, for example there are div elements and table elements.
+
+What is a HTML attribute?
+So HTML attributes define the properties of each HTML element, and they are typically defined within the tag,
+like the id, class, value, src. These attributes control the 
+elements behavior at a finer level than the tag definition itself.
+
+What is doctype HTML5?
+Defined by the doctype tag.
+
+List some common HTML elements?
+list, unordered vs ordered, the two types of lists,
+div, span, header 1-6
+
+What is HTML5?
+
+What is an audio tag?
+Adds sound to the document, usually using a src attribute to access the file.
+
+What is a video tab?
+Used to embed video in the HTML document, usually using a src attribute to access the file.
+
+What is canvas element?
+HTML element used to draw graphics using scripting.
+
+What is HTML5 accessibilty?
+
+What is CSS?
+CSS stands for Cascading Style Sheets. These files are used to add color, different fonts, control the look and feel of the document apart from the data and layout of that data. The cascade in CSS refers to which style definitions in the files take precedence.
+
+What is a CSS rule?
+A CSS rule determines style for a particular id, class, or HTML tag. Consists of a selector and a declaration block.
+The CSS selector determines what elements the rule applies to. The declaration block determines what style properties will be applied to what is selected.
+
+What is a CSS property?
+A CSS property is a particular type of style that can be changed such as color, background-color, font-family, margin, padding.
+
+
+What is the CSS cascade?
+The CSS cascade is an algorithm defining how to combine properties from different sources.
+
+What is the box model?
+The box model consists of...
+every box is composed of four areas: content edge, padding edge, border edge, margin edge.
+The browser renders each element as a box accordoing to the CSS box model.
+
+The content area contains the real content of the element, such as text or an image.
+
+The padding area extends the content area to contain the elements padding, it adds padding.
+
+The border area extends the padding to include the elements borders.
+
+The margin area, bounded by the margin edge, is used to include an empty area that separates the element from its neighbors.
+
+
+What is CSS inheritance?
+The inherit CSS keyword causes the CSS selection to take the property value of its parent. For example inherit: color.
+
+What is a CSS media query?
+A CSS media query is something that is applied to the rule that causes the rule to only apply in certain situations like when the screen size reaches a certain number of pixels. The page does not have to be reloaded for the media query rule to kick in, but it will not apply until a certain condition is met. Allows for some conditional logic in the CSS.
+
+What is CSS positioning?
+Talk about relative, absolute, etc.
+
+
+What is responsive design?
+REsponsive web design involves styling the webpages so that they work for any screen size.
+
+Talk about CSS external/internal/inline?
+What are they and what are the differences?
+
+
+What are CSS selectors?
+Talk about different CSS selectors?
+
+
+What is Bootstrap?
+Bootstrap is a CSS/JS library, mostly CSS that has a variety of CSS styling via classes that causes webpages to be more responsive, the foundation of Bootstrap is to divide the page into 12 columns.
+
+
+What is MVC?
+Stands for model view controller. Architectural pattern commonly used for developing user interfaces that divides an application into three interconnected parts. 
+
+What is MVC model?
+Model is the central component of the pattern, independent of the user interface. It directly manages the data, logic, and rules of the application.
+
+What is MVC view?
+View is the part of the MVC pattern that display the data. Any representation of data such as a chart, diagram, or a table. It is the display of the data, and also contains the user interface. You can even have multiple view of the same information for different groups of people. A bar chart or pie chart overview and a table with the specific for the people that need it.
+
+What is MVC controller?
+Controller is the part of the MVC that accepts input and converts it to commands for the model or view.
+
+What is MVC view model?
+An MVC view model is an additional interface or air gap between the view and the model, it allows the model data to be rationalized or delivered to the view in a manner that is more conducive to display and what the view needs without forcing the model into that format, or having the model get too far away from the data access layer. So you have a database with its restrictions and maybe the view needs more information or redundant data that breaks the database rules, so you don't want this in your model, but the view still needs it so you have an additional viewmodel that still looks like the model but has the extra stuff that the view needs. Viewmodels can also carry data annotation information that translates to front end validation and also keeps certain values from being bound. Including this logic in the model may not make sense for that class and it would also take more code to do than using the library provided.
+
+What is a HTTP request lifecycle?
+An HTTP request is usually a GET or a POST. 
+Initiated by browser to server, server handles request via route using URL. Then the response is sent back to the client as a new webpage and the browser renders the new information in the reponse. Could be a redirect, a partial update of the current page.
+
+
+What is ASP.NET MVC controller action?
+What are ActionResults?
+Actionresults are what controllers return in response to a browser request.
+
+
+HTTP verbs, GET and POST
+
+In ASP.NET MVC what is model binding?
+
+
+
+
