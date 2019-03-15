@@ -1,0 +1,185 @@
+Azure devops
+retention and parallel jobs
+can support 1800 parallel jobs
+Project 2 sonarcloud goes under the repo sonarcloud
+we all have semi-administrator permissions
+
+docker run hello-world
+
+virtualization
+
+
+apps
+
+OS                      OS   OS
+
+hardware                hardware
+
+
+single
+boot
+
+hypervisor - exposes virtual hardware interface to guest OSes and connect that to real hardware via host OS
+develop something for Linux from a Windows machine
+the image is a big file when you aren't running it, pretty typical
+
+these tools move more towards Agile developement, moving around environment to environment faster,
+easier to get everyone on the same page
+
+disk image
+
+container
+next level of virtualization
+
+when I start virtual machine, I must allocate fixed block of RAM, since OS cannot change their memory
+while they are running, because hardware can't do that, so the virtual machine can't either
+However, with containers, containers flexibly use resources like RAM in the same way as regular processes
+containers are the fastest compared to other methods like OS-level virtualization or no virtualization
+
+the usual workflow does not involve saving a container to disk
+containers are about reliability, and they offer isolation, good separation of concerns 
+containers allows for the environment to be duplicated, and that is most of the reliability
+
+
+Doing some Docker...
+if we all had Windows 10 Professional, or linux, we could install real docker.
+but non-pro windows 10 doesn't support containers (yet?) so, we have Docker Toolbox.
+
+Docker Toolbox is meant to be one-click setup for running Linux containers on Windows using a small Linux
+virtual machine.
+
+The Docker 
+Docker Hub is like NuGet for container images
+
+docker run <image-name>
+    this starts a new container from the given image (downloading that image if necessary)
+docker pull <image-name>
+    just downloads the image (or updates, if there's some new version)
+
+docker image:
+    template for container to start
+    had the whole file system
+    has a pointer to some program inside the image that should run
+        when we start the containers
+    images are LAYERED - every image has some base image, adding new layers on top of it
+
+Dockerfile:
+    provides instructions to build a new image from some base image
+    FROM:
+        sets the base image to use for subsequent layers
+
+docker orchestration
+Docker Swarm
+Kubernetes
+
+these both have very powerful abstractions for given just an image and with one configuration file,
+can specify declaritively that I want 9 copies of this machine, and if one dies, it automatically
+makes a new container, has a load balancer
+
+containers are not the same as the cloud, but there are some common themes
+abstraction from the hardware, fast setup and teardown, flexibly use only the resources that you need
+
+on-premises servers/resources
+on-premises means that the company that is using the services owns the hardware and physically pays for the
+electricity, etc.
+
+the contrast is cloud resources/services
+SaaS software as a service
+abstract away hardware, network, OS, disk, everything but the app
+
+webapps, Gmail, Office 365, Outlook, Project 1
+
+abstract away hardware, network, OS, disk (sort of hardware), everything but the app is abstracted away
+IaaS infrastructure as a service
+abstract away physical location, electricity, some/most physical stuff
+
+PaaS
+abstract away OS, disk, network, hardware
+
+Azure VM
+Amazon EC2 (AWS)
+
+provider/cloud platforms
+- Amazon Web Services (AWS)
+- Microsoft Azure
+- Google Cloud
+
+"on-premises"
+cloud
+hybrid cloud (a hand in both jars, cloud, and on-premises)
+multi cloud (using more than one cloud provider)
+
+SLA
+service level agreement, what percentage of the time will that resource be running correctly
+99.9999%, hours/year that it may be down
+
+"uptime"
+"downtime"
+
+region
+East US,
+Central US,
+Australia
+
+Availability zone
+separate to region, Zone 1, 2, 3, 4, and as much as possible the cloud provider tries to decouple a catastrophic
+failure to isolate the zones from each other
+
+storage
+    Azure Disks, Files, Blobs
+    Amazon S3
+
+Disk storage
+    connect to 1 VM at a time
+
+File storage
+    connect to many at once
+
+BLOB storage
+    binary large object, unstructured, no directories, no FS, large/streamed files,
+    static assets like images, binary large object
+
+For IaaS, Azure VM, Amazon EC2
+For PaaS, Azure App Service, Amazon Elastic Beanstalk, Azure Pipelines, Amazon CodeBuild, Amazon CodePipeline
+For SaaS, Azure Boards, GitHub webapps, Gmail, Office 365, Outlook, project 1
+For CaaS container as a service, 
+
+public cloud/private cloud
+government cloud, American govt software staying within national confines, can't leak to other places
+
+CI tools:
+Azure Pipelines
+Jenkins
+CircleCI
+TravisCI
+Appveyor
+AWS CodePipeline/CodeBuild
+GoCD (one of the first ones to promote CD)
+
+Project 2
+
+ML.NET, chatbot
+
+- data model
+    multiplicites, many blog posts instead of one
+- user interactions
+- web applications
+- needs a database
+- tech stack that I require of you, and can add from there like Google Maps
+- Nick will say if is out of scope
+
+
+authentication (users, at least one with different priveleges)
+Azure Admin 
+
+at least as complex as project 1
+
+CI pipeline
+AppService
+
+have a team and a semi-formal proposal
+paragraph form of what the app is for and what the user can do
+alongside that paragraph describe to me justify the complexity of your data model
+and what the user can do, what are your user stories, what can the user do
+
+minimum viable product
