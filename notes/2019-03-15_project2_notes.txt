@@ -1,0 +1,48 @@
+trying to make a trivia web app
+
+topics for quizzes, games, movies, sports, beer, QC questions
+
+can have points to pay for quizzes or pay with real money
+
+possibly add reviews
+
+need logins authentication
+
+link user account 
+
+User
+id
+first
+last
+username
+password
+
+
+questions
+id
+points
+type
+category
+rating (difficulty, maybe 1 - 5)
+
+
+Answers
+id
+question id
+answer
+bool for multiple choice, if true, link to junction table with wrong answers
+
+
+Results
+score
+type of quiz category
+
+
+
+
+
+
+
+
+
+
