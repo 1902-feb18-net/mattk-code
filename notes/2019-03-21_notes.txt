@@ -1,0 +1,45 @@
+ASP.NET Identity, the Nuget package is already installed in a API Web App in Visual Studio
+
+There is going to be another SQL database for authentication information, and that means another DBContext,
+but it is already configured and implemented for us.
+
+Cookie header in HTTP request
+Every cookie is a key-value pair like TempData in ASP.NET MVC
+name1 = value1
+The policy on the internet anything over HTTP every time you send a request, your client looks at its stored
+cookies, and anything that belongs to the domain you are sending the request, that cookie information is sent.
+
+Set-Cookie:
+
+
+browser
+
+Set-Cookie
+
+MVC (copy to response)
+
+Set-Cookie
+
+API (Identity is on the API)
+
+API will say Set-Cookie to MVC, with Set-Cookie Header. By default that won't do anything because MVC
+isn't going to do anything with it, but we tell MVC to copy each Set-Cookie to every response that we
+are going to send to the browser.
+
+
+The most complicated is based on Claims
+Some client connecting to a service will have certain Claims that it sends
+Claims a username, department in organization, etc.
+For authorization we can evaulate the claims and match them to whatever we want them to be
+
+Role-Based Authorization
+Relationship between Users and Roles
+We will stick to role-based
+
+What is the point of a public abstract constructor anyway?
+
+
+
+
+
+

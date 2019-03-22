@@ -1,0 +1,91 @@
+This week we're going to learn about service-oriented architecture
+next level for separated concerns/loose coupling
+split application into web services
+instead of linking our layers at build time as DLLs, they will communicate at runtime over the web
+we can have our application use services that are hosted on the internet, they don't have to be our layers
+there is a Facebook api, League of Legends api
+
+"API" and "web API" are synonyms for web service
+verbs used with services, exposed service and consumed service
+
+If I run my API on app service, I'm exposing that service to be consumed by clients
+Your front end, or MVC app can consume that service, could mean reading from the service, writing to
+the service.
+
+SOAP
+REST
+
+Today we're going to focus on SOAP
+
+Also Javascript this week
+
+SOAP, used to stand for simple object access protocol
+but now SOAP just means SOAP, the word's meaning has drifted from the acronym
+It used to be the standard for web services, getting shoved out by REST
+
+communicate using XML over a variety of protocols
+rigorously define all needed info about the service in a WSDL (web services definition language) document
+
+web service, with services we follow a client-server architecture
+server
+  |
+client
+MVC
+server
+  |
+client
+browser
+
+(sometimes there is more than one client and server)
+
+The API in our Project 2 is REST
+
+WCF, Windows Communication Foundation, big Microsoft namespace, not pushing as much anymore
+big framework for a lot of different web services type things, some has been ported to .NET Core,
+but not most of it
+
+Web.config is a .NET Framework thing
+
+Every SOAP message is in XML, we're going to have an envelope
+<envelope>
+    <header> (optional)
+
+    </header>
+    <body> (required)
+    
+    </body>
+</envelope>
+
+XML supports "XML schema"
+Database diagram is a picture of your schema
+Schema is also something you add as a namespace to a database in SQL Server
+
+adds required structure to XML, including data types
+XML supports namespace, so you can import stuff defined in other XML documents into the current one
+via namespaces
+
+Binding (what protocol will we use? and what port?) issue with WCF and services in general, what kind of lanugage to communicate
+Address (what URL? are we going to find the service at?)
+Contract (what are all operations/messages you support?)
+
+mneumonic as ABC (Address, Binding, Contract)
+
+add async to Project 2
+
+Make a new service
+
+Know what the WSDL is, but know how it's running
+
+REST is in JSON, easier to send, easier to parse
+
+In Postman, may need to turn off SSL certificates checks
+
+server
+
+
+client sends HTTP request, server responds with HTTP response
+the format for these, the request(method, headers, body(for some methods like POST))
+
+client (Postman)
+
+Use API Controller with read/write when making API controllers

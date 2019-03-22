@@ -1,0 +1,18 @@
+web services SOAP vs. REST
+
+- SOA (patterns, principles)
+- SOAP (message, WSDL)
+- WCF (address, binding, contract, attributes, service reference)
+- XML, XML Schema
+- REST architecture (principles, HTTP, resources, representations)
+- Other REST architecture, content negotiation, hypermedia
+- HTTP (request, response, headers, methods, status codes, safe, idempotent)
+- ASP.NET Core, for APIs (action result types, attr routing, Swagger, JSON)
+- HttpClient
+- authenication, authorization (roles, claims)
+- JavaScript (data types, functions, prototypes, scopes, ES5, ES6, JSON,
+callback, closure)
+- DOM (traversal, events, event propagation)
+- AJAX (XmlHttpRequest, Fetch API, promises)
+- Azure AD?
+- ASP.NET Identity?

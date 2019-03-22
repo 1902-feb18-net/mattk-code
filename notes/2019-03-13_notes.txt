@@ -1,3 +1,20 @@
+DevOps (week 3 QC list)
+
+SDLC: watefall, iterative, Agile, Scrum, kanban
+Scrum: sprint, planning, user story, effort, capacity, velocity, scrum board
+Git branching, merging, pull request, conflict resolution
+DevOps: motivation, values, continuous integration/delivery/deployment, build pipeline
+Azure DevOps: pipelines, boards
+Pipelines: build definition, task, parameter, service connection, release definition,
+Designer/YAML
+static analysis: SonarQube/SonarCloud, configuration, quality gate, quality profile
+code coverage 
+cloud computing: public, private, hybrid, multi, IaaS, PaaS, SaaS, CaaS
+Azure services: VM, SQL, AppService, storage
+Docker: daemon, CLI, image, container, virtualization
+Dockerfile: FROM, RUN, CMD, ENTRYPOINT, EXPOSE, COPY, WORKDIR, ARG
+(Docker orchestration, Compose, Stack?)
+
 Software deployment
 
 There are the dev people
@@ -56,22 +73,7 @@ continuous deployment (CD)
 
 list for the week
 
-DevOps (week 3 QC list)
 
-SDLC: watefall, iterative, Agile, Scrum, kanban
-Scrum: sprint, planning, user story, effort, capacity, velocity, scrum board
-Git branching, merging, pull request, conflict resolution
-DevOps: motivation, values, continuous integration/delivery/deployment, build pipeline
-Azure DevOps: pipelines, boards
-Pipelines: build definition, task, parameter, service connection, release definition,
-Designer/YAML
-static analysis: SonarQube/SonarCloud, configuration, quality gate, quality profile
-code coverage 
-cloud computing: public, private, hybrid, multi, IaaS, PaaS, SaaS, CaaS
-Azure services: VM, SQL, AppService, storage
-Docker: daemon, CLI, image, container, virtualization
-Dockerfile: FROM, RUN, CMD, ENTRYPOINT, EXPOSE, COPY, WORKDIR, ARG
-(Docker orchestration, Compose, Stack?)
 
 
 NuGet restore

@@ -1,0 +1,129 @@
+SOAP
+When it used HTTP, message goes in a POST request, in the body
+SOAP a protocol communicate using XML over a variety of transport protocol rigorously define all needed
+info about service in a WSDL document
+
+RPC (remote procedure call) general term for web services with tight coupling to the implementation of the service
+Level 0 of the RMM is an example of RPC
+"service.com/methodName?param1=23"
+
+HTTP has a lot of semantics (rules for use that define meaning on their own) that traditionally,
+websites implement partly (GET for read, POST for write) and web services (SOAP, RPC) ignore, and they ignore
+HTTP status codes
+
+REST "representational state transfer" (very abstract terms, re-inventing the internet a little,
+re-inventing how we talk over the internet a little)
+REST is an architecture, we are going to communicate using many representations (often JSON) over
+HTTP only. 
+info of service either:
+(1) it's not rigorously defined. (not really REST)
+(2) hypermedia/HATEOAS (110% REST)
+(3) one of many API description languages, like WSDL for SOAP
+    e.g. OpenAPI/Swagger
+    API Blueprint
+
+layered arch:
+    payoff in 1 year
+SOA:
+    payoff in 3 years
+hypermedia:
+    payoff in 15 years?
+
+1. uniform interface
+- use HTTP semantically (according to its proper meaning) in headers, methods, status codes
+- we're also going to identify resources, and have 1-to-1 relationship between URLs and resources
+- distinguish the resource from its representations 
+
+2. client-server architecture
+
+3. statelessness, the server is not going to store any state about exchanges with the clients
+for example: pizza ordering server, the server is not going to keep track of a partial order
+goes through the db that's ok, but per client, per request is not stored on the server
+if the server does not have to store all this extra stuff, then it becomes more scalable
+
+4. cacheability
+when HTTP supports it, we should be able to cache responses to requests
+category of requests called safe, confident that if the same request comes in, we can give the same response
+at least within a couple of days, caching helps scalability
+
+5. layered system
+we don't mean layered architecture the traditional way, sort of extension of client-server
+could be many servers behind one server, and the client doesn't need to know about all of those other
+servers
+
+6. code on demand
+not done in practice much, more theoretical, a client could request from the server
+the client says i don't understand this representation of something, and the server sends 
+code for that representation, but it isn't done in practice
+
+HTTP methods/verbs
+GET - retrieval of resource (safe) (id.)
+POST - creation of resource
+PUT - replace resource (id.)
+DELETE - delete resource (id.)
+PATCH - partial update of resource
+----------------------------------------------------------------------------------------------
+HEAD - just like GET, but, only send the headers, not the body (safe) (id.)
+OPTIONS - tell me what methods I can use on this resource (responds with an Allow header) (safe) (id.)
+TRACE - (don't need to remember as much) repeat the request from the server
+
+"safe": should not change the system's state
+(enables cacheability)
+
+"idempotent": multiple copies of the same request should have the same effect as only one copy
+
+light switch resource, switch is on or off, and I want to expose the ability to change the state of the
+light switch
+two ways to implement the functionality:
+(1) allow a toggle operation
+(2) allow set on, set off operations
+
+HTTP status codes:
+range from 100 to 599
+100-199: informational category, very empty category
+200-299: success
+300-399: redirection
+400-499: client error
+500-599: server error
+
+100: continue (got headers, send me the rest of the body)
+*200: OK (generic success) for GET responses in particular
+*201: Created for POST responses (should also return resource + location)
+*204: No content (success, with no body) for PUT, DELETE, PATCH (not expected to return a copy of the resource)
+301: Moved permanently
+*302: Found (common browser redirect)
+304: Not Modified (based on If-Modified-Since request header, for client-side caching)
+*400: Bad Request (generic client error)
+*401: Unauthorized (really means not authenticated)
+402: Payment Required
+*403: Forbidden (maybe authenticated, but not authorized)
+*404: Not Found (the resource you are trying to access does not exist)
+405: Method not allowed
+*406: Not acceptable: if server cannot provide any requested formats
+418: I am a teapot (teapot asked to brew coffee)
+*500: Internal Server Error (generic server error)
+501: Not implemented
+*502: Bad gateway (this server didn't have a problem, but some other server it was talking to did)
+
+authentication: prove who you are (this is about identity)
+authorization: prove what you are allowed to do (priveleges)
+
+requests have an Accept: field/block in the body
+
+ASP.NET MVC
+ASP.NET WebAPI
+
+application/json
+application/xml
+text/plain
+
+1 data.xml PUT, POST
+1 data.json
+Accept, Content-Type
+
+Swagger                 ASP.NET
+OpenAPI                 server code
+spec
+
+To use swagger, go to /swagger path in your application after installing the Nuget package.
+And then you can pick different HTTP verbs to use.
