@@ -12,7 +12,7 @@ web services SOAP vs. REST
 - authenication, authorization (roles, claims)
 - JavaScript (data types, functions, prototypes, scopes, ES5, ES6, JSON,
 callback, closure)
-- DOM (traversal, events, event propagation)
-- AJAX (XmlHttpRequest, Fetch API, promises)
-- Azure AD?
-- ASP.NET Identity?
+- DOM (traversal, events, event propagation) <- next week
+- AJAX (XmlHttpRequest, Fetch API, promises) <- next week
+- Azure AD? <- didn't cover so much
+- ASP.NET Identity? <- did cover

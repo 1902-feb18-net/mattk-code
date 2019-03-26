@@ -1,0 +1,19 @@
+{
+  "name": "typescript-demo",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && webpack",
+    "test": "echo \"Error: no test specified\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.3.4000",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}

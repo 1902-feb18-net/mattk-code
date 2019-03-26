@@ -1,4 +1,5 @@
 using MyWcfConsumer.MyService;
+using MyWcfConsumer.MyService2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,11 +33,11 @@ namespace MyWcfConsumer
                     Console.WriteLine("Not a number!");
                 }
 
-                Question question = client.GetQuestion(1);
+                MyService.Question question = client.GetQuestion(1);
                 Console.WriteLine(question.QuestionId);
                 // can't access datemodified
 
-                Question question12 = client.GetQuestion(2);
+                MyService.Question question12 = client.GetQuestion(2);
                 Console.WriteLine(question.QuestionId);
 
             }

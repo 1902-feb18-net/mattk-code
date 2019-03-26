@@ -1,0 +1,85 @@
+Debugging tools in Azure
+
+Log stream
+Diagnostics logs
+
+Web server logging can go to Storage or File System
+Add a .scm (maybe source code management) to get to Kudu 
+
+Use Serilog, stores key-value pairs
+
+Code coverage from .NET CLI, only works on Windows
+
+Coverlet for code coverage from .NET Core CLI
+
+DOM is document object model
+
+JS assignment/exercise
+make a index.html for logged in users (contents e.g.
+"welcome logged in user")
+make a login.html page with inputs for username and password.
+then use javascript events to check the values when the
+user clicks a button
+the user should be redirected to index.html if his values
+are correct
+otherwise display some error message on the page
+bonus: get it working with a form element instead of
+bare input and button
+
+document
+then document.documentElement
+then document.body
+
+Javascript 
+
+and then we have browser stuff
+DOM (document) APIs like XHR
+
+Javascript has core, types, functions
+
+And then there is Node (server-side, file access API)
+
+Node package manager (NPM) more declarative package management
+package.json is like .csproj in C#
+
+NPM supports global installs as well. A lot of isolation of concerns in that this package should not depend
+upon the dependencies of other packages, they are isolated atomic units.
+
+ES5 in the browser                      ES2017 source                   then how do you connect the two?
+"compile"/"transpile" from one to the other
+the software that does this is a transpiler
+the difference between a compiler and a transpiler is a little vague
+
+
+C#              CIL                                                            native instructions
+more abstract                                                                                 less abstract
+
+C# compiler goes from C# to CIL, CLR's JIT goes from CIL to native instructions
+Transpiling in terms of abstraction or language complexity is that going from ES5 to ES2017 is a lateral
+compile or side compilation, which is transpilation, the abstraction of the language isn't changing.
+Babel is a transpiler.
+
+TypeScript is JS + strict compile-time type checking, interfaces, classes, modules
+CoffeeScript is falling out of fashion, main thing that it provides is a better syntax for functions
+Arrow functions make CoffeeScript obsolete
+Typescript adds a transpilation build step to the process
+
+*.tx -> (tsc) -> *.js -> (webpack) (bundler/module loader) -> bundle.js
+
+npm install with no arguments grabs everything from the package.json and updates/installs it
+
+look up what npx is for
+
+angular is a lot like asp.net but in typescript
+AngularJS a library for JS
+Angular is a framework for Typescript
+Provide a high level of abstraction over things that we want to have in a web application driven heavily
+by JS, allows us to make single page application (SPA)
+
+<html>
+<body>
+
+</body>
+</html>
+
+
