@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <!-- routerLink comes from router module -->
+  <a routerLink="/pokemon">Pokemon</a>
+</div>
+
+<div style="text-align:center">
+  <h1>
+    <!-- this is "interpolation" syntax. -->
+    <!-- is angular templates, we can {{}} -->
+    <!-- and put a "template expression" inside. -->
+    <!-- that can be any JS expression... it will be converted to string -->
+    <!-- and HTML-encoded -->
+
+    <!-- this will be dynamic... if something changes the value of "title" -->
+    <!-- in my component object.. the view will change to reflect that. -->
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<router-outlet></router-outlet>

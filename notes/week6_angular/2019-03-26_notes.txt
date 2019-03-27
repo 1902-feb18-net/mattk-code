@@ -1,0 +1,31 @@
+module is a unit of deployment within your app, but deployment is not really the right word
+container/namespace for components/directives
+pipes, etc.
+can import such from other modules,
+must export its own for others to see
+
+app
+root module
+root component
+
+
+routing module
+
+
+module
+class + NgModule decorator
+
+
+The first thing that you do is bootstrap the root module which bootstraps the root component
+
+A module is a class, we put a decorator on that class, it's like an attribute in C#
+the class is TS and the NgModule is Ng
+
+result rendering is an inherent part of the mvc lifecycle
+part of http response
+could be view, could be json, could be object that could become json, could be status code
+
+Cognizant interviewers
+Shannon Hanson
+Krishna Ventkata
+Natarajan Roy

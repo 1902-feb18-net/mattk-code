@@ -1,0 +1,57 @@
+cognizant questions...
+
+stack is first in last out
+queue is first in first out
+
+BFS uses always a queue
+DFS uses always a stack
+
+BFS algorithm with a queue
+Start at source vertex source, put s in the queue
+Discover every vertex that is reachable from s
+Also produces a BFS tree with root s and including all
+reachable vertices
+BFS calculates the shortest path distance to the source
+vertex
+
+DFS is another strategy for exploring a graph
+Explore "deeper" in the graph whenever possible
+Edges are explored out of the most recently discovered vertex
+v that still has unexplored Edges
+When all of v's edges have been explored, backtrack to the
+vertex from which v was discovered
+recursive
+
+where are cognizant's offices?
+where matt probably go?
+maybe ohio, could be anywhere
+what matt do?
+FACETS, healthcare products,
+TriZetto Healthcare products
+What language is FACETS, what technologies does it use?
+are you guys programmers
+
+
+so I was a mechanical engineer working in a residual stress testing lab, a lot of attention to detail, started doing lab work, and 
+moved on to more contour stress data analysis work, wanted to do something else, started an online CS degree program
+got a degree in CS moved to Oregon, wanted to try something different, a little tired of California
+
+
+project 1 was a cupcake store order manager in C#, .NET framework, using SQL Server hosted on Azure connecting to SQL Server database with
+Entity framework, using ASP.NET MVC for the webpages
+
+worked on a team for capstone project, graphical web crawler Python Flask, D3.js for the front end and graph
+worked on a team someone else did they actual HTML scraper that parses the HTML and finds the links to build
+the web crawler, I worked ont he front end UI and the graph itself in D3.js
+
+working on project 2 C#, .NET framework, using SQL Server connecting to SQL SErver database with EntityFramework,
+using ASP.NET MVC for the webpages, and we just added Angular. We have the DAL as a web service, that our ASP.NET MVC
+can access that, just getting Angular. We have the application, both projects hosted through Azure, using Azure DevOps
+for continuous deployment, also using the Kanban board on Azure DevOps a little bit
+
+
+
+
+
+
+

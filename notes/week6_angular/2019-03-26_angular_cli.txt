@@ -1,0 +1,451 @@
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature
+$ cd mattk_notes
+bash: cd: mattk_notes: No such file or directory
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature
+$ ls -la
+total 276
+drwxr-xr-x 1 mpkag 197609      0 Mar 25 12:24 .
+drwxr-xr-x 1 mpkag 197609      0 Mar 25 15:44 ..
+-rw-r--r-- 1 mpkag 197609 152138 Mar  5  2018 alice.txt
+drwxr-xr-x 1 mpkag 197609      0 Mar 26 00:04 BAM-Trivia-Project-2
+drwxr-xr-x 1 mpkag 197609      0 Mar 20 09:18 BAM-Trivia-Project-2-MVC
+drwxr-xr-x 1 mpkag 197609      0 Mar 22 15:12 Completed_Exercises
+drwxr-xr-x 1 mpkag 197609      0 Mar 23 22:12 Completed_Projects
+drwxr-xr-x 1 mpkag 197609      0 Mar 25 13:13 js_assignment
+drwxr-xr-x 1 mpkag 197609      0 Mar 25 11:57 mattk-code
+-rw-r--r-- 1 mpkag 197609    601 Feb 23 21:14 persons_data.xml
+-rw-r--r-- 1 mpkag 197609  69333 Mar 17  2018 plaintext4
+drwxr-xr-x 1 mpkag 197609      0 Mar 20 01:39 Project2_items
+drwxr-xr-x 1 mpkag 197609      0 Mar 19 23:50 Project2_main
+drwxr-xr-x 1 mpkag 197609      0 Feb 21 20:23 Revature
+drwxr-xr-x 1 mpkag 197609      0 Mar 25 20:33 training-code
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature
+$ cd mattk-code/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ cd week6_angular/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular (master)
+$ ng new pokemon-app
+? Would you like to add Angular routing? No
+? Which stylesheet format would you like to use? CSS
+CREATE pokemon-app/angular.json (3852 bytes)
+CREATE pokemon-app/package.json (1310 bytes)
+CREATE pokemon-app/README.md (1027 bytes)
+CREATE pokemon-app/tsconfig.json (435 bytes)
+CREATE pokemon-app/tslint.json (1621 bytes)
+CREATE pokemon-app/.editorconfig (246 bytes)
+CREATE pokemon-app/.gitignore (629 bytes)
+CREATE pokemon-app/src/favicon.ico (5430 bytes)
+CREATE pokemon-app/src/index.html (297 bytes)
+CREATE pokemon-app/src/main.ts (372 bytes)
+CREATE pokemon-app/src/polyfills.ts (2841 bytes)
+CREATE pokemon-app/src/styles.css (80 bytes)
+CREATE pokemon-app/src/test.ts (642 bytes)
+CREATE pokemon-app/src/browserslist (388 bytes)
+CREATE pokemon-app/src/karma.conf.js (1024 bytes)
+CREATE pokemon-app/src/tsconfig.app.json (166 bytes)
+CREATE pokemon-app/src/tsconfig.spec.json (256 bytes)
+CREATE pokemon-app/src/tslint.json (244 bytes)
+CREATE pokemon-app/src/assets/.gitkeep (0 bytes)
+CREATE pokemon-app/src/environments/environment.prod.ts (51 bytes)
+CREATE pokemon-app/src/environments/environment.ts (662 bytes)
+CREATE pokemon-app/src/app/app.module.ts (314 bytes)
+CREATE pokemon-app/src/app/app.component.html (1120 bytes)
+CREATE pokemon-app/src/app/app.component.spec.ts (993 bytes)
+CREATE pokemon-app/src/app/app.component.ts (215 bytes)
+CREATE pokemon-app/src/app/app.component.css (0 bytes)
+CREATE pokemon-app/e2e/protractor.conf.js (752 bytes)
+CREATE pokemon-app/e2e/tsconfig.e2e.json (213 bytes)
+CREATE pokemon-app/e2e/src/app.e2e-spec.ts (640 bytes)
+CREATE pokemon-app/e2e/src/app.po.ts (251 bytes)
+
+> node-sass@4.11.0 install C:\revature\mattk-code\week6_angular\pokemon-app\node_modules\node-sass
+> node scripts/install.js
+
+Cached binary found at C:\Users\mpkag\AppData\Roaming\npm-cache\node-sass\4.11.0\win32-x64-67_binding.node
+
+> node-sass@4.11.0 postinstall C:\revature\mattk-code\week6_angular\pokemon-app\node_modules\node-sass
+> node scripts/build.js
+
+Binary found at C:\revature\mattk-code\week6_angular\pokemon-app\node_modules\node-sass\vendor\win32-x64-67\binding.node
+Testing binary
+Binary is fine
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.7 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.7: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 1074 packages from 1028 contributors and audited 42608 packages in 42.293s
+found 0 vulnerabilities
+
+    Directory is already under version control. Skipping initialization of git.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular (master)
+$ ng new pokemon-app2
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? CSS
+CREATE pokemon-app2/angular.json (3861 bytes)
+CREATE pokemon-app2/package.json (1311 bytes)
+CREATE pokemon-app2/README.md (1028 bytes)
+CREATE pokemon-app2/tsconfig.json (435 bytes)
+CREATE pokemon-app2/tslint.json (1621 bytes)
+CREATE pokemon-app2/.editorconfig (246 bytes)
+CREATE pokemon-app2/.gitignore (629 bytes)
+CREATE pokemon-app2/src/favicon.ico (5430 bytes)
+CREATE pokemon-app2/src/index.html (298 bytes)
+CREATE pokemon-app2/src/main.ts (372 bytes)
+CREATE pokemon-app2/src/polyfills.ts (2841 bytes)
+CREATE pokemon-app2/src/styles.css (80 bytes)
+CREATE pokemon-app2/src/test.ts (642 bytes)
+CREATE pokemon-app2/src/browserslist (388 bytes)
+CREATE pokemon-app2/src/karma.conf.js (1025 bytes)
+CREATE pokemon-app2/src/tsconfig.app.json (166 bytes)
+CREATE pokemon-app2/src/tsconfig.spec.json (256 bytes)
+CREATE pokemon-app2/src/tslint.json (244 bytes)
+CREATE pokemon-app2/src/assets/.gitkeep (0 bytes)
+CREATE pokemon-app2/src/environments/environment.prod.ts (51 bytes)
+CREATE pokemon-app2/src/environments/environment.ts (662 bytes)
+CREATE pokemon-app2/src/app/app-routing.module.ts (245 bytes)
+CREATE pokemon-app2/src/app/app.module.ts (393 bytes)
+CREATE pokemon-app2/src/app/app.component.html (1152 bytes)
+CREATE pokemon-app2/src/app/app.component.spec.ts (1113 bytes)
+CREATE pokemon-app2/src/app/app.component.ts (216 bytes)
+CREATE pokemon-app2/src/app/app.component.css (0 bytes)
+CREATE pokemon-app2/e2e/protractor.conf.js (752 bytes)
+CREATE pokemon-app2/e2e/tsconfig.e2e.json (213 bytes)
+CREATE pokemon-app2/e2e/src/app.e2e-spec.ts (641 bytes)
+CREATE pokemon-app2/e2e/src/app.po.ts (251 bytes)
+
+> node-sass@4.11.0 install C:\revature\mattk-code\week6_angular\pokemon-app2\node_modules\node-sass
+> node scripts/install.js
+
+Cached binary found at C:\Users\mpkag\AppData\Roaming\npm-cache\node-sass\4.11.0\win32-x64-67_binding.node
+
+> node-sass@4.11.0 postinstall C:\revature\mattk-code\week6_angular\pokemon-app2\node_modules\node-sass
+> node scripts/build.js
+
+Binary found at C:\revature\mattk-code\week6_angular\pokemon-app2\node_modules\node-sass\vendor\win32-x64-67\binding.node
+Testing binary
+Binary is fine
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.7 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.7: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 1074 packages from 1028 contributors and audited 42608 packages in 40.672s
+found 0 vulnerabilities
+
+    Directory is already under version control. Skipping initialization of git.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular (master)
+$ cd pokemon-app2
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular/pokemon-app2 (master)
+$ ng new --help
+arguments:
+  name
+    The name of the new workspace and initial project.
+
+options:
+  --collection (-c)
+    A collection of schematics to use in generating the initial app.
+  --commit
+    Initial git repository commit information.
+  --create-application
+    When true (the default), creates a new initial app project in the src folder of the new workspace. When false, creates an empty workspace with no
+initial app. You can then use the generate application command so that all apps are created in the projects folder.
+  --defaults
+    When true, disables interactive input prompts for options with a default.
+  --directory
+    The directory name to create the workspace in.
+  --dry-run (-d)
+    When true, runs through and reports activity without writing out results.
+  --experimental-ivy
+    EXPERIMENTAL: When true, creates a new app that uses the Ivy rendering engine.
+  --force (-f)
+    When true, forces overwriting of existing files.
+  --help
+    Shows a help message for this command in the console.
+  --inline-style (-s)
+    When true, includes styles inline in the component TS file. By default, an external styles file is created and referenced in the component TS file.
+  --inline-template (-t)
+    When true, includes template inline in the component TS file. By default, an external template file is created and referenced in the component TS
+file.
+  --interactive
+    When false, disables interactive input prompts.
+  --minimal
+    When true, creates a project without any testing frameworks. (Use for learning purposes only.)
+  --new-project-root
+    The path where new projects will be created, relative to the new workspace root.
+  --prefix (-p)
+    The prefix to apply to generated selectors for the initial project.
+  --routing
+    When true, generates a routing module for the initial project.
+  --skip-git (-g)
+    When true, does not initialize a git repository.
+  --skip-install
+    When true, does not install dependency packages.
+  --skip-tests (-S)
+    When true, does not generate "spec.ts" test files for the new project.
+  --style
+    The file extension or preprocessor to use for style files.
+  --verbose (-v)
+    When true, adds more details to output logging.
+  --view-encapsulation
+    The view encapsulation strategy to use in the initial project.
+
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular/pokemon-app2 (master)
+$ ng generate component Pokemon
+CREATE src/app/pokemon/pokemon.component.html (26 bytes)
+CREATE src/app/pokemon/pokemon.component.spec.ts (635 bytes)
+CREATE src/app/pokemon/pokemon.component.ts (273 bytes)
+CREATE src/app/pokemon/pokemon.component.css (0 bytes)
+UPDATE src/app/app.module.ts (1116 bytes)
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular/pokemon-app2 (master)
+$ ng serve --open
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-03-26T16:25:41.102Z
+Hash: 6070000e4272bf035c2b
+Time: 8898ms
+chunk {es2015-polyfills} es2015-polyfills.js, es2015-polyfills.js.map (es2015-polyfills) 284 kB [initial] [rendered]
+chunk {main} main.js, main.js.map (main) 14.8 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 236 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 16.3 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.76 MB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T16:25:51.721Z - Hash: 8af2312397353906b1af - Time: 1475ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 14.9 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T16:25:54.437Z - Hash: 8af2312397353906b1af - Time: 459ms
+6 unchanged chunks
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T16:25:57.893Z - Hash: 17e859e0252db477a958 - Time: 241ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 15.2 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T16:26:04.101Z - Hash: 96b535eaf87528f9dec8 - Time: 205ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 15.2 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular/pokemon-app2 (master)
+$ ng serve --open
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-03-26T16:26:20.824Z
+Hash: 96b535eaf87528f9dec8
+Time: 7630ms
+chunk {es2015-polyfills} es2015-polyfills.js, es2015-polyfills.js.map (es2015-polyfills) 284 kB [initial] [rendered]
+chunk {main} main.js, main.js.map (main) 15.2 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 236 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 16.3 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.76 MB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular/pokemon-app2 (master)
+$ ng serve --open
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+Date: 2019-03-26T16:29:34.496Z
+Hash: 7187de53c0be28af247d
+Time: 8239ms
+chunk {es2015-polyfills} es2015-polyfills.js, es2015-polyfills.js.map (es2015-polyfills) 284 kB [initial] [rendered]
+chunk {main} main.js, main.js.map (main) 15.5 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 236 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 16.3 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 4.03 MB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T16:29:41.084Z - Hash: 34504431f144740acf2b - Time: 1476ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 15.6 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T16:31:22.159Z - Hash: 4ee54ba24627c34cc0cd - Time: 217ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 15.6 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T16:31:56.807Z - Hash: 9a5e9f16eb0e81ac9c13 - Time: 218ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 15.6 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T16:34:54.862Z - Hash: 96ea259e414d7dd79f65 - Time: 470ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 15.7 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T16:34:57.953Z - Hash: 3c218eab74bae8c6551e - Time: 213ms 213ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 16 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...                                               209ms
+
+Date: 2019-03-26T16:35:15.699Z - Hash: 9416b0e78eb2133cb222 - Time: 209ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 16 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T16:36:26.442Z - Hash: c438c0095dd50b59683b - Time: 218ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 16 kB [initial] [rendered]i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T16:41:51.655Z - Hash: f0a6845f6e634272be2b - Time: 3775ms
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 18 kB [initial] [rendered]chunk {vendor} vendor.js, vendor.js.map (vendor) 4.12 MB [initial]
+[rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T16:42:46.689Z - Hash: 353b7c25cab54fde9f50 - Time: 831ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 18.2 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T16:44:55.102Z - Hash: ad3bf60d16449a4bac50 - Time: 245ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 18.4 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+
+ERROR in src/app/pokemon-api.service.ts(16,37): error TS2355: A function whose declared type is neither 'void' nor 'any' must return a value.
+
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T16:50:17.597Z - Hash: 13b7f8b78a2b3ceacc4f - Time: 247ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 18.7 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T16:52:09.601Z - Hash: 06c92addce94cf6f5c54 - Time: 252ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 18.9 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T16:52:45.491Z - Hash: 1bc91d30b34ed01a71d3 - Time: 203ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 18.9 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T16:57:24.113Z - Hash: c4217615d3253417d05a - Time: 154ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.4 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T16:58:26.465Z - Hash: 513e05e545d33c9f8b9d - Time: 192ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.4 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T16:59:20.289Z - Hash: 36ba54a8f1dc9506a66b - Time: 267ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.5 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T16:59:22.622Z - Hash: 1dfb7efc89a5be15edc8 - Time: 201ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.5 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T17:01:34.535Z - Hash: ed59151ba740a2afaa9d - Time: 152ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.5 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T17:02:02.842Z - Hash: 1dfb7efc89a5be15edc8 - Time: 173ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.5 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T17:02:18.358Z - Hash: 78a50b00dfce94605c41 - Time: 199ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.6 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T17:03:53.586Z - Hash: c3fe7ef5ebd026d1a766 - Time: 149ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.6 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+Date: 2019-03-26T17:04:05.165Z - Hash: f37121a1ca9cf9739a3e - Time: 156ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.6 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T17:04:27.763Z - Hash: f30773118491b8a3c386 - Time: 181ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.6 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T17:04:40.631Z - Hash: 78a50b00dfce94605c41 - Time: 142ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.6 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+i ｢wdm｣: Compiling...
+
+Date: 2019-03-26T17:05:17.279Z - Hash: 4444cd66868c9319e9af - Time: 148ms
+5 unchanged chunks
+chunk {main} main.js, main.js.map (main) 19.6 kB [initial] [rendered]
+i ｢wdm｣: Compiled successfully.
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular/pokemon-app2 (master)
+$ ng serve --open
+** Angular Live Development Server is listening on localhost:4200,
+open your browser on http://localhost:4200/ **
+Date: 2019-03-26T21:31:37.540Z
+Hash: 4444cd66868c9319e9af
+Time: 10389ms
+chunk {es2015-polyfills} es2015-polyfills.js, es2015-polyfills.js.map (es2015-polyfills) 284 kB [initial] [rendered]
+chunk {main} main.js, main.js.map (main) 19.6 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 236 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 16.3 kB [initial]
+[rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 4.12 MB [initial]
+[rendered]
+i ｢wdm｣: Compiled successfully.
+
+---------------------------- SECOND TERMINAL INPUT/OUTPUT --------------------------------------
+
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature
+$ cd mattk-code/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code (master)
+$ cd week6_angular/
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular
+(master)
+$ cd pokemon-app2
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular/pokemon-app2 (master)
+$ ng generate service PokemonApi
+CREATE src/app/pokemon-api.service.spec.ts (354 bytes)
+CREATE src/app/pokemon-api.service.ts (139 bytes)
+
+mpkag@DESKTOP-ICC58FK MINGW64 /c/revature/mattk-code/week6_angular/pokemon-app2 (master)
+$
