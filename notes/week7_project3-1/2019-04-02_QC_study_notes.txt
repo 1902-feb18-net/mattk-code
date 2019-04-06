@@ -1,0 +1,151 @@
+what is a TS class?
+a typescript class is like a JS class, but is stricter 
+at compile time
+typescript offers true OOP inheritance, JS does not
+
+What is a TS interface?
+interfaces are like objects in typescript,
+they enforce a set of type-checking rules for a list
+of variable, usually data attributes of something,
+once the TS is transpiled to JS, these types are
+thrown out since JS doesn't have type checking
+
+What are the data types in JS?
+undefined, number, string, boolean, object,
+null, function
+NAN is a number data type
+
+What evaluates to false in JS?
+undefined, null, NAN, 0, "", and false
+
+
+What are TS type annotations?
+name: string
+
+Type annotations after the variable name specify the
+type in TS, this goes away in JS since there is no
+type checking in JS
+
+
+What is TS lint?
+ng lint, tslint.json, set of rules to clean up the
+TS code
+
+
+what is a TS module?
+a module is a class or namespace or method
+that can be imported into another file, this allows for
+abstraction within TS
+
+
+what is TS config?
+specifies the root files and the compiler options
+required to compile the project
+run with tsc
+can compile specific .ts files
+
+
+
+
+semver - semantic version, try to bring some order to the
+chaos of everyone having their own version
+1.1.1
+major: when we break any backwards compatibility
+minor: new features
+patch: bug fix
+
+What is node runtime? (revisit)
+node.js javascript juntime environment,
+runtime that runs node packages
+
+What is npm?
+npx execute packages without running explicitly
+
+What is package.json?
+
+What are node_modules?
+node modules are all of the packages
+that npm install installs from package.json
+
+Angular CLI...
+
+What is Angular configuration?
+angular.json file, configuration schema for the project
+tells the project what certain Angular CLI
+commands are supposed to do what their builder is
+options for them, etc.
+
+What is a Angular module?
+An Angular moduel is @NgModule, and has
+declarations for components
+imports for modules from Angular libraries
+bootstrap for components to bootstrap
+
+What is bootstrapping in Angular?
+loading components into the DOM injecting services
+into those components
+
+What is an Angular decorator?
+TS has classes, the Angular decorators make them
+special classes, they upgrade them
+@Component, @NgModule, @Injectable, @Directive
+by in large decorators are the distinguishing factor
+between vanilla Typescript and Angular
+
+What is an Angular component?
+change a class into an Angular component,
+manage a view
+we can have components inside other components,
+typically has selector, templateUrl, styleUrls
+
+What is ngOnInit?
+This is a method in each component that runs
+when the component is loaded.
+
+What are directives?
+Anything that is in HTML that are not valid HTML,
+NgStyle, NgIf, NgFor
+app-root, router, app-pokemon, router-outlet
+
+attribute directives NgClass (set CSS class
+dynamically for a DOM element), NgStyle
+structural directives NgIf, NgFor
+component directives app-root, app-pokemon,
+dependency injection via ngmodule and constructor
+
+What is data binding?
+interpolation?
+{{ name }}
+two-way binding?
+<!-- <input type="text" [(ngModel)]="searchText" /> -->
+property binding
+<span *ngIf="p.height && p.weight" [ngClass]="heightWeightClasses"> <!-- property binding with ngClass attribute directive -->
+event binding?
+ <button (click)="getPokemon();">Search</button>
+
+Webpakc
+module bundler, it will combine multiple files
+into smaller files, minification
+
+Angular HttpClient?
+HttpClient is a module in Angular for making
+Http requests to urls. has to return an observable
+give httpClient in the constructor.
+
+What is a pipe?
+A pipe in Angular is a method that takes in an input
+and transforms it to a desired output.
+
+What is an Observable?
+Object for passing message between publishers and subscribers
+Does so asynchronously which is why HttpClient
+requires an Observable return type.
+because HttpClient uses observables.
+
+What is Jasmine?
+Jasmine is unit testing in JS.
+describe, beforeEach, it should clauses, like should create
+
+What is Karma?
+A JS test runner.
+

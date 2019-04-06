@@ -1,0 +1,95 @@
+Housing application
+Was touched 7 months ago
+Project 3 is using microservices architecture
+The same ideas of SOA, but we're going to
+have more services.
+"microservices" is kind of a buzzword
+microservice has its own database, it doesn'to
+share its database with anything else
+
+SOA allows us to scale up the product
+to meet changing demand
+
+container orchestration
+the most common one is Kubernetes
+we are using Docker Swarm
+Docker Swarm is on the way out, but it will
+work for this project.
+
+docker-compose.yml
+
+selection ui is a module in Angular
+which comes in as an npm package that we would
+publish
+
+selection       forecast   
+
+user        room        batch
+
+
+data
+
+"Angular library"
+not an app
+one or more modules to publish to npm
+and get included in apps
+uses "ng-packagr" format
+
+We all have to learn the code
+
+Team 1 (Auth team)
+Conrad
+Lee
+Oswaldo
+Andy
+Daniel
+
+Authentication and authorization
+Azure AD, didnt' quite succeed, not entirely
+sure why. 
+auth w/ Azure AD
+UI
+proposals to improve or refactor things
+forecast
+
+Team 2 (Queues)
+Storm
+Matt K
+Matt V
+Ben
+Will
+The queues have been partly implemented on them
+alreayd. Buty the team missed some fundamental
+understanding of the architecture, and they
+didn't plug it properly into ASP.NET.
+Too much console, not enough MVC.
+Azure Service Bus
+selection service
+improved logging, probably want Serilog
+if Nlog is a better fit, then talk about that
+
+selection and forecast uses PostgreSQL
+with EF
+
+user/room/batch uses non-relational DB
+MongoDB
+"document-based" DB
+
+maybe make prototype, mock projects
+to facilitate adding to the real project
+
+The idea behind selection service is it's going
+to store everything that it needs
+
+
+Starting to research queues
+Have to make a service Bus
+Then a queues
+Then a console app to send
+Then add nuget package microsoft.azure.servicebus
+Also need console app to receive
+
+Two apis talking over the queue resource that you want.
+list of methods that will need to receive users,
+look into encoding users
+move on to the other two

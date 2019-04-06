@@ -1,0 +1,67 @@
+module                  npm
+
+npm install
+
+/node_modules
+
+the decorator's imports bring in stuff from node_modules
+
+module D
+
+then exports from the decorator go to another module (different module somewhere else)
+inside our modules we have components with decorators
+
+declarations
+for root module: bootstrap
+
+services D providedIn: root (singleton)
+
+a component represents a view, so any logic or code on the page ties to the component
+
+{{ name }} interpolation / in component ts file this.name
+
+< [disabled] = "disabled" > / this.disabled
+            property binding
+
+< ... (click) = "handleClick(event)" > / handleClick() { ... ... }
+
+< ... [(ngModel)] = "data", <---> this.data
+two-way binding
+import FormsModule
+
+semver.npmjs.com semver for getting dependency versions
+"semver" semantic version, we try to bring some order to the chaos of everybody on the internet
+making a new version of everything all the time
+
+major.minor.patch, so npm modules always have 3 numbers
+major: when we break any backwards compatibility
+minor: new features 
+patch: bug fix
+
+"^1.2.3"
+
+means: minimum 1.2.3
+       maximum 1.999.999 (major)
+
+"~1.2.3" (minor)
+"1.2.3" = exact
+
+if you're depending on undocumented behavior, it's your fault
+if you're depending on documented behavior, it's their fault
+
+npm outdated
+npm update
+
+Talking about CORS
+same-origin policy
+server -- (HTML, JS) -> browser -> server (API)
+cross-origin request
+
+API must be configured to allow some cross-origin requests
+cross-origin resource sharing
+
+
+
+
+
+

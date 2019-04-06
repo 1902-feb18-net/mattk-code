@@ -1,0 +1,20 @@
+Angular
+
+TypeScript (class, interface, type annotations, modules, config)
+Node (runtime, NPM, package.json, semver, node_modules)
+Angular 
+- CLI, configuration
+- module, decorator
+- component, decorator, ngOnInit
+- directives
+    structural, attribute, component
+- service/injectable, decorator, provider (root, module, component), dependency injection
+- data binding (interpolation, property, event, two-way)
+- pipes
+- HttpClient, Observable
+- Jasmine unit testing, Karma, coverage
+- deployment
+- routing
+- guards
+- template syntax - exprs, statements, reference variables
+Webpack

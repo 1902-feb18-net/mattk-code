@@ -1,0 +1,38 @@
+updated documentation
+
+start with servicehub-user
+
+DocFX for documentation
+go to servicehub-user
+docfx --serve
+user story for fixing docfx
+
+Vagrant to get a good environment with which to run Docker, not using anymore
+
+go to powershell
+type new-guid (globally unique identifier)
+
+branches
+
+broker ------------------------------#-----------------------------------------------------
+            \                       /
+             ----------*---------------user story branch
+                \     /
+                 -----
+                task branch (team member branch)
+
+* - review by team lead
+# - team lead commits to broker
+1. one user code reviewer (Matt + Matt)
+2. the other team lead
+3. trainer reviews
+4. merge + delete branch
+
+only team leads commit directly to user story branch
+team members commit to task branches connected to story branch
+
+pivotal ID
+        -> (user story branch) branch name 12651162-userstory
+        -> commit messages include in first line: [#12651162]
+        -> "task" branch 
+

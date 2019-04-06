@@ -1,0 +1,61 @@
+Job Title: Software Engineer
+About Me: Techonologies you have been focusing on and are supposed to be working with
+
+The main purpose of this portfolio is to get rendered into a resume, text based resume
+Repeating ourselves a lot, hoping that the buzzwords and sentences structured to show competence
+that it grabs some attention
+C# at least 1 year experience in terms of what the industry would judge
+Work Experiences leave blank
+Projects are a lot of work
+Project 1 little blurb based on what that application does
+Roles/Responsibilities are somehting you have to fill out, at least 8 per Project
+
+job Title
+everything 
+except: 
+- industry equivalency
+- skill matrix
+- 1/3 about me bullet points (4 I think)
+- project 3
+
+
+SPA says we're just going to have one page, and JS is going to do things to the DOM to make it
+look like we have only just one page
+This is what Angular targets.
+Typescript, we're going to have binding that ties the object in code to the DOM.
+
+Angular, TypeScript, TS has some interfaces and some classes, some of the classes are going to
+be special, and they will be upgraded with decorators to become special classes
+
+Angular is going to have decorators. 
+@Component -> change a class into an Angular component -> manage a view
+we can have components inside components, we can nest them, component class in the decorator
+references a template, and the template is HTML, plus directives and binding,
+directives and binding are Angular stuff
+@NgModule ->  (angular) module -> provide namespace & compilation context for components,
+ other directives
+pipes, can be a context for services, etc.
+@Injectable -> services -> view independent logic that supports dependency injection
+@Directive -> custom directives
+
+directives, anything that is in HTML that are not valid HTML, NgStyle, NgIf, NgFor
+app-root, router, app-pokemon, router-outlet, 
+
+attribute directives NgClass, NgStyle
+structural directives NgIf, NgFor
+component directives app-root (AppComponent), app-pokemon
+other directives router-outlet
+
+components have a selector 
+
+decorator provides some metadata about an object in the language, Python has similar syntax,
+and that may be the word came from
+
+
+ts module a .ts file with imports at the top and/or exports also,
+pulls the file's contents out of JS's global
+a component.ts is a TS module
+ng module is a TS class with a NgModule decorator - imports, exports, declarations, etc.
+ng module root module (AppModule)
+
+angular.io Guide -> "Fundamentals"
