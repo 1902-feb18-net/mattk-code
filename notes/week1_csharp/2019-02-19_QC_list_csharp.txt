@@ -1,0 +1,49 @@
+C# anatomy
+- language, compiler, runtime, platform, general features, program structure
+
+.NET building blocks
+- Framework, Standard, Core, project, assembly, solution, application, library
+
+infrastructure
+- CLI, CLR, CTS, BCL, VES, JIT compiler, CIL/MSIL
+
+managed/unmanaged data types
+- value, reference access modifiers, extended modifiers, class, struct, interface,
+- enum, property/field separation of concerns, KISS, DRY, comments
+
+OOP principles
+- abstraction, polymorphism, encapsulation, inheritance
+
+advanced data types
+- upcasting, downcasting, implicit, explicit, boxing, is, ref out, typeof
+
+collections, generics
+- array, list, set, dictionary, stack, queue
+
+serialization
+- XML, file I/O, JSONP, regular expressions
+
+exception handling
+- try, catch, finally, throw
+
+testing
+- unit test, xUnit, arrange/act/assert, TDD
+
+debugging
+
+logging
+
+SOLID principles
+
+delegates
+- Action, Func, lambda, LINQ, events
+
+Task
+- async, await
+
+Git
+- status, add, commit, push, pull, diff log, clone
+
+bash
+- ls, mkdir, cd
+

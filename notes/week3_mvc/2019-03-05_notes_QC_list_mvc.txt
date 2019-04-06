@@ -1,0 +1,21 @@
+MVC
+
+HTML: element, attribute, doctype HTML5, common elements (list, structural, etc.)
+HTML5: audio, video, canvas, new elements, accessibility
+CSS: rule, property, cascade, box model, inheritance, media query, positioning, responsive design,
+external/internal/inline, selectors, Bootstrap
+MVC: model, view, controller, view model, HTTP request lifecycle
+
+ASP.NET MVC
+controller: action, HTTP verbs
+model: model binding, Data Annotations
+view: Razor, Layour, @model (strongly weakly-typed), ViewData, ViewBad,
+dynamic, TempData
+routing: convention, attribute, route parameter, query string
+validation: server, client ModelState, CSRF, anti-forgery token
+testing: mask, BDD
+filters: authorization, resource, action, exception, result, (custom)
+helpers: HTML, tag, (custom), common ones
+ASP.NET + EF design, code-first EF, migrations
+dependency injection: singleton, scoped, transient, FromService
+
